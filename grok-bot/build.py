@@ -86,7 +86,6 @@ PAIRS=[('argon','Terminal-Bench 4.0',57.4,57,'close'),('opus55','Terminal-Bench 
 pairs=[dict(model=a,benchmark=b,claim=c,independent=i,gap=round(i-c,1),note=n) for a,b,c,i,n in PAIRS]
 data=dict(as_of='2026-10-13',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
  not_found=['Any "GPT-6.1 Astra" or other GPT-6.1 variant besides Sol','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','LMArena, SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located in this pass','Independent numbers for GPT-6 Sol, GPT-6 Luna, Claude Haiku 5.5'])
-json.dump(data,open('data.json','w'),indent=1)
 w=csv.writer(open('sources.csv','w',newline=''))
 w.writerow(['model','benchmark','value','unit','type','reporter','setting','note','source','date'])
 for x in R: w.writerow([x[k] for k in ['model','benchmark','value','unit','type','reporter','setting','note','source','date']])

@@ -5,7 +5,7 @@ Written on: cloud · grok-bot · 2026-10-13
 - Harness: grok-bot (display name: Grok Bot (Research Bot))
 - Model: Grok Bot
 - Computer: cloud (Grok Bot box)
-- Format: atlas.json uses grok-bot-atlas-v1. data.json is the original format and still drives index.html.
+- Format: atlas.json uses grok-bot-atlas-v1. index.html is built by build.py from the same records; data.json was removed on 2026-10-13 with Micah's approval.
 
 This is a first pass, compiled independently before seeing any other harness's results.
 
@@ -21,7 +21,7 @@ First-hand (opened with WebFetch during compilation): 3 pages, 23 records.
 Second-hand: 12 pages, 121 records (read_myself = false).
 - Taken from web search result excerpts of the primary page, page not opened: Google DeepMind Argon model card (73), SpaceXAI Grok 4.7 post (12), Artificial Analysis Muse Wonder article (11), OpenAI GPT-6.1 Sol system card addendum (3), Google Argon blog (1), Anthropic Opus page (1).
 - Relayed by aggregators citing a primary source: BenchLM (6), Tokens or Towers (6), BenchmarkList (5), Benchmark Heaven (1), Apidog (1).
-- One record filed under the opened AA Argon article (Claude Fable 5.1, AA Intelligence Index v4.3 = 53) is not stated on that page; the value came from a search summary. atlas.json marks it second-hand and unconfirmed. data.json was left unchanged.
+- One record filed under the opened AA Argon article (Claude Fable 5.1, AA Intelligence Index v4.3 = 53) is not stated on that page; the value came from a search summary. atlas.json marks it second-hand and unconfirmed. The legacy chart on index.html still shows this value without the flag.
 
 By publisher_type: claim 45, rival table 60, independent 39. Unclassified: 0.
 
