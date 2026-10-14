@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-10-13",
+    "title": "Gemini 4 Argon model card",
+    "harness": "google-argon-card",
+    "note": "Google's comparison table, including quoted or unspecified competitor cells."
+  },
+  {
+    "date": "2026-10-12",
+    "title": "Muse Wonder and Muse Wonder Full",
+    "harness": "meta-muse-wonder",
+    "note": "Reported codename Watermelon. Wonder is on the API. Wonder Full is Muse Code only."
+  },
+  {
+    "date": "2026-10-12",
+    "title": "Artificial Analysis Muse Wonder index",
+    "harness": "artificial-analysis",
+    "note": "Independent index. Separate from Meta's own table."
+  },
+  {
+    "date": "2026-09-29",
+    "title": "GPT-6.1 Sol",
+    "harness": "openai-gpt-6",
+    "note": "Work and Codex model. The DeepSWE absolute is derived from OpenAI's 6.4-point claim."
+  },
+  {
+    "date": "2026-09-22",
+    "title": "GPT-6 Sol and GPT-6 Luna",
+    "harness": "openai-gpt-6",
+    "note": "ChatGPT's GPT-6 slider later maps Instant through Extra High to GPT-6 Sol."
+  },
+  {
+    "date": "2026-09-22",
+    "title": "Claude Opus 5.5",
+    "harness": "anthropic-claude",
+    "note": "Anthropic's headline table. Some GPT cells are quoted from OpenAI."
+  },
+  {
+    "date": "2026-09-21",
+    "title": "Grok 4.7",
+    "harness": "xai-grok-4-7",
+    "note": "xAI launch table. CursorBench cells match Cursor's board."
+  }
+]

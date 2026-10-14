@@ -1,0 +1,85 @@
+{
+  "id": "xai-grok-4-7",
+  "title": "xAI Grok 4.7 launch table",
+  "publisher": "xAI",
+  "readOn": "2026-10-13",
+  "url": "https://x.ai/news/grok-4-7",
+  "kind": "Company claim",
+  "summary": "The comparison xAI printed with Grok 4.7 on 21 Sep 2026, against Grok 4.6, GPT-5.6 Sol, and Claude Fable 5.1.",
+  "howItCompiles": [
+    "Grok 4.7 DeepSWE is marked high effort on the announcement.",
+    "The CursorBench cell for Grok 4.7 is 46.3%, which matches Cursor's Extra High row.",
+    "The Grok 4.6 CursorBench cell xAI prints is 40.4%, which matches Cursor's High row. Cursor's Extra High row for Grok 4.6 is 41.4%."
+  ],
+  "limits": [
+    "AA Briefcase is an Elo scale and is not mixed into the percent rows. xAI prints 1657 for Grok 4.7, 1546 for Grok 4.6, 1487 for GPT-5.6 Sol, and 1678 for Fable 5.1.",
+    "List prices on that page: Grok 4.7 $2 input and $6 output per million tokens."
+  ],
+  "benchmarks": [
+    {
+      "id": "cursorbench-4.0",
+      "name": "CursorBench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "xAI's CursorBench column.",
+      "rows": [
+        {"modelId": "grok-4-7", "effort": "Extra High", "score": 46.3, "origin": "quoted", "note": "Matches Cursor's Extra High row."},
+        {"modelId": "grok-4-6", "effort": "High", "score": 40.4, "origin": "quoted", "note": "Matches Cursor's High row, not Extra High."},
+        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 41.7, "origin": "quoted", "note": "Matches Cursor."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 51.8, "origin": "quoted", "note": "Matches Cursor."}
+      ]
+    },
+    {
+      "id": "deepswe-v1.1",
+      "name": "DeepSWE v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "xAI's DeepSWE column. Fable differs from OpenAI and Google.",
+      "rows": [
+        {"modelId": "grok-4-7", "effort": "High", "score": 71.0, "origin": "measured", "note": "Asterisk on the announcement: high effort."},
+        {"modelId": "grok-4-6", "effort": "Best reported", "score": 65.2, "origin": "measured", "note": "xAI table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 72.7, "origin": "quoted", "note": "Matches OpenAI's Astra-page cell."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 70.0, "origin": "unspecified", "note": "OpenAI and Google print 67.4%."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "xAI's terminal column.",
+      "rows": [
+        {"modelId": "grok-4-7", "effort": "Best reported", "score": 37.6, "origin": "measured", "note": "xAI table."},
+        {"modelId": "grok-4-6", "effort": "Best reported", "score": 20.3, "origin": "measured", "note": "xAI table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "quoted", "note": "Matches OpenAI."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 57.9, "origin": "unspecified", "note": "Anthropic prints 55.8%."}
+      ]
+    },
+    {
+      "id": "harvey-legal",
+      "name": "Harvey Legal Agent Benchmark",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "xAI's Harvey column. Not Harvey LAB-AA.",
+      "rows": [
+        {"modelId": "grok-4-7", "effort": "Best reported", "score": 19.6, "origin": "measured", "note": "The same percent Google prints for Argon, from a different lab's table."},
+        {"modelId": "grok-4-6", "effort": "Best reported", "score": 15.8, "origin": "measured", "note": "xAI table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 2.5, "origin": "unspecified", "note": "xAI table."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 6.7, "origin": "unspecified", "note": "Matches Google's Fable cell."}
+      ]
+    },
+    {
+      "id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "xAI's clinical-reasoning column.",
+      "rows": [
+        {"modelId": "grok-4-7", "effort": "Best reported", "score": 56.7, "origin": "measured", "note": "xAI table."},
+        {"modelId": "grok-4-6", "effort": "Best reported", "score": 48.5, "origin": "measured", "note": "xAI table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 60.5, "origin": "quoted", "note": "Matches OpenAI's length-adjusted Sol cell on the Astra page."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 62.1, "origin": "unspecified", "note": "xAI table. Meta's HealthBench Pro cell for Fable is also 62.1."}
+      ]
+    }
+  ]
+}

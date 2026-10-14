@@ -1,0 +1,76 @@
+{
+  "id": "artificial-analysis",
+  "title": "Artificial Analysis",
+  "publisher": "Artificial Analysis",
+  "readOn": "2026-10-13",
+  "url": "https://artificialanalysis.ai/articles/muse-wonder",
+  "kind": "Independent index",
+  "summary": "Artificial Analysis measurements from the 12 Oct 2026 Muse Wonder article. These are separate from Meta's developer table, including where both mention Terminal-Bench.",
+  "howItCompiles": [
+    "Intelligence Index v4.3 combines ten evaluations AA runs.",
+    "The article gives Spark 1.3, Wonder, and Wonder Full at max effort.",
+    "Coding Agents Index scores are for the named agent product: Muse Code for Muse models.",
+    "Cost per index task is AA's estimate for its own task mix. It is not a CursorBench task cost."
+  ],
+  "limits": [
+    "Wonder Full has no token price, so AA does not publish a cost per task for it.",
+    "AA's Terminal-Bench percent for Wonder Full is 57, which the article calls level with Gemini 4 Argon high on AA's run. That is not Anthropic's 66.4%."
+  ],
+  "benchmarks": [
+    {
+      "id": "aa-intelligence-index-v4-3",
+      "name": "AA Intelligence Index v4.3",
+      "unit": "index",
+      "higherIsBetter": true,
+      "about": "Composite index. Opus 5.5 leads the models named in the article's comparison set at 58, from Meta's chart as read by later coverage. This file stores the three Muse scores AA printed in prose.",
+      "rows": [
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 48, "origin": "measured", "note": "AA article, 12 Oct 2026."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 52, "origin": "measured", "note": "AA article, 12 Oct 2026."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 56, "origin": "measured", "note": "AA article, 12 Oct 2026."}
+      ]
+    },
+    {
+      "id": "aa-coding-agents-index",
+      "name": "AA Coding Agents Index",
+      "unit": "index",
+      "higherIsBetter": true,
+      "about": "Agent-product coding index.",
+      "rows": [
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 54, "origin": "measured", "note": "Muse Code."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 63, "origin": "measured", "note": "Muse Code."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 68, "origin": "measured", "note": "Muse Code. AA says this ties Claude Code with Sonnet 5.5."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 68, "origin": "measured", "note": "Claude Code, from the same AA paragraph."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 66, "origin": "measured", "note": "Claude Code, from the same AA paragraph."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4.0-aa",
+      "name": "Terminal-Bench 4.0, Artificial Analysis",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "AA's own before-and-after for the Muse line. Rounded to the percent AA printed.",
+      "rows": [
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 33, "origin": "measured", "note": "AA article."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 52, "origin": "measured", "note": "AA article."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 57, "origin": "measured", "note": "AA article. Meta's table cites a more precise 57.1."}
+      ]
+    },
+    {
+      "id": "aa-index-task-cost",
+      "name": "AA cost per Intelligence Index task",
+      "unit": "usd",
+      "higherIsBetter": false,
+      "about": "Estimated dollars per AA index task. Lower is cheaper. Wonder Full is omitted because it has no token price.",
+      "rows": [
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 0.72, "origin": "measured", "note": "AA article."},
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 1.60, "origin": "measured", "note": "AA article."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 1.99, "origin": "measured", "note": "AA article."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 3.26, "origin": "measured", "note": "AA article."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 4.52, "origin": "measured", "note": "AA article. Driven by input tokens at $4 per million."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 5.46, "origin": "measured", "note": "AA article, with fallback."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 5.98, "origin": "measured", "note": "AA article, with fallback."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 7.63, "origin": "measured", "note": "AA article, with fallback."}
+      ]
+    }
+  ]
+}

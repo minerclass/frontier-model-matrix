@@ -1,0 +1,93 @@
+:root {
+  color: #1a1a1a;
+  background: #f7f6f3;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+body {
+  margin: 0;
+}
+
+header.site, main, footer {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+header.site {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 0 8px;
+}
+
+header.site nav {
+  display: flex;
+  gap: 14px;
+}
+
+main {
+  padding-bottom: 48px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 28px 0 8px;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 18px 0 6px;
+}
+
+p, li {
+  font-size: 0.98rem;
+}
+
+a {
+  color: #0b3a73;
+}
+
+.kicker, .meta, footer {
+  color: #4d4a45;
+  font-size: 0.88rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #d9d4cc;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ece7df;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f0ece6;
+  font-weight: 650;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+footer {
+  padding: 8px 0 28px;
+}

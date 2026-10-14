@@ -1,0 +1,28 @@
+{
+  "models": {
+    "claude-opus-5-5": {"name": "Claude Opus 5.5", "lab": "Anthropic", "family": "Claude 5.5", "role": "Flagship Claude 5.5 model."},
+    "claude-sonnet-5-5": {"name": "Claude Sonnet 5.5", "lab": "Anthropic", "family": "Claude 5.5", "role": "Mid-tier Claude 5.5 model."},
+    "claude-haiku-5-5": {"name": "Claude Haiku 5.5", "lab": "Anthropic", "family": "Claude 5.5", "role": "Fast Claude 5.5 model."},
+    "claude-fable-5-1": {"name": "Claude Fable 5.1", "lab": "Anthropic", "family": "Claude Fable", "role": "Fable 5.1, scored beside the 5.5 family."},
+    "claude-fable-5": {"name": "Claude Fable 5", "lab": "Anthropic", "family": "Claude Fable", "role": "Prior Fable model, quoted on some OpenAI tables."},
+    "claude-opus-5": {"name": "Claude Opus 5", "lab": "Anthropic", "family": "Claude 5", "role": "Previous Opus generation."},
+    "claude-sonnet-5": {"name": "Claude Sonnet 5", "lab": "Anthropic", "family": "Claude 5", "role": "Previous Sonnet generation."},
+    "gemini-4-argon": {"name": "Gemini 4 Argon", "lab": "Google", "family": "Gemini 4", "role": "Google's frontier model on the 13 Oct 2026 card."},
+    "gemini-3-8-flash": {"name": "Gemini 3.8 Flash", "lab": "Google", "family": "Gemini 3.8", "role": "Earlier Gemini model still on some boards."},
+    "gpt-6-astra": {"name": "GPT-6 Astra", "lab": "OpenAI", "family": "GPT-6", "role": "Powers ChatGPT's GPT-6 Pro setting."},
+    "gpt-6-sol": {"name": "GPT-6 Sol", "lab": "OpenAI", "family": "GPT-6", "role": "Powers ChatGPT's GPT-6 Instant, Medium, High, and Extra High settings."},
+    "gpt-6-luna": {"name": "GPT-6 Luna", "lab": "OpenAI", "family": "GPT-6", "role": "Low-cost GPT-6 tier for the API, Work, and Codex."},
+    "gpt-6-1-sol": {"name": "GPT-6.1 Sol", "lab": "OpenAI", "family": "GPT-6.1", "role": "Separate Work and Codex model. It is not the ChatGPT thinking slider."},
+    "gpt-5-6-sol": {"name": "GPT-5.6 Sol", "lab": "OpenAI", "family": "GPT-5.6", "role": "Previous Sol tier. This is the OpenAI model CursorBench has scored."},
+    "gpt-5-6-terra": {"name": "GPT-5.6 Terra", "lab": "OpenAI", "family": "GPT-5.6", "role": "Balanced GPT-5.6 tier, on CursorBench."},
+    "gpt-5-6-luna": {"name": "GPT-5.6 Luna", "lab": "OpenAI", "family": "GPT-5.6", "role": "Fast GPT-5.6 tier. Free and Go chat still defaults here."},
+    "grok-4-7": {"name": "Grok 4.7", "lab": "xAI", "family": "Grok 4.7", "role": "xAI coding model served in Cursor at several efforts."},
+    "grok-4-6": {"name": "Grok 4.6", "lab": "xAI", "family": "Grok 4.6", "role": "Previous Grok tier, still on CursorBench."},
+    "muse-spark-1-3": {"name": "Muse Spark 1.3", "lab": "Meta", "family": "Muse Spark", "role": "Meta coding model on CursorBench."},
+    "muse-wonder": {"name": "Muse Wonder", "lab": "Meta", "family": "Muse Wonder", "role": "API model. Reported codename Watermelon."},
+    "muse-wonder-full": {"name": "Muse Wonder Full", "lab": "Meta", "family": "Muse Wonder", "role": "Larger Wonder model, Muse Code only. Same reported codename family."},
+    "glm-5-3": {"name": "GLM 5.3", "lab": "Z.AI", "family": "GLM 5.3", "role": "Agent model on CursorBench."},
+    "glm-5-3-flash": {"name": "GLM 5.3 Flash", "lab": "Z.AI", "family": "GLM 5.3", "role": "Faster GLM tier on CursorBench."},
+    "composer-2-5": {"name": "Composer 2.5", "lab": "Cursor", "family": "Composer", "role": "Cursor's own agent model on CursorBench."}
+  }
+}

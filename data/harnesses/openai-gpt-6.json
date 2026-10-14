@@ -1,0 +1,103 @@
+{
+  "id": "openai-gpt-6",
+  "title": "OpenAI GPT-6 family",
+  "publisher": "OpenAI",
+  "readOn": "2026-10-13",
+  "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+  "kind": "Company claim",
+  "summary": "OpenAI's published scores for GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, and the GPT-6.1 Sol claim. ChatGPT's GPT-6 control is a thinking slider over Sol and Astra, not a separate scored model.",
+  "howItCompiles": [
+    "Astra scores come from the Astra launch page. The page says scores are the maximum at any effort unless a table names an effort.",
+    "Sol and Luna scores come from the 22 Sep 2026 Sol and Luna post, at the effort named in each row.",
+    "GPT-6.1 Sol's DeepSWE cell is derived. OpenAI printed a 6.4 point gain over GPT-6 Sol's best and did not print the absolute.",
+    "Competitor cells on these pages are quotes from other labs when OpenAI says so."
+  ],
+  "limits": [
+    "None of GPT-6 Astra, GPT-6 Sol, GPT-6.1 Sol, or GPT-6 Luna has a CursorBench row in the 13 Oct 2026 read.",
+    "A derived cell is not a number OpenAI printed."
+  ],
+  "panels": [
+    {
+      "title": "How ChatGPT compiles the GPT-6 menu",
+      "headers": ["What you select", "Model that runs", "Where"],
+      "rows": [
+        ["GPT-6 Instant, Medium, High, Extra High", "GPT-6 Sol", "Chat"],
+        ["GPT-6 Pro", "GPT-6 Astra", "Chat, on eligible paid plans"],
+        ["GPT-6.1 Sol", "GPT-6.1 Sol", "ChatGPT Work and Codex"],
+        ["GPT-6 Luna", "GPT-6 Luna", "API, Work, and Codex"],
+        ["Free and Go default", "GPT-5.6 Luna", "Chat"]
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "deepswe-v1.1",
+      "name": "DeepSWE v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Long-horizon software engineering tasks in real repositories.",
+      "rows": [
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 66.6, "origin": "measured", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 68.8, "origin": "measured", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 74.1, "origin": "measured", "note": "Printed on the Astra page."},
+        {"modelId": "gpt-6-1-sol", "effort": "Lower than Sol max", "score": 75.2, "origin": "derived", "note": "68.8 plus the 6.4 point gain OpenAI stated on 29 Sep 2026. The post does not print 75.2."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 72.7, "origin": "measured", "note": "Printed on the Astra coding table."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 67.4, "origin": "quoted", "note": "Printed on the Astra coding table as a competitor cell."},
+        {"modelId": "claude-fable-5", "effort": "Extra High", "score": 69.9, "origin": "quoted", "note": "Sol and Luna post, Fable 5 at xhigh, used because a Fable 5.1 cell was unavailable for that comparison."}
+      ]
+    },
+    {
+      "id": "osworld-2.0-offline",
+      "name": "OSWorld 2.0 offline partial",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Partial reward on the offline set of OSWorld 2.0, v2026.08.08, as OpenAI describes it.",
+      "rows": [
+        {"modelId": "gpt-6-sol", "effort": "Extra High", "score": 60.5, "origin": "measured", "note": "22 Sep 2026 post. Compared there with Opus 5 medium at 60.3%."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 72.6, "origin": "measured", "note": "Astra page."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 65.7, "origin": "measured", "note": "Astra computer-use table."}
+      ]
+    },
+    {
+      "id": "automationbench",
+      "name": "AutomationBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Zapier-style business workflows. Keep this id separate from AutomationBench-AA.",
+      "rows": [
+        {"modelId": "gpt-6-sol", "effort": "Extra High", "score": 33.2, "origin": "measured", "note": "22 Sep 2026 comparison, $0.27 per task. This is not Sol's maximum if a higher effort exists and was not printed."},
+        {"modelId": "gpt-6-astra", "effort": "Low", "score": 30.3, "origin": "measured", "note": "The low-effort cell in the Sol comparison. Astra's higher published cell on its own page is 41.4%."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 41.4, "origin": "measured", "note": "Astra professional table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "note": "Sol post, with Opus 5 fallback. OpenAI says fallback cost is omitted."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 26.9, "origin": "quoted", "note": "Sol post."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 18.1, "origin": "measured", "note": "Astra professional table. Anthropic later quotes Zapier at 28.8% for this model."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Terminal tasks. OpenAI's Astra table.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 57.9, "origin": "measured", "note": "Astra coding table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "measured", "note": "Astra coding table."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 55.8, "origin": "quoted", "note": "Astra coding table."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 52.6, "origin": "quoted", "note": "Astra coding table. Anthropic's own Opus 5 cell is 52.3%."}
+      ]
+    },
+    {
+      "id": "agents-last-exam",
+      "name": "Agents' Last Exam",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Professional workflows on a computer, as OpenAI describes the exam.",
+      "rows": [
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 56.4, "origin": "measured", "note": "22 Sep 2026 post."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 59.3, "origin": "measured", "note": "Astra computer-use table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 53.6, "origin": "measured", "note": "Astra computer-use table."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 55.5, "origin": "quoted", "note": "Astra computer-use table."}
+      ]
+    }
+  ]
+}

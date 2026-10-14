@@ -1,0 +1,75 @@
+{
+  "id": "google-argon-card",
+  "title": "Gemini 4 Argon model card",
+  "publisher": "Google DeepMind",
+  "readOn": "2026-10-13",
+  "url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+  "kind": "Company claim",
+  "summary": "The comparison table on the Gemini 4 Argon model card, published 13 Oct 2026. Argon leads 13 of 19 rows, ties Astra on CWE-bench v1, and trails on five rows.",
+  "howItCompiles": [
+    "Argon cells are Google's reported results for its own model.",
+    "Competitor cells are marked unspecified because the card does not say Google re-ran every one.",
+    "A blank on the card is omitted here. It is not stored as zero.",
+    "Methodology link on the card: deepmind.google/models/evals-methodology/gemini-4-argon."
+  ],
+  "limits": [
+    "This table is Google's compilation. It is not CursorBench.",
+    "AutomationBench here is the Zapier-style score Google printed, not AutomationBench-AA."
+  ],
+  "benchmarks": [
+    {"id": "vals-index", "name": "Vals Index", "unit": "percent", "higherIsBetter": true, "about": "Economic-sector index named on the Argon card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 68.9, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 63.1, "origin": "unspecified", "note": "Competitor cell on Google's card."},
+      {"modelId": "claude-fable-5-1", "score": 65.8, "origin": "unspecified", "note": "Competitor cell on Google's card."},
+      {"modelId": "claude-opus-5-5", "score": 67.0, "origin": "unspecified", "note": "Competitor cell on Google's card."}
+    ]},
+    {"id": "automationbench", "name": "AutomationBench", "unit": "percent", "higherIsBetter": true, "about": "Score column on the Argon card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 51.3, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 41.4, "origin": "unspecified", "note": "Matches OpenAI's own 41.4% Astra cell."},
+      {"modelId": "claude-fable-5-1", "score": 31.4, "origin": "unspecified", "note": "Matches Anthropic and OpenAI."},
+      {"modelId": "claude-opus-5-5", "score": 42.5, "origin": "unspecified", "note": "Anthropic/Zapier printed 40.0%."}
+    ]},
+    {"id": "vals-finance-v2", "name": "Vals Finance Agent v2", "unit": "percent", "higherIsBetter": true, "about": "Financial-analyst tasks on the Argon card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 65.4, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 53.5, "origin": "unspecified", "note": "Also the Astra cell on Meta's Wonder table."},
+      {"modelId": "claude-fable-5-1", "score": 58.9, "origin": "unspecified", "note": "Also the Fable cell on Meta's Wonder table."},
+      {"modelId": "claude-opus-5-5", "score": 58.6, "origin": "unspecified", "note": "Also the Opus cell on Meta's Wonder table."}
+    ]},
+    {"id": "harvey-legal", "name": "Harvey Legal Agent Benchmark", "unit": "percent", "higherIsBetter": true, "about": "Google's Harvey row. This is a different setup from Harvey LAB-AA on Meta's table.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 19.6, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 5.4, "origin": "unspecified", "note": "Competitor cell on Google's card."},
+      {"modelId": "claude-fable-5-1", "score": 6.7, "origin": "unspecified", "note": "Same 6.7% xAI prints for Fable."},
+      {"modelId": "claude-opus-5-5", "score": 3.8, "origin": "unspecified", "note": "Competitor cell on Google's card."}
+    ]},
+    {"id": "deepswe-v1.1", "name": "DeepSWE v1.1", "unit": "percent", "higherIsBetter": true, "about": "Google's DeepSWE row.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 77.9, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 74.1, "origin": "unspecified", "note": "Matches OpenAI's Astra cell."},
+      {"modelId": "claude-fable-5-1", "score": 67.4, "origin": "unspecified", "note": "Matches OpenAI. xAI prints 70.0%."},
+      {"modelId": "claude-opus-5-5", "score": 74.2, "origin": "unspecified", "note": "Also Meta's Opus cell."}
+    ]},
+    {"id": "frontierswe-v2", "name": "FrontierSWE v2", "unit": "percent", "higherIsBetter": true, "about": "Google's FrontierSWE row. Astra leads.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 55.0, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 65.5, "origin": "unspecified", "note": "Competitor cell on Google's card."},
+      {"modelId": "claude-fable-5-1", "score": 56.3, "origin": "unspecified", "note": "Competitor cell on Google's card."},
+      {"modelId": "claude-opus-5-5", "score": 62.3, "origin": "unspecified", "note": "Competitor cell on Google's card."}
+    ]},
+    {"id": "terminal-bench-4.0", "name": "Terminal-Bench 4.0", "unit": "percent", "higherIsBetter": true, "about": "Google's Terminal-Bench row. Opus leads.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 57.4, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 58.2, "origin": "unspecified", "note": "OpenAI prints Astra at 57.9%."},
+      {"modelId": "claude-fable-5-1", "score": 57.9, "origin": "unspecified", "note": "Anthropic and OpenAI print 55.8%."},
+      {"modelId": "claude-opus-5-5", "score": 66.4, "origin": "unspecified", "note": "Matches Anthropic's xhigh cell."}
+    ]},
+    {"id": "terminal-bench-science-0.1", "name": "Terminal-Bench Science 0.1", "unit": "percent", "higherIsBetter": true, "about": "Google's science terminal row. Astra leads on this card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 57.6, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 68.1, "origin": "unspecified", "note": "OpenAI's later GPT-6.1 post also cites 68.1%. The Astra launch table printed 64.6%."},
+      {"modelId": "claude-fable-5-1", "score": 52.6, "origin": "unspecified", "note": "Matches Anthropic."},
+      {"modelId": "claude-opus-5-5", "score": 63.3, "origin": "unspecified", "note": "Anthropic prints 58.7%."}
+    ]},
+    {"id": "cwe-bench-v1", "name": "CWE-bench v1", "unit": "percent", "higherIsBetter": true, "about": "Vulnerability remediation. Argon and Astra tie on this card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 68.0, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 68.0, "origin": "unspecified", "note": "Tie with Argon on Google's card."},
+      {"modelId": "claude-fable-5-1", "score": 58.0, "origin": "unspecified", "note": "Competitor cell on Google's card."},
+      {"modelId": "claude-opus-5-5", "score": 67.0, "origin": "unspecified", "note": "Competitor cell on Google's card."}
+    ]}
+  ]
+}

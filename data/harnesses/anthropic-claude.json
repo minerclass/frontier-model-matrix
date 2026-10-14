@@ -1,0 +1,92 @@
+{
+  "id": "anthropic-claude",
+  "title": "Anthropic Claude 5.5 posts",
+  "publisher": "Anthropic",
+  "readOn": "2026-10-13",
+  "url": "https://www.anthropic.com/claude-opus-5-5",
+  "kind": "Company claim",
+  "summary": "Headline scores from Anthropic's Opus 5.5 post on 22 Sep 2026 and the Sonnet 5.5 post. CursorBench cells match Cursor's board. Several GPT cells are quoted from OpenAI.",
+  "howItCompiles": [
+    "Opus 5.5 results use adaptive thinking at max effort unless the post names another effort.",
+    "Terminal-Bench for Opus 5.5 is xhigh. Astra's Terminal-Bench cell is quoted from OpenAI.",
+    "Sonnet 5.5 cells come from the Sonnet post. FrontierCode for Sonnet is the extra-high figure, 52.1%. Max is 46.2% and is not the cell stored here.",
+    "AutomationBench was run by Zapier. Anthropic says safeguard interventions counted as failures."
+  ],
+  "limits": [
+    "Sonnet has no AutomationBench or HLE cell on the Sonnet table, so those rows are omitted.",
+    "GDPval-AA is Elo and is stored separately from percent scores."
+  ],
+  "benchmarks": [
+    {
+      "id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Anthropic's terminal scores. Sonnet's headline is above Opus on this test and below Opus on CursorBench.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Extra High", "score": 66.4, "origin": "measured", "note": "Opus 5.5 post. Standard error stated as ±2.6 points."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 55.8, "origin": "measured", "note": "Opus 5.5 post."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 52.3, "origin": "measured", "note": "Opus 5.5 post."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Best reported", "score": 70.6, "origin": "measured", "note": "Sonnet 5.5 post."},
+        {"modelId": "gpt-6-astra", "effort": "High", "score": 57.9, "origin": "quoted", "note": "Anthropic says this is OpenAI's figure."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "quoted", "note": "Anthropic says this is OpenAI's figure."}
+      ]
+    },
+    {
+      "id": "cursorbench-4.0",
+      "name": "CursorBench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Anthropic's CursorBench headlines. They match Cursor's Max rows.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 57.8, "origin": "quoted", "note": "Matches cursor.com. Anthropic also says medium effort scores 52.5%."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 51.8, "origin": "quoted", "note": "Matches cursor.com."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 46.6, "origin": "quoted", "note": "Matches cursor.com."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 55.5, "origin": "quoted", "note": "Sonnet 5.5 post. Matches cursor.com."},
+        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 41.7, "origin": "quoted", "note": "Matches cursor.com."}
+      ]
+    },
+    {
+      "id": "automationbench",
+      "name": "AutomationBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Zapier results cited by Anthropic.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 40.0, "origin": "quoted", "note": "Zapier early access, without fallback. Google's card later prints 42.5%."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "note": "Zapier, via the Opus 5.5 post."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 26.9, "origin": "quoted", "note": "Zapier public leaderboard, via Anthropic."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 41.4, "origin": "quoted", "note": "Zapier public leaderboard, via Anthropic."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 28.8, "origin": "quoted", "note": "Zapier, via Anthropic. OpenAI's own table prints 18.1%."}
+      ]
+    },
+    {
+      "id": "frontiercode-v1-1-main",
+      "name": "FrontierCode v1.1 main",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Merge-style coding score. The id is unique to this metric.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 54.4, "origin": "measured", "note": "Opus 5.5 post. The post also says medium effort scores 54.6%."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 50.3, "origin": "measured", "note": "Opus 5.5 post."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Extra High", "score": 52.1, "origin": "measured", "note": "Sonnet post. Max is 46.2%."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 53.3, "origin": "quoted", "note": "Opus 5.5 post, taken from OpenAI."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 47.5, "origin": "quoted", "note": "Opus 5.5 post."}
+      ]
+    },
+    {
+      "id": "gdpval-aa-v2-1",
+      "name": "GDPval-AA v2.1",
+      "unit": "elo",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis Elo for professional work, as printed by Anthropic.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 1846, "origin": "quoted", "note": "Opus 5.5 post."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 1735, "origin": "quoted", "note": "Opus 5.5 post."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 1708, "origin": "quoted", "note": "Opus 5.5 post."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 1542, "origin": "quoted", "note": "Opus 5.5 post."},
+        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 1588, "origin": "quoted", "note": "Opus 5.5 post."}
+      ]
+    }
+  ]
+}

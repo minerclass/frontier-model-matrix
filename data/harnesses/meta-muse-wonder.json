@@ -1,0 +1,163 @@
+{
+  "id": "meta-muse-wonder",
+  "title": "Meta Muse Wonder table",
+  "publisher": "Meta",
+  "readOn": "2026-10-13",
+  "url": "https://dev.meta.ai/resources/blog/build-with-muse-wonder",
+  "kind": "Company claim",
+  "summary": "Meta's 12 Oct 2026 developer table for Muse Wonder and Muse Wonder Full. Press coverage on 13 Oct calls the family Watermelon. Meta's own posts use the Wonder names.",
+  "howItCompiles": [
+    "Wonder and Wonder Full cells are Meta's reported results at max effort unless a row says otherwise.",
+    "SWE-Marathon for Wonder Full is xhigh.",
+    "Terminal-Bench uses Artificial Analysis as the result source, so those cells are AA's run as cited by Meta.",
+    "DeepSWE uses Datacurve for Wonder, Wonder Full, and Opus, OpenAI's number for Astra, and Anthropic's system card for Fable.",
+    "Competitor cells are whatever source Meta names. They are not a fresh common-harness run unless the model card says so."
+  ],
+  "limits": [
+    "Wonder Full has no per-token price and is limited to Muse Code Power and Maximum.",
+    "Wonder API price is $4 input and $20 output per million tokens, with a 1M context.",
+    "Neither Wonder model is on CursorBench.",
+    "AutomationBench-AA is not the Zapier AutomationBench used by OpenAI and Google."
+  ],
+  "benchmarks": [
+    {
+      "id": "deepswe-v1.1",
+      "name": "DeepSWE v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Meta's DeepSWE row. Wonder Full leads the models on this table.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 79.0, "origin": "measured", "note": "Datacurve result, cited by Meta."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 78.8, "origin": "measured", "note": "Datacurve result, cited by Meta."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 67.4, "origin": "quoted", "note": "Meta cites Anthropic's system card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 74.1, "origin": "quoted", "note": "Meta cites OpenAI."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 74.2, "origin": "quoted", "note": "Datacurve result, cited by Meta. Matches Google's card."}
+      ]
+    },
+    {
+      "id": "swe-marathon",
+      "name": "SWE-Marathon",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Long-running software projects. Meta says Abundant AI is the source, and the Astra and Fable leaderboard runs use different agents.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Extra High", "score": 57.5, "origin": "measured", "note": "Meta marks this cell xhigh."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 53.1, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 45.6, "origin": "quoted", "note": "Abundant AI via Meta. Not a common harness with Wonder."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 42.5, "origin": "quoted", "note": "Abundant AI via Meta, Codex agent."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 46.3, "origin": "quoted", "note": "Abundant AI via Meta."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4.0-aa",
+      "name": "Terminal-Bench 4.0, Artificial Analysis",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Kept on its own benchmark id so it is not averaged with Anthropic's 66.4% Opus cell.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 57.1, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 52.0, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 52.0, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 59.1, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 59.6, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."}
+      ]
+    },
+    {
+      "id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis strict pass. Do not place these next to Zapier's AutomationBench as if they were the same run.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 45.4, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 39.1, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 32.1, "origin": "quoted", "note": "Meta developer table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 41.6, "origin": "quoted", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 41.2, "origin": "quoted", "note": "Meta developer table."}
+      ]
+    },
+    {
+      "id": "harvey-lab-aa",
+      "name": "Harvey LAB-AA",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis legal-agent version with hallucination checks. Not Google's Harvey row.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 13.1, "origin": "quoted", "note": "Artificial Analysis, cited by Meta."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 10.0, "origin": "quoted", "note": "Meta developer table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 6.4, "origin": "quoted", "note": "Meta developer table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 8.6, "origin": "quoted", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 4.2, "origin": "quoted", "note": "Meta developer table."}
+      ]
+    },
+    {
+      "id": "vals-finance-v2",
+      "name": "Vals Finance Agent v2",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "The finance row on Meta's table. Three competitor cells match Google's card.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.1, "origin": "quoted", "note": "Vals AI, cited by Meta."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 56.6, "origin": "quoted", "note": "Meta developer table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 58.9, "origin": "quoted", "note": "Matches Google's card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 53.5, "origin": "quoted", "note": "Matches Google's card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 58.6, "origin": "quoted", "note": "Matches Google's card."}
+      ]
+    },
+    {
+      "id": "healthbench-pro",
+      "name": "HealthBench Pro",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Meta's professional health row. Opus leads.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 62.3, "origin": "measured", "note": "Meta says it ran the official tasks for this row."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 60.5, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 62.1, "origin": "quoted", "note": "Meta cites Anthropic's system card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 65.3, "origin": "unspecified", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 65.6, "origin": "quoted", "note": "Meta cites Anthropic's system card."}
+      ]
+    },
+    {
+      "id": "programbench",
+      "name": "ProgramBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Clean-room program reconstruction with mini-swe-agent. Opus leads.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.0, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 50.0, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 55.5, "origin": "unspecified", "note": "Meta developer table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 52.5, "origin": "unspecified", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 70.5, "origin": "unspecified", "note": "Meta developer table."}
+      ]
+    },
+    {
+      "id": "jobbench",
+      "name": "JobBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Sixty-five professional tasks. Opus leads Wonder Full by 0.1 point.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 75.3, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 70.5, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 73.1, "origin": "unspecified", "note": "Meta developer table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 66.1, "origin": "unspecified", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 75.4, "origin": "unspecified", "note": "Meta developer table."}
+      ]
+    },
+    {
+      "id": "memorybench",
+      "name": "MemoryBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Meta's internal memory test. Wonder is a tenth of a point above Wonder Full. Fable's cell was not cleanly readable, so it is omitted.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 85.5, "origin": "measured", "note": "Meta internal benchmark."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 85.6, "origin": "measured", "note": "Meta internal benchmark."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 81.4, "origin": "unspecified", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 81.5, "origin": "unspecified", "note": "Meta developer table."}
+      ]
+    }
+  ]
+}
