@@ -41,4 +41,4 @@ Watermelon is the reported codename for Muse Wonder and Muse Wonder Full. The re
 
 ## Git
 
-This copy lives outside OneDrive, on the computer where it was built. It has not been pushed. Ask before creating a GitHub remote.
+This copy lives outside OneDrive. Revision 2 adds `data/figures.json` and `NOTES.md` for the Frontier Benchmark Atlas brief. The hub link on each page is https://minerclass.github.io/frontier-benchmark-atlas/. Ask before pushing.

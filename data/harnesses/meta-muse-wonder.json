@@ -125,7 +125,7 @@
       "higherIsBetter": true,
       "about": "Clean-room program reconstruction with mini-swe-agent. Opus leads.",
       "rows": [
-        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.0, "origin": "measured", "note": "Meta developer table."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.0, "origin": "measured", "readDirectly": false, "note": "Meta developer table. The 59.0 cell was confirmed from a primary-source reading of that table after the page text extract dropped it. The other four cells on this row were in the extract."},
         {"modelId": "muse-wonder", "effort": "Max", "score": 50.0, "origin": "measured", "note": "Meta developer table."},
         {"modelId": "claude-fable-5-1", "effort": "Max", "score": 55.5, "origin": "unspecified", "note": "Meta developer table."},
         {"modelId": "gpt-6-astra", "effort": "Max", "score": 52.5, "origin": "unspecified", "note": "Meta developer table."},

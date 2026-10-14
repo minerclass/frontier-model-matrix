@@ -40,7 +40,7 @@
         {"modelId": "gpt-6-luna", "effort": "Max", "score": 66.6, "origin": "measured", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
         {"modelId": "gpt-6-sol", "effort": "Max", "score": 68.8, "origin": "measured", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
         {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 74.1, "origin": "measured", "note": "Printed on the Astra page."},
-        {"modelId": "gpt-6-1-sol", "effort": "Lower than Sol max", "score": 75.2, "origin": "derived", "note": "68.8 plus the 6.4 point gain OpenAI stated on 29 Sep 2026. The post does not print 75.2."},
+        {"modelId": "gpt-6-1-sol", "effort": "Lower than Sol max", "score": 75.2, "origin": "derived", "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-sol/", "sourceDate": "2026-09-29", "note": "68.8 plus the 6.4 point gain OpenAI stated on 29 Sep 2026. The 68.8 is on the Sol and Luna post. The 6.1 post does not print 75.2."},
         {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 72.7, "origin": "measured", "note": "Printed on the Astra coding table."},
         {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 67.4, "origin": "quoted", "note": "Printed on the Astra coding table as a competitor cell."},
         {"modelId": "claude-fable-5", "effort": "Extra High", "score": 69.9, "origin": "quoted", "note": "Sol and Luna post, Fable 5 at xhigh, used because a Fable 5.1 cell was unavailable for that comparison."}

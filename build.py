@@ -14,6 +14,17 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 HARNESS_DIR = DATA / "harnesses"
 
+HUB = "https://minerclass.github.io/frontier-benchmark-atlas/"
+
+PUBLISHER_LAB = {
+    "Google DeepMind": "Google",
+    "Anthropic": "Anthropic",
+    "OpenAI": "OpenAI",
+    "xAI": "xAI",
+    "Meta": "Meta",
+    "Cursor": "Cursor",
+}
+
 ORIGIN_LABEL = {
     "measured": "Measured by this publisher",
     "quoted": "Quoted from another lab",
@@ -98,9 +109,11 @@ def page(title: str, body: str, depth: int) -> str:
   <header class="site">
     <a href="{prefix}index.html">Frontier model matrix</a>
     <nav>
+      <a href="{HUB}">Atlas hub</a>
       <a href="{prefix}index.html">Comparison</a>
       <a href="{prefix}harnesses/index.html">Harnesses</a>
       <a href="{prefix}models/index.html">Models</a>
+      <a href="{prefix}NOTES.md">Notes</a>
     </nav>
   </header>
   <main>
@@ -327,6 +340,56 @@ def render_harness_index(harnesses: list[dict]) -> str:
     return page("Harnesses", body, 1)
 
 
+def classify(harness: dict, model: dict, row: dict) -> tuple[str, str]:
+    if row.get("stance") and row.get("publishedBy"):
+        return row["stance"], row["publishedBy"]
+    publisher = harness["publisher"]
+    kind = harness["kind"]
+    if "Independent" in kind or "Third-party" in kind:
+        return "independent", publisher
+    if row["origin"] in {"quoted", "unspecified"}:
+        return "rival", publisher
+    if row["origin"] in {"measured", "derived"} and PUBLISHER_LAB.get(publisher) == model["lab"]:
+        return "claim", publisher
+    return "rival", publisher
+
+
+def write_figures(models: dict, harnesses: list[dict]) -> int:
+    figures = []
+    for harness in harnesses:
+        for bench in harness["benchmarks"]:
+            for row in bench["rows"]:
+                model = models["models"][row["modelId"]]
+                stance, published_by = classify(harness, model, row)
+                figures.append({
+                    "model": row["modelId"],
+                    "benchmark": bench["name"],
+                    "benchmarkId": bench["id"],
+                    "value": row["score"],
+                    "unit": bench["unit"],
+                    "publishedBy": published_by,
+                    "stance": stance,
+                    "setting": row.get("effort") or "",
+                    "sourceUrl": row.get("sourceUrl") or harness["url"],
+                    "sourceDate": row.get("sourceDate") or harness["readOn"],
+                    "readDirectly": row.get("readDirectly", True),
+                    "origin": row["origin"],
+                    "note": row.get("note") or "",
+                    "storedIn": f"data/harnesses/{harness['id']}.json",
+                })
+    payload = {
+        "compiler": "cursor",
+        "computer": "surface-arm",
+        "revision": 2,
+        "compiledOn": "2026-10-13",
+        "brief": "Frontier Benchmark Atlas brief, surface-arm/claude-code, 2026-10-13",
+        "hub": HUB,
+        "figures": figures,
+    }
+    (DATA / "figures.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    return len(figures)
+
+
 def main() -> None:
     models, releases, harnesses = load()
     validate(models, harnesses)
@@ -343,7 +406,8 @@ def main() -> None:
         (ROOT / "models" / f"{model_id}.html").write_text(
             render_model(models, model_id, meta, harnesses), encoding="utf-8"
         )
-    print(f"Wrote {len(harnesses)} harness pages and {len(models['models'])} model pages.")
+    count = write_figures(models, harnesses)
+    print(f"Wrote {len(harnesses)} harness pages, {len(models['models'])} model pages, and {count} figures.")
 
 
 if __name__ == "__main__":

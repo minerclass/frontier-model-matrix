@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-13",
+    "title": "Revision 2: atlas figure file",
+    "harness": "cursorbench",
+    "note": "Prompted by the Frontier Benchmark Atlas brief. No score changed. data/figures.json adds stance, source URL, source date, and whether the page was read directly."
+  },
+  {
+    "date": "2026-10-13",
     "title": "Gemini 4 Argon model card",
     "harness": "google-argon-card",
     "note": "Google's comparison table, including quoted or unspecified competitor cells."
