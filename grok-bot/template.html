@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Frontier AI Benchmarks, Oct 2026</title>
+<script>/*ECHARTS*/</script>
+<style>
+body{margin:0;background:#070b16;color:#dde6ff;font-family:system-ui,Segoe UI,Arial,sans-serif}
+.hero{height:340px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:0 6vw;background:radial-gradient(circle at 20% 30%,#1b2b6b,#070b16 60%)}
+.hero h1{font-size:44px;margin:0;background:linear-gradient(90deg,#7cf,#c8f,#fc7);-webkit-background-clip:text;color:transparent;animation:fade 1.5s}
+.hero p{max-width:820px;color:#9fb0d8}
+canvas#stars{position:absolute;inset:0;z-index:0}.hero>*:not(canvas){z-index:1}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
+nav{position:sticky;top:0;background:#0b1124ee;padding:10px 6vw;z-index:9}nav a{color:#9cf;margin-right:16px;text-decoration:none}
+section{padding:30px 6vw;opacity:0;transform:translateY(30px);transition:all .8s}section.on{opacity:1;transform:none}
+h2{color:#9cf}.chart{height:520px;background:#0d1530;border-radius:14px}
+.note{background:#151d3a;border-left:4px solid #fc7;padding:10px 14px;border-radius:6px;color:#c9d3f0;font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:13px}th{cursor:pointer;background:#16204a;position:sticky;top:44px}td,th{padding:6px;border-bottom:1px solid #223}a{color:#8cf}
+.tag{padding:2px 6px;border-radius:4px;font-size:11px}.claim{background:#6a3a12}.independent{background:#12553a}.vendor-table{background:#4a2a6a}
+select,input{background:#16204a;color:#fff;border:1px solid #335;padding:5px;border-radius:6px}
+</style></head><body>
+<div class="hero"><canvas id="stars"></canvas><h1>Frontier AI Benchmarks: Claims vs Independent Results</h1>
+<p>Gemini 4 Argon, GPT-6 Astra and GPT-6.1 Sol, Claude Opus 5.5 and Fable 5.1, Grok 4.7, Muse Wonder. <b>Data as of Oct 13, 2026.</b> Every number links to its source. Gaps mean not found, never zero.</p></div>
+<nav><a href="#schem">Schematic</a><a href="#bars">Bars</a><a href="#radar">Radar</a><a href="#gap">Claims vs Independent</a><a href="#time">Timeline</a><a href="#tbl">Table</a><a href="#method">Method</a></nav>
+<section id="schem"><h2>Model family schematic</h2><div id="c_tree" class="chart"></div></section>
+<section id="bars"><h2>Google's launch table (19 benchmarks, 4 models)</h2><p class="note">Single common table from the Gemini 4 Argon model card. Rival values are as presented by Google (from leaderboards, Google runs, or rival system cards). Click legend items to toggle models.</p><div id="c_bar" class="chart" style="height:640px"></div></section>
+<section id="radar"><h2>Radar per model</h2><select id="rsel"></select> <span class="note" style="display:inline">Axes: Google table rows. Missing values plot as gaps.</span><div id="c_radar" class="chart"></div></section>
+<section id="gap"><h2>Claims vs independent (dumbbell)</h2><p class="note">Orange = vendor claim, green = independent or other-vendor figure. Settings differ by row; hover for details.</p><div id="c_gap" class="chart"></div></section>
+<section id="time"><h2>Release timeline</h2><div id="c_time" class="chart" style="height:380px"></div></section>
+<section id="tbl"><h2>All records</h2><input id="flt" placeholder="filter..."><div style="max-height:600px;overflow:auto"><table id="t"><thead><tr><th>Model</th><th>Benchmark</th><th>Value</th><th>Type</th><th>Reporter</th><th>Setting / note</th><th>Date</th><th>Source</th></tr></thead><tbody></tbody></table></div></section>
+<section id="method"><h2>Methodology and caveats</h2><div class="note" id="meth"></div></section>
+<script>
+const D=/*DATA*/;const NM=Object.fromEntries(D.models.map(m=>[m.id,m.name]));
+const COL={argon:'#4fa3ff',astra:'#19c37d',fable51:'#d6a1ff',opus55:'#ff9a5a',grok47:'#e8e8e8',wfull:'#ff5aa8',sol61:'#7fffd4',wonder:'#ffb3d9',sonnet55:'#ffcf7a',spark13:'#aa88ff'};
+const T={backgroundColor:'transparent',textStyle:{color:'#cfe'}};
+const qs=new URLSearchParams(location.search);const only=qs.get('view');
+document.querySelectorAll('section').forEach(s=>{if(only&&s.id!==only)s.style.display='none'});
+if(only)document.querySelector('.hero').style.display=document.querySelector('nav').style.display='none';
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('on')));document.querySelectorAll('section').forEach(s=>{io.observe(s);if(only)s.classList.add('on')});
+// stars
+(function(){const c=document.getElementById('stars'),x=c.getContext('2d');let P=[...Array(160)].map(()=>({x:Math.random(),y:Math.random(),v:Math.random()*.0008+.0002}));function f(){c.width=c.offsetWidth;c.height=c.offsetHeight;x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.x=(p.x+p.v)%1;x.fillStyle='rgba(150,190,255,.7)';x.fillRect(p.x*c.width,p.y*c.height,2,2)});requestAnimationFrame(f)}f()})();
+const src=r=>`<br><i>${r.reporter}, ${r.date}</i><br>${r.setting||''} ${r.note||''}<br>${r.source}`;
+// tree
+const mk={};D.models.forEach(m=>{mk[m.maker]=mk[m.maker]||{};(mk[m.maker][m.family]=mk[m.maker][m.family]||[]).push(m)});
+const tree={name:'Frontier labs',children:Object.entries(mk).map(([k,f])=>({name:k,children:Object.entries(f).map(([fn,ms])=>({name:fn,children:ms.map(m=>({name:m.name+(m.status!=='verified'?' ('+m.status+')':''),tip:`${m.name}<br>Release: ${m.release||'not verified'}<br>${m.note}`}))}))}))};
+echarts.init(c_tree,null).setOption({...T,tooltip:{formatter:p=>p.data.tip||p.name},series:[{type:'tree',data:[tree],left:'6%',right:'20%',symbolSize:12,itemStyle:{color:'#7cf'},lineStyle:{color:'#456',curveness:.5},expandAndCollapse:true,initialTreeDepth:-1,label:{position:'top',color:'#dde',fontSize:13,distance:8},leaves:{label:{position:'right',color:'#fff'}},animationDuration:900}]});
+// bars
+const GM=['argon','astra','fable51','opus55'];const gr=D.records.filter(r=>r.source_key==='gcard');
+const gv=(m,b)=>{const r=gr.find(r=>r.model===m&&r.benchmark===b);return r?{value:r.value,rec:r}:{value:null}};
+echarts.init(c_bar).setOption({...T,legend:{textStyle:{color:'#cde'}},tooltip:{trigger:'item',formatter:p=>p.data.rec?`<b>${NM[p.data.rec.model]}</b> ${p.name}: ${p.value}%`+src(p.data.rec):p.name+': not reported'},grid:{left:220,right:30},yAxis:{type:'category',data:D.google_table_benchmarks,inverse:true,axisLabel:{color:'#cde'}},xAxis:{type:'value',max:100,axisLabel:{color:'#cde'},splitLine:{lineStyle:{color:'#223'}}},series:GM.map(m=>({name:NM[m],type:'bar',itemStyle:{color:COL[m]},data:D.google_table_benchmarks.map(b=>gv(m,b)),animationDelay:i=>i*40}))});
+// radar
+const rc=echarts.init(c_radar);GM.forEach(m=>rsel.add(new Option(NM[m],m)));
+function drawR(){const m=rsel.value;rc.setOption({...T,tooltip:{},radar:{indicator:D.google_table_benchmarks.map(b=>({name:b,max:100})),axisName:{color:'#cde',fontSize:10},splitArea:{areaStyle:{color:['#0d1530','#111a3a']}}},series:[{type:'radar',data:[{name:NM[m],value:D.google_table_benchmarks.map(b=>gv(m,b).value??'-'),areaStyle:{opacity:.35},itemStyle:{color:COL[m]}}]}]},true)}rsel.onchange=drawR;drawR();
+// dumbbell
+const P=D.pairs,lab=P.map(p=>NM[p.model]+' | '+p.benchmark);
+echarts.init(c_gap).setOption({...T,tooltip:{formatter:p=>{const q=P[p.dataIndex];return `<b>${lab[p.dataIndex]}</b><br>Claim ${q.claim} vs other ${q.independent} (gap ${q.gap})<br>${q.note}`}},grid:{left:360,right:40},yAxis:{type:'category',data:lab,axisLabel:{color:'#cde'}},xAxis:{type:'value',min:20,max:100,axisLabel:{color:'#cde'},splitLine:{lineStyle:{color:'#223'}}},
+series:[{type:'custom',renderItem:(pa,api)=>{const a=api.coord([api.value(0),api.value(2)]),b=api.coord([api.value(1),api.value(2)]);return{type:'line',shape:{x1:a[0],y1:a[1],x2:b[0],y2:b[1]},style:{stroke:'#667',lineWidth:3}}},data:P.map((p,i)=>[p.claim,p.independent,i])},
+{type:'scatter',name:'claim',symbolSize:16,itemStyle:{color:'#ff9a3c'},data:P.map((p,i)=>[p.claim,i])},{type:'scatter',name:'independent',symbolSize:16,itemStyle:{color:'#2fe08a'},data:P.map((p,i)=>[p.independent,i])}]});
+// timeline
+const tm=D.models.filter(m=>m.release);
+echarts.init(c_time).setOption({...T,tooltip:{formatter:p=>`${p.data[2]}<br>${p.data[0]}`},xAxis:{type:'time',min:'2026-08-25',max:'2026-10-20',axisLabel:{color:'#cde'}},yAxis:{type:'category',data:[...new Set(tm.map(m=>m.maker))],axisLabel:{color:'#cde'}},series:[{type:'scatter',symbolSize:22,data:tm.map(m=>({value:[m.release,m.maker,m.name],itemStyle:{color:COL[m.id]||'#888'},label:m.id==='wonder'?{position:'bottom'}:undefined})),label:{show:true,formatter:p=>p.data.value[2],position:'top',color:'#fff',fontSize:11}}]});
+// table
+const tb=document.querySelector('#t tbody');let rows=D.records.slice(),sk=null,dir=1;
+function drawT(){const f=flt.value.toLowerCase();tb.innerHTML=rows.filter(r=>JSON.stringify(r).toLowerCase().includes(f)||NM[r.model].toLowerCase().includes(f)).map(r=>`<tr><td>${NM[r.model]}</td><td>${r.benchmark}</td><td>${r.value} ${r.unit}</td><td><span class="tag ${r.type}">${r.type}</span></td><td>${r.reporter}</td><td>${r.setting} ${r.note}</td><td>${r.date}</td><td><a href="${r.source}" target="_blank">link</a></td></tr>`).join('')}
+document.querySelectorAll('#t th').forEach((th,i)=>th.onclick=()=>{const k=['model','benchmark','value','type','reporter','setting','date','source'][i];dir=sk===k?-dir:1;sk=k;rows.sort((a,b)=>(k==='model'?NM[a.model]>NM[b.model]:a[k]>b[k])?dir:-dir);drawT()});flt.oninput=drawT;drawT();
+meth.innerHTML=`<p><b>Data as of ${D.as_of}.</b> Collected by web search and page fetch on that date. "claim" = the model's own maker. "vendor-table" = one vendor reporting a rival's score. "independent" = third-party evaluator (mostly Artificial Analysis).</p><ul><li>Vendor numbers use different reasoning efforts (low to max), harnesses, tools, and fallback models. Anthropic results ran with safety fallbacks to older models. Treat cross-vendor rows as rough.</li><li>Artificial Analysis rebased its Intelligence Index to v4.3; older launch-week scores (e.g. Fable 5.1 = 66) are not comparable.</li><li>AutomationBench (Zapier) and AutomationBench-AA are different variants.</li><li>Some values come from secondary aggregators citing the primary card; these are marked in the note.</li></ul><p><b>Not found:</b></p><ul>${D.not_found.map(x=>'<li>'+x+'</li>').join('')}</ul>`;
+</script></body></html>
