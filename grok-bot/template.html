@@ -17,7 +17,7 @@ select,input{background:#16204a;color:#fff;border:1px solid #335;padding:5px;bor
 </style></head><body>
 <div style="padding:8px 6vw;background:#0b1124"><a href="https://minerclass.github.io/frontier-benchmark-atlas/" style="color:#fc7;font-weight:600">&larr; Back to the Frontier Benchmark Atlas hub</a></div>
 <div class="hero"><canvas id="stars"></canvas><h1>Frontier AI Benchmarks: Claims vs Independent Results</h1>
-<p>Gemini 4 Argon, GPT-6 Astra and GPT-6.1 Sol, Claude Opus 5.5 and Fable 5.1, Grok 4.7, Muse Wonder. <b>Data as of Oct 13, 2026.</b> Every number links to its source. Gaps mean not found, never zero.</p></div>
+<p>Gemini 4 Argon, GPT-6 Astra and GPT-6.1 Sol, Claude Opus 5.5 and Fable 5.1, Grok 4.7, Muse Wonder, plus new Muse Spark Open and Kimi K3.1 Pro. <b>Data as of Oct 26, 2026.</b> Every number links to its source. Gaps mean not found, never zero.</p></div>
 <nav><a href="#schem">Schematic</a><a href="#bars">Bars</a><a href="#radar">Radar</a><a href="#gap">Claims vs Independent</a><a href="#time">Timeline</a><a href="#tbl">Table</a><a href="#method">Method</a></nav>
 <section id="schem"><h2>Model family schematic</h2><div id="c_tree" class="chart"></div></section>
 <section id="bars"><h2>Google's launch table (19 benchmarks, 4 models)</h2><p class="note">Single common table from the Gemini 4 Argon model card. Rival values are as presented by Google (from leaderboards, Google runs, or rival system cards). Click legend items to toggle models.</p><div id="c_bar" class="chart" style="height:640px"></div></section>
@@ -28,7 +28,7 @@ select,input{background:#16204a;color:#fff;border:1px solid #335;padding:5px;bor
 <section id="method"><h2>Methodology and caveats</h2><div class="note" id="meth"></div></section>
 <script>
 const D=/*DATA*/;const NM=Object.fromEntries(D.models.map(m=>[m.id,m.name]));
-const COL={argon:'#4fa3ff',astra:'#19c37d',fable51:'#d6a1ff',opus55:'#ff9a5a',grok47:'#e8e8e8',wfull:'#ff5aa8',sol61:'#7fffd4',wonder:'#ffb3d9',sonnet55:'#ffcf7a',spark13:'#aa88ff'};
+const COL={argon:'#4fa3ff',astra:'#19c37d',fable51:'#d6a1ff',opus55:'#ff9a5a',grok47:'#e8e8e8',wfull:'#ff5aa8',sol61:'#7fffd4',wonder:'#ffb3d9',sonnet55:'#ffcf7a',spark13:'#aa88ff',sparkopen:'#c9a0ff',kimi31:'#ffe14f',haiku55:'#ffd9a8',luna:'#9fe8c8',sol6:'#5fd0b0'};
 const T={backgroundColor:'transparent',textStyle:{color:'#cfe'}};
 const qs=new URLSearchParams(location.search);const only=qs.get('view');
 document.querySelectorAll('section').forEach(s=>{if(only&&s.id!==only)s.style.display='none'});
@@ -55,7 +55,7 @@ series:[{type:'custom',renderItem:(pa,api)=>{const a=api.coord([api.value(0),api
 {type:'scatter',name:'claim',symbolSize:16,itemStyle:{color:'#ff9a3c'},data:P.map((p,i)=>[p.claim,i])},{type:'scatter',name:'independent',symbolSize:16,itemStyle:{color:'#2fe08a'},data:P.map((p,i)=>[p.independent,i])}]});
 // timeline
 const tm=D.models.filter(m=>m.release);
-echarts.init(c_time).setOption({...T,tooltip:{formatter:p=>`${p.data[2]}<br>${p.data[0]}`},xAxis:{type:'time',min:'2026-08-25',max:'2026-10-20',axisLabel:{color:'#cde'}},yAxis:{type:'category',data:[...new Set(tm.map(m=>m.maker))],axisLabel:{color:'#cde'}},series:[{type:'scatter',symbolSize:22,data:tm.map(m=>({value:[m.release,m.maker,m.name],itemStyle:{color:COL[m.id]||'#888'},label:m.id==='wonder'?{position:'bottom'}:undefined})),label:{show:true,formatter:p=>p.data.value[2],position:'top',color:'#fff',fontSize:11}}]});
+echarts.init(c_time).setOption({...T,tooltip:{formatter:p=>`${p.data[2]}<br>${p.data[0]}`},xAxis:{type:'time',min:'2026-08-25',max:'2026-10-31',axisLabel:{color:'#cde'}},yAxis:{type:'category',data:[...new Set(tm.map(m=>m.maker))],axisLabel:{color:'#cde'}},series:[{type:'scatter',symbolSize:22,data:tm.map(m=>({value:[m.release,m.maker,m.name],itemStyle:{color:COL[m.id]||'#888'},label:m.id==='wonder'?{position:'bottom'}:undefined})),label:{show:true,formatter:p=>p.data.value[2],position:'top',color:'#fff',fontSize:11}}]});
 // table
 const tb=document.querySelector('#t tbody');let rows=D.records.slice(),sk=null,dir=1;
 function drawT(){const f=flt.value.toLowerCase();tb.innerHTML=rows.filter(r=>JSON.stringify(r).toLowerCase().includes(f)||NM[r.model].toLowerCase().includes(f)).map(r=>`<tr><td>${NM[r.model]}</td><td>${r.benchmark}</td><td>${r.value} ${r.unit}</td><td><span class="tag ${r.type}">${r.type}</span></td><td>${r.reporter}</td><td>${r.setting} ${r.note}</td><td>${r.date}</td><td><a href="${r.source}" target="_blank">link</a></td></tr>`).join('')}

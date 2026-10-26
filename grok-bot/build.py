@@ -19,21 +19,36 @@ S={
 'meta_dev':('https://dev.meta.ai/resources/blog/build-with-muse-wonder','2026-10-12','Meta: Build with Muse Wonder'),
 'tot_muse':('https://www.tokensortowers.com/us/models/muse-wonder-full','2026-10-12','Tokens or Towers citing Meta and AA'),
 'benchlm_muse':('https://benchlm.ai/models/muse-wonder-full','2026-10-12','BenchLM citing Meta model card and AA'),
+'aa_kimi':('https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks','2026-10-23','Artificial Analysis: Kimi K3.1 Pro launches at 4th on the Intelligence Index'),
+'aa_health':('https://artificialanalysis.ai/articles/healthbench-professional-health-conversations','2026-10-19','Artificial Analysis: HealthBench and HealthBench Professional leaderboards'),
+'aa_fcode':('https://artificialanalysis.ai/articles/frontiercode','2026-10-12','Artificial Analysis: FrontierCode 1.1 launch article'),
+'aa_decision':('https://artificialanalysis.ai/articles/artificial-analysis-decision-index','2026-10-13','Artificial Analysis: Decision Index v1.0 launch article'),
+'aa_robotics':('https://artificialanalysis.ai/articles/aa-robotics','2026-10-14','Artificial Analysis: AA-Robotics v0.1'),
+'aa_3d':('https://artificialanalysis.ai/articles/aa-3d','2026-10-12','Artificial Analysis: AA-3D launch article'),
+'aa_beam':('https://artificialanalysis.ai/articles/reflection-beam','2026-10-16','Artificial Analysis: Reflection Beam (cites Muse Spark Open index score)'),
+'arena_text':('https://arena.ai/leaderboard/text','2026-10-22','Arena (formerly LMArena) Text leaderboard, overall'),
+'meta_sparkopen':('https://dev.meta.ai/models/muse-spark-open/','2026-10-15','Meta: Muse Spark Open model page (benchmark table)'),
+'meta_sparkopen_blog':('https://dev.meta.ai/resources/blog/build-with-muse-spark-open','2026-10-15','Meta: Build with Muse Spark Open'),
+'meta_spark13':('https://research.meta.ai/blog/introducing-muse-spark-1-3','2026-09-02','Meta AI Research: Introducing Muse Spark 1.3'),
+'anth_news':('https://www.anthropic.com/news','2026-10-26','Anthropic newsroom (release dates for Sonnet 5.5 and Haiku 5.5)'),
+'kimi_blog':('https://www.kimi.ai/blog/kimi-k3-1-pro','2026-10-23','Moonshot AI: Kimi K3.1 Pro tech blog'),
 }
 M=[ # id,name,maker,family,release,status,note
 ('argon','Gemini 4 Argon','Google','Gemini 4','2026-10-13','verified','GA Oct 13 per Google blog; AA tested a limited rollout Sep 30. Effort: high (highest available).'),
 ('astra','GPT-6 Astra','OpenAI','GPT-6','2026-09-03','verified','Release date from search summary of OpenAI/AA pages. No "GPT-6.1 Astra" found.'),
 ('sol61','GPT-6.1 Sol','OpenAI','GPT-6.1','2026-09-29','verified','Only GPT-6.1 model found. Matches the user\'s "ChatGPT 6.1".'),
 ('sol6','GPT-6 Sol','OpenAI','GPT-6','2026-09-22','verified','Predecessor of 6.1 Sol.'),
-('luna','GPT-6 Luna','OpenAI','GPT-6',None,'name only','Named in OpenAI system card; no date or scores collected.'),
+('luna','GPT-6 Luna','OpenAI','GPT-6',None,'partial','Named in OpenAI system card; release date still not verified. Independent figures added 2026-10-26 (AA HealthBench, FrontierCode, Decision Index; Arena).'),
 ('opus55','Claude Opus 5.5','Anthropic','Claude 5.5','2026-09-22','verified',''),
-('sonnet55','Claude Sonnet 5.5','Anthropic','Claude 5.5',None,'partial','Listed in Claude docs; release date not verified.'),
-('haiku55','Claude Haiku 5.5','Anthropic','Claude 5.5',None,'name only','Listed in Claude docs; no scores found.'),
+('sonnet55','Claude Sonnet 5.5','Anthropic','Claude 5.5','2026-09-28','partial','Release date Sep 28, 2026 per Anthropic newsroom (read 2026-10-26). Independent figures only; no Anthropic benchmark claims collected.'),
+('haiku55','Claude Haiku 5.5','Anthropic','Claude 5.5','2026-10-07','partial','Release date Oct 7, 2026 per Anthropic newsroom (read 2026-10-26). Independent figures only (AA Decision Index, Arena).'),
 ('fable51','Claude Fable 5.1','Anthropic','Claude Fable','2026-09-01','verified',''),
 ('grok47','Grok 4.7','SpaceXAI (xAI)','Grok 4.7','2026-09-21','verified','Variants low/high/xhigh. No Cursor-specific Grok 4.7 model found; xAI reports CursorBench 4.0.'),
 ('wfull','Muse Wonder Full','Meta','Muse Wonder','2026-10-12','verified','Muse Code subscription only.'),
 ('wonder','Muse Wonder','Meta','Muse Wonder','2026-10-12','verified','API $4/$20.'),
-('spark13','Muse Spark 1.3','Meta','Muse Spark',None,'partial','About 6 weeks before Wonder per AA; exact date not verified.'),
+('spark13','Muse Spark 1.3','Meta','Muse Spark','2026-09-02','partial','Release date Sep 2, 2026 per Meta AI Research blog (read 2026-10-26).'),
+('sparkopen','Muse Spark Open','Meta','Muse Spark','2026-10-15','verified','New 2026-10-26. Open-weight 816B total / 42B active, derived from Muse Spark (Aug 2026). Meta table setting: xhigh.'),
+('kimi31','Kimi K3.1 Pro','Moonshot AI','Kimi K3.1','2026-10-23','verified','New entrant added 2026-10-26. API launch Oct 23, 2026 (Moonshot blog and AA article); weights promised by Nov 4, 2026. 2.8T total / 104B active.'),
 ]
 R=[]
 def r(m,b,v,t,rep,src,setting='',note='',unit='%'):
@@ -63,7 +78,7 @@ for b,v in [('CursorBench 4.0',51.8),('DeepSWE v1.1',70.0),('EEBench',56.4),('Te
 for b,v,n in [('Terminal-Bench 4.0',57.1,'max'),('DeepSWE v1.1',79.0,'max'),('SWE-Marathon',57.5,'xhigh'),('JobBench',75.3,'max'),('HealthBench Professional',62.3,'max'),('Vals Finance Agent v2',59.1,'max'),('Harvey Legal Agent',13.1,'max'),('AutomationBench-AA',45.4,'max, as labeled by Meta/Tokens or Towers'),('OSWorld V2.1 (partial)',78.4,'max; binary 39.4')]:
     r('wfull',b,v,'claim','Meta','tot_muse' if b in('SWE-Marathon','AutomationBench-AA','OSWorld V2.1 (partial)','DeepSWE v1.1','Vals Finance Agent v2') else 'benchlm_muse',n)
 # independent
-for m,v,s,n in [('argon',53,'aa_argon','high'),('astra',53,'aa_argon','max'),('sol61',52,'aa_argon','max'),('fable51',53,'aa_argon','v4.3 rebase; scored 66 on the older index at launch (aa_fable)'),('grok47',46,'aa_grok','xhigh'),('wfull',56,'aa_muse','max'),('wonder',52,'aa_muse','max'),('spark13',48,'aa_muse','max'),('opus55',58,'tot_muse','max; secondary source (Tokens or Towers) naming Opus 5.5 index leader')]:
+for m,v,s,n in [('argon',53,'aa_argon','high'),('astra',53,'aa_argon','max'),('sol61',52,'aa_argon','max'),('fable51',53,'aa_argon','v4.3 rebase; scored 66 on the older index at launch (aa_fable)'),('grok47',46,'aa_grok','xhigh'),('wfull',56,'aa_muse','max'),('wonder',52,'aa_muse','max'),('spark13',48,'aa_muse','max'),('opus55',58,'aa_kimi','max with fallback; confirmed on AA Kimi K3.1 Pro article (2026-10-23). Previously sourced second-hand from Tokens or Towers.'),('sonnet55',56,'aa_kimi','max with fallback'),('kimi31',55,'aa_kimi','reasoning model, AA launch test'),('sparkopen',39,'aa_beam','value quoted in AA Beam article')]:
     r(m,'AA Intelligence Index v4.3',v,'independent','Artificial Analysis',s,n,unit='index')
 for m,v,s,n in [('argon',57,'aa_argon','high'),('astra',59,'aa_argon',''),('opus55',60,'aa_argon','max'),('sonnet55',64,'aa_argon','max'),('wfull',57,'aa_muse','max, AA harness'),('wonder',52,'aa_muse','max'),('grok47',33,'aa_grok','xhigh in Grok Build harness (Coding Agent Index)')]:
     r(m,'Terminal-Bench 4.0',v,'independent','Artificial Analysis',s,n)
@@ -82,13 +97,55 @@ r('fable51','SciCode',62.0,'independent','Artificial Analysis','aa_fable','max')
 r('wfull','SciCode',63,'independent','Artificial Analysis','aa_muse','max')
 r('wfull','CritPt',33,'independent','Artificial Analysis','aa_muse','max')
 r('grok47','SWE-Together',64.7,'independent','SWE-Together evaluators','apidog_grok','pass@1 after sandbox lockdown; 44/218 first-run trials fetched external code')
-PAIRS=[('argon','Terminal-Bench 4.0',57.4,57,'close'),('opus55','Terminal-Bench 4.0',66.4,60,'claim xhigh, Anthropic harness; AA max'),('astra','Terminal-Bench 4.0',58.2,59,'claim value from Google table, "as reported by OpenAI"'),('grok47','Terminal-Bench 4.0',37.6,33,'AA used Grok Build harness'),('wfull','Terminal-Bench 4.0',57.1,57,'close'),('grok47','DeepSWE v1.1',71.0,73,'independent higher than claim'),('argon','AutomationBench vs AA variant',51.3,78,'DIFFERENT variants: Zapier private set vs AutomationBench-AA'),('wfull','AutomationBench vs AA variant',45.4,71,'Labels conflict; likely different variants'),('fable51','DeepSWE v1.1 (Google table vs xAI table)',67.4,70.0,'two rival vendors report different Fable numbers')]
+# ---- added 2026-10-26 ----
+# Kimi K3.1 Pro, AA independent (opened page)
+r('kimi31','GDPval-AA (Elo)',1846,'independent','Artificial Analysis','aa_kimi',unit='Elo')
+r('opus55','GDPval-AA (Elo)',1866,'independent','Artificial Analysis','aa_kimi','max with fallback (quoted in Kimi article)',unit='Elo')
+r('kimi31','Terminal-Bench 4.0',67,'independent','Artificial Analysis','aa_kimi','AA harness; AA calls it the highest score of any model on Terminal-Bench 4.0')
+r('kimi31','AutomationBench-AA',73,'independent','Artificial Analysis','aa_kimi')
+r('kimi31',"Humanity's Last Exam",52,'independent','Artificial Analysis','aa_kimi')
+r('kimi31','CritPt',25,'independent','Artificial Analysis','aa_kimi')
+r('kimi31','SciCode',61,'independent','Artificial Analysis','aa_kimi')
+r('kimi31','AA-Omniscience hallucination rate (lower better)',44,'independent','Artificial Analysis','aa_kimi')
+r('kimi31','AA-Omniscience Index',30,'independent','Artificial Analysis','aa_kimi',unit='index')
+# Kimi K3.1 Pro vendor claims (Moonshot blog, opened page)
+r('kimi31','Terminal-Bench 4.0',65.7,'claim','Moonshot AI','kimi_blog','Claude-Code harness')
+r('kimi31','BenchCAD',92.7,'claim','Moonshot AI','kimi_blog','with tools')
+r('kimi31','OfficeQA Pro v2',64.4,'claim','Moonshot AI','kimi_blog','Moonshot internal benchmark; Moonshot claims state of the art')
+r('opus55','BenchCAD',96.2,'vendor-table','Moonshot AI','kimi_blog','as reported in Moonshot launch post')
+r('astra','BenchCAD',95.9,'vendor-table','Moonshot AI','kimi_blog','as reported in Moonshot launch post')
+# AA HealthBench leaderboards (length-adjusted, as OpenAI reports)
+for m,v,n in [('astra',66.0,'max'),('sol61',65.1,'max'),('sonnet55',63.0,'max with fallback'),('sol6',62.3,'max'),('luna',61.9,'max'),('opus55',59.9,'max with fallback; raw (unadjusted) score 71.4, highest raw score')]:
+    r(m,'HealthBench Professional (AA, length-adjusted)',v,'independent','Artificial Analysis','aa_health',n,'Graded by GPT-5.4 (low) per OpenAI implementation.')
+r('opus55','HealthBench Professional (AA, raw)',71.4,'independent','Artificial Analysis','aa_health','max with fallback','Raw share of rubric points; not length-adjusted.')
+for m,v,n in [('sonnet55',62.1,'max with fallback'),('sol61',58.5,'max'),('luna',54.6,'max')]:
+    r(m,'HealthBench (AA, length-adjusted)',v,'independent','Artificial Analysis','aa_health',n,'Graded by GPT-4.1 per OpenAI implementation.')
+# AA FrontierCode 1.1 (Cognition benchmark, AA Stirrup harness)
+for m,v,n in [('opus55',52,'max with fallback; pass rate 58%'),('sol61',49,'max'),('fable51',49,'max with fallback'),('luna',42,'max')]:
+    r(m,'FrontierCode 1.1 Main (AA)',v,'independent','Artificial Analysis','aa_fcode',n,'Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value.')
+r('opus55','FrontierCode 1.1 Main pass rate (AA)',58,'independent','Artificial Analysis','aa_fcode','max with fallback')
+# AA Decision Index v1.0 (language-model comparison rows)
+r('haiku55','AA Decision Index v1.0',61,'independent','Artificial Analysis','aa_decision','Low effort',unit='index')
+r('luna','AA Decision Index v1.0',55,'independent','Artificial Analysis','aa_decision','Low effort',unit='index')
+# AA-Robotics v0.1
+r('astra','AA-Robotics v0.1',69,'independent','Artificial Analysis','aa_robotics','Codex, high effort','Mean score per task (0 to 100).',unit='score')
+r('sol61','AA-Robotics v0.1',65,'independent','Artificial Analysis','aa_robotics','Codex, high effort','Mean score per task (0 to 100).',unit='score')
+# AA-3D (Elo, blind human votes)
+r('sonnet55','AA-3D (Elo)',1194,'independent','Artificial Analysis','aa_3d','max with fallback','Top four statistically tied per AA.',unit='Elo')
+r('spark13','AA-3D (Elo)',1035,'independent','Artificial Analysis','aa_3d','max','7th place.',unit='Elo')
+# Arena text leaderboard, overall (Oct 22, 2026 snapshot); +/- is the reported CI
+for m,v,ci,n in [('argon',1517,7,'Gemini 4 Argon (High)'),('opus55',1509,7,'Claude Opus 5.5 (High)'),('wonder',1509,8,'Muse Wonder (Max)'),('fable51',1503,6,'Claude Fable 5.1 (Max)'),('spark13',1496,5,'Muse Spark 1.3 (Max)'),('sol61',1480,7,'GPT-6.1 Sol (Max)'),('sonnet55',1478,7,'Claude Sonnet 5.5 (xHigh)'),('astra',1476,6,'GPT-6 Astra (Max)'),('sol6',1459,6,'GPT-6 Sol (Max)'),('luna',1442,4,'GPT-6 Luna (Max)'),('grok47',1441,6,'Grok 4.7 (xHigh)'),('haiku55',1425,8,'Claude Haiku 5.5 (High)')]:
+    r(m,'Arena Text (overall)',v,'independent','Arena (LMArena)','arena_text',n,'Score +/- %d as shown on leaderboard dated Oct 22, 2026.'%ci,unit='Elo')
+# Muse Spark Open, Meta model page table (opened page; column order checked in page HTML)
+for b,v,u in [('JobBench',61.8,'%'),('MCP-Atlas',89.2,'%'),('GDPval-AA v2 (Elo)',1401,'Elo'),('HLE-Diamond (no tools)',26.1,'%'),('SciCode',58.5,'%'),('AA-Omniscience Index',25,'index'),('Terminal-Bench 2.1 (Terminus 2 agent)',76.4,'%'),('DeepSWE 1.1 (best available/self-reported harness)',60,'%'),('ZeroBench',50.0,'%'),('BabyVision',80.2,'%'),('SimpleVQA',73.6,'%')]:
+    r('sparkopen',b,v,'claim','Meta','meta_sparkopen','xhigh','Meta table; units not printed on the page, assumed % except Elo and index rows.',unit=u)
+PAIRS=[('argon','Terminal-Bench 4.0',57.4,57,'close'),('opus55','Terminal-Bench 4.0',66.4,60,'claim xhigh, Anthropic harness; AA max'),('astra','Terminal-Bench 4.0',58.2,59,'claim value from Google table, "as reported by OpenAI"'),('grok47','Terminal-Bench 4.0',37.6,33,'AA used Grok Build harness'),('wfull','Terminal-Bench 4.0',57.1,57,'close'),('grok47','DeepSWE v1.1',71.0,73,'independent higher than claim'),('argon','AutomationBench vs AA variant',51.3,78,'DIFFERENT variants: Zapier private set vs AutomationBench-AA'),('wfull','AutomationBench vs AA variant',45.4,71,'Labels conflict; likely different variants'),('fable51','DeepSWE v1.1 (Google table vs xAI table)',67.4,70.0,'two rival vendors report different Fable numbers'),('kimi31','Terminal-Bench 4.0',65.7,67,'claim Claude-Code harness; AA harness. Added 2026-10-26'),('sol61','HealthBench Professional',64.2,65.1,'both length-adjusted; OpenAI claim vs AA run. Added 2026-10-26'),('sol61','HealthBench',58.5,58.5,'both length-adjusted; identical. Added 2026-10-26')]
 pairs=[dict(model=a,benchmark=b,claim=c,independent=i,gap=round(i-c,1),note=n) for a,b,c,i,n in PAIRS]
-data=dict(as_of='2026-10-13',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
- not_found=['Any "GPT-6.1 Astra" or other GPT-6.1 variant besides Sol','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','LMArena, SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located in this pass','Independent numbers for GPT-6 Sol, GPT-6 Luna, Claude Haiku 5.5'])
-w=csv.writer(open('sources.csv','w',newline=''))
+data=dict(as_of='2026-10-26',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
+ not_found=['Any "GPT-6.1 Astra" or other GPT-6.1 variant besides Sol','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)'])
+w=csv.writer(open('sources.csv','w',newline=''),lineterminator='\n')
 w.writerow(['model','benchmark','value','unit','type','reporter','setting','note','source','date'])
 for x in R: w.writerow([x[k] for k in ['model','benchmark','value','unit','type','reporter','setting','note','source','date']])
-html=open('template.html').read().replace('/*DATA*/',json.dumps(data)).replace('/*ECHARTS*/',open('echarts.min.js') if __import__('os').path.exists('echarts.min.js') else __import__('urllib.request',fromlist=['x']).urlopen('https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js').read())
+html=open('template.html').read().replace('/*DATA*/',json.dumps(data)).replace('/*ECHARTS*/',open('echarts.min.js').read() if __import__('os').path.exists('echarts.min.js') else __import__('urllib.request',fromlist=['x']).urlopen('https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js').read().decode())
 open('index.html','w').write(html)
 print(len(R),'records')

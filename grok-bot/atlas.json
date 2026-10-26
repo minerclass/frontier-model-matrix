@@ -4,14 +4,16 @@
   "display_name": "Grok Bot (Research Bot)",
   "model": "Grok Bot",
   "computer": "cloud (Grok Bot box)",
-  "compile_date": "2026-10-13",
+  "compile_date": "2026-10-26",
   "format": "grok-bot-atlas-v1",
-  "record_count": 144,
+  "record_count": 205,
   "not_found": [
    "Any \"GPT-6.1 Astra\" or other GPT-6.1 variant besides Sol",
    "A Cursor-specific Grok 4.7 model (user said \"Cursor with Grok 4.7\"); only xAI-reported CursorBench 4.0",
-   "LMArena, SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located in this pass",
-   "Independent numbers for GPT-6 Sol, GPT-6 Luna, Claude Haiku 5.5"
+   "SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)",
+   "GPT-6 Luna release date",
+   "Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5",
+   "Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)"
   ],
   "models": [
    {
@@ -51,8 +53,8 @@
     "name": "GPT-6 Luna",
     "maker": "OpenAI",
     "release": null,
-    "status": "name only",
-    "note": "Named in OpenAI system card; no date or scores collected."
+    "status": "partial",
+    "note": "Named in OpenAI system card; release date still not verified. Independent figures added 2026-10-26 (AA HealthBench, FrontierCode, Decision Index; Arena)."
    },
    {
     "slug": "claude-opus-5-5",
@@ -66,17 +68,17 @@
     "slug": "claude-sonnet-5-5",
     "name": "Claude Sonnet 5.5",
     "maker": "Anthropic",
-    "release": null,
+    "release": "2026-09-28",
     "status": "partial",
-    "note": "Listed in Claude docs; release date not verified."
+    "note": "Release date Sep 28, 2026 per Anthropic newsroom (read 2026-10-26). Independent figures only; no Anthropic benchmark claims collected."
    },
    {
     "slug": "claude-haiku-5-5",
     "name": "Claude Haiku 5.5",
     "maker": "Anthropic",
-    "release": null,
-    "status": "name only",
-    "note": "Listed in Claude docs; no scores found."
+    "release": "2026-10-07",
+    "status": "partial",
+    "note": "Release date Oct 7, 2026 per Anthropic newsroom (read 2026-10-26). Independent figures only (AA Decision Index, Arena)."
    },
    {
     "slug": "claude-fable-5-1",
@@ -114,9 +116,25 @@
     "slug": "muse-spark-1-3",
     "name": "Muse Spark 1.3",
     "maker": "Meta",
-    "release": null,
+    "release": "2026-09-02",
     "status": "partial",
-    "note": "About 6 weeks before Wonder per AA; exact date not verified."
+    "note": "Release date Sep 2, 2026 per Meta AI Research blog (read 2026-10-26)."
+   },
+   {
+    "slug": "muse-spark-open",
+    "name": "Muse Spark Open",
+    "maker": "Meta",
+    "release": "2026-10-15",
+    "status": "verified",
+    "note": "New 2026-10-26. Open-weight 816B total / 42B active, derived from Muse Spark (Aug 2026). Meta table setting: xhigh."
+   },
+   {
+    "slug": "kimi-k3-1-pro",
+    "name": "Kimi K3.1 Pro",
+    "maker": "Moonshot AI",
+    "release": "2026-10-23",
+    "status": "verified",
+    "note": "New entrant added 2026-10-26. API launch Oct 23, 2026 (Moonshot blog and AA article); weights promised by Nov 4, 2026. 2.8T total / 104B active."
    }
   ]
  },
@@ -1223,8 +1241,8 @@
    "setting": "xhigh",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "grok-4-7",
@@ -1236,8 +1254,8 @@
    "setting": "high effort (asterisk in xAI table)",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "grok-4-7",
@@ -1249,8 +1267,8 @@
    "setting": "",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "grok-4-7",
@@ -1262,8 +1280,8 @@
    "setting": "",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "grok-4-7",
@@ -1275,8 +1293,8 @@
    "setting": "",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "grok-4-7",
@@ -1288,8 +1306,8 @@
    "setting": "",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "claude-fable-5-1",
@@ -1301,8 +1319,8 @@
    "setting": "xAI comparison table",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "claude-fable-5-1",
@@ -1314,8 +1332,8 @@
    "setting": "xAI comparison table",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "claude-fable-5-1",
@@ -1327,8 +1345,8 @@
    "setting": "xAI comparison table",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "claude-fable-5-1",
@@ -1340,8 +1358,8 @@
    "setting": "xAI comparison table",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "claude-fable-5-1",
@@ -1353,8 +1371,8 @@
    "setting": "xAI comparison table",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "claude-fable-5-1",
@@ -1366,8 +1384,8 @@
    "setting": "xAI comparison table",
    "source_url": "https://x.ai/news/grok-4-7",
    "source_date": "2026-09-21",
-   "read_myself": false,
-   "note": "Second-hand: figure taken from a web search result excerpt of this page; the page itself was not opened. Benchmark name may be normalized; confirm against publisher."
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "muse-wonder-full",
@@ -1536,7 +1554,7 @@
    "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
    "source_date": "2026-09-30",
    "read_myself": false,
-   "note": "Second-hand: the value 53 came from a web search summary (Artificial Analysis and The AI Rankings pages), not from the AA Argon article it is filed under, which does not state Fable 5.1's v4.3 score. The opened AA Fable article gives 66 on the older index. Treat as unconfirmed."
+   "note": "Second-hand: the value 53 came from a web search summary (Artificial Analysis and The AI Rankings pages), not from the AA Argon article it is filed under, which does not state Fable 5.1's v4.3 score. The opened AA Fable article gives 66 on the older index. Treat as unconfirmed. Still unconfirmed on 2026-10-26."
   },
   {
    "model": "grok-4-7",
@@ -1597,11 +1615,50 @@
    "unit": "index",
    "publisher": "Artificial Analysis",
    "publisher_type": "independent",
-   "setting": "max; secondary source (Tokens or Towers) naming Opus 5.5 index leader",
-   "source_url": "https://www.tokensortowers.com/us/models/muse-wonder-full",
-   "source_date": "2026-10-12",
-   "read_myself": false,
-   "note": "Second-hand: relayed by an aggregator (Tokens or Towers citing Meta and AA); the primary page was not opened. Benchmark name may be normalized; confirm against publisher."
+   "setting": "max with fallback; confirmed on AA Kimi K3.1 Pro article (2026-10-23). Previously sourced second-hand from Tokens or Towers.",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "benchmark": "AA Intelligence Index v4.3",
+   "value": 56,
+   "unit": "index",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "AA Intelligence Index v4.3",
+   "value": 55,
+   "unit": "index",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "reasoning model, AA launch test",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "AA Intelligence Index v4.3",
+   "value": 39,
+   "unit": "index",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "value quoted in AA Beam article",
+   "source_url": "https://artificialanalysis.ai/articles/reflection-beam",
+   "source_date": "2026-10-16",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
   },
   {
    "model": "gemini-4-argon",
@@ -1992,6 +2049,760 @@
    "source_date": "2026-09",
    "read_myself": false,
    "note": "Second-hand: relayed by an aggregator (Apidog: Grok 4.7 benchmarks and SWE-Together); the primary page was not opened. Benchmark name may be normalized; confirm against publisher."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "GDPval-AA (Elo)",
+   "value": 1846,
+   "unit": "Elo",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "GDPval-AA (Elo)",
+   "value": 1866,
+   "unit": "Elo",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback (quoted in Kimi article)",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "Terminal-Bench 4.0",
+   "value": 67,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "AA harness; AA calls it the highest score of any model on Terminal-Bench 4.0",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "AutomationBench-AA",
+   "value": 73,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "Humanity's Last Exam",
+   "value": 52,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "CritPt",
+   "value": 25,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "SciCode",
+   "value": 61,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "AA-Omniscience hallucination rate (lower better)",
+   "value": 44,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "AA-Omniscience Index",
+   "value": 30,
+   "unit": "index",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "",
+   "source_url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "Terminal-Bench 4.0",
+   "value": 65.7,
+   "unit": "%",
+   "publisher": "Moonshot AI",
+   "publisher_type": "claim",
+   "setting": "Claude-Code harness",
+   "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "BenchCAD",
+   "value": 92.7,
+   "unit": "%",
+   "publisher": "Moonshot AI",
+   "publisher_type": "claim",
+   "setting": "with tools",
+   "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "kimi-k3-1-pro",
+   "benchmark": "OfficeQA Pro v2",
+   "value": 64.4,
+   "unit": "%",
+   "publisher": "Moonshot AI",
+   "publisher_type": "claim",
+   "setting": "Moonshot internal benchmark; Moonshot claims state of the art",
+   "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "BenchCAD",
+   "value": 96.2,
+   "unit": "%",
+   "publisher": "Moonshot AI",
+   "publisher_type": "rival table",
+   "setting": "as reported in Moonshot launch post",
+   "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "BenchCAD",
+   "value": 95.9,
+   "unit": "%",
+   "publisher": "Moonshot AI",
+   "publisher_type": "rival table",
+   "setting": "as reported in Moonshot launch post",
+   "source_url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+   "source_date": "2026-10-23",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "HealthBench Professional (AA, length-adjusted)",
+   "value": 66.0,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-5.4 (low) per OpenAI implementation."
+  },
+  {
+   "model": "gpt-6-1-sol",
+   "benchmark": "HealthBench Professional (AA, length-adjusted)",
+   "value": 65.1,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-5.4 (low) per OpenAI implementation."
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "benchmark": "HealthBench Professional (AA, length-adjusted)",
+   "value": 63.0,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-5.4 (low) per OpenAI implementation."
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "HealthBench Professional (AA, length-adjusted)",
+   "value": 62.3,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-5.4 (low) per OpenAI implementation."
+  },
+  {
+   "model": "gpt-6-luna",
+   "benchmark": "HealthBench Professional (AA, length-adjusted)",
+   "value": 61.9,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-5.4 (low) per OpenAI implementation."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "HealthBench Professional (AA, length-adjusted)",
+   "value": 59.9,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback; raw (unadjusted) score 71.4, highest raw score",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-5.4 (low) per OpenAI implementation."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "HealthBench Professional (AA, raw)",
+   "value": 71.4,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Raw share of rubric points; not length-adjusted."
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "benchmark": "HealthBench (AA, length-adjusted)",
+   "value": 62.1,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-4.1 per OpenAI implementation."
+  },
+  {
+   "model": "gpt-6-1-sol",
+   "benchmark": "HealthBench (AA, length-adjusted)",
+   "value": 58.5,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-4.1 per OpenAI implementation."
+  },
+  {
+   "model": "gpt-6-luna",
+   "benchmark": "HealthBench (AA, length-adjusted)",
+   "value": 54.6,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/healthbench-professional-health-conversations",
+   "source_date": "2026-10-19",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Graded by GPT-4.1 per OpenAI implementation."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "FrontierCode 1.1 Main (AA)",
+   "value": 52,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback; pass rate 58%",
+   "source_url": "https://artificialanalysis.ai/articles/frontiercode",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value."
+  },
+  {
+   "model": "gpt-6-1-sol",
+   "benchmark": "FrontierCode 1.1 Main (AA)",
+   "value": 49,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/frontiercode",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value."
+  },
+  {
+   "model": "claude-fable-5-1",
+   "benchmark": "FrontierCode 1.1 Main (AA)",
+   "value": 49,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/frontiercode",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value."
+  },
+  {
+   "model": "gpt-6-luna",
+   "benchmark": "FrontierCode 1.1 Main (AA)",
+   "value": 42,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/frontiercode",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "FrontierCode 1.1 Main pass rate (AA)",
+   "value": 58,
+   "unit": "%",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/frontiercode",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "benchmark": "AA Decision Index v1.0",
+   "value": 61,
+   "unit": "index",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "Low effort",
+   "source_url": "https://artificialanalysis.ai/articles/artificial-analysis-decision-index",
+   "source_date": "2026-10-13",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "gpt-6-luna",
+   "benchmark": "AA Decision Index v1.0",
+   "value": 55,
+   "unit": "index",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "Low effort",
+   "source_url": "https://artificialanalysis.ai/articles/artificial-analysis-decision-index",
+   "source_date": "2026-10-13",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl)."
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "AA-Robotics v0.1",
+   "value": 69,
+   "unit": "score",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "Codex, high effort",
+   "source_url": "https://artificialanalysis.ai/articles/aa-robotics",
+   "source_date": "2026-10-14",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Mean score per task (0 to 100)."
+  },
+  {
+   "model": "gpt-6-1-sol",
+   "benchmark": "AA-Robotics v0.1",
+   "value": 65,
+   "unit": "score",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "Codex, high effort",
+   "source_url": "https://artificialanalysis.ai/articles/aa-robotics",
+   "source_date": "2026-10-14",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Mean score per task (0 to 100)."
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "benchmark": "AA-3D (Elo)",
+   "value": 1194,
+   "unit": "Elo",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max with fallback",
+   "source_url": "https://artificialanalysis.ai/articles/aa-3d",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Top four statistically tied per AA."
+  },
+  {
+   "model": "muse-spark-1-3",
+   "benchmark": "AA-3D (Elo)",
+   "value": 1035,
+   "unit": "Elo",
+   "publisher": "Artificial Analysis",
+   "publisher_type": "independent",
+   "setting": "max",
+   "source_url": "https://artificialanalysis.ai/articles/aa-3d",
+   "source_date": "2026-10-12",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). 7th place."
+  },
+  {
+   "model": "gemini-4-argon",
+   "benchmark": "Arena Text (overall)",
+   "value": 1517,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Gemini 4 Argon (High)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 7 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "claude-opus-5-5",
+   "benchmark": "Arena Text (overall)",
+   "value": 1509,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Claude Opus 5.5 (High)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 7 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "muse-wonder",
+   "benchmark": "Arena Text (overall)",
+   "value": 1509,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Muse Wonder (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 8 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "claude-fable-5-1",
+   "benchmark": "Arena Text (overall)",
+   "value": 1503,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Claude Fable 5.1 (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 6 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "muse-spark-1-3",
+   "benchmark": "Arena Text (overall)",
+   "value": 1496,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Muse Spark 1.3 (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 5 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "gpt-6-1-sol",
+   "benchmark": "Arena Text (overall)",
+   "value": 1480,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "GPT-6.1 Sol (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 7 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "claude-sonnet-5-5",
+   "benchmark": "Arena Text (overall)",
+   "value": 1478,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Claude Sonnet 5.5 (xHigh)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 7 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "gpt-6-astra",
+   "benchmark": "Arena Text (overall)",
+   "value": 1476,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "GPT-6 Astra (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 6 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "gpt-6-sol",
+   "benchmark": "Arena Text (overall)",
+   "value": 1459,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "GPT-6 Sol (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 6 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "gpt-6-luna",
+   "benchmark": "Arena Text (overall)",
+   "value": 1442,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "GPT-6 Luna (Max)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 4 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "grok-4-7",
+   "benchmark": "Arena Text (overall)",
+   "value": 1441,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Grok 4.7 (xHigh)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 6 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "claude-haiku-5-5",
+   "benchmark": "Arena Text (overall)",
+   "value": 1425,
+   "unit": "Elo",
+   "publisher": "Arena (LMArena)",
+   "publisher_type": "independent",
+   "setting": "Claude Haiku 5.5 (High)",
+   "source_url": "https://arena.ai/leaderboard/text",
+   "source_date": "2026-10-22",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Score +/- 8 as shown on leaderboard dated Oct 22, 2026."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "JobBench",
+   "value": 61.8,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "MCP-Atlas",
+   "value": 89.2,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "GDPval-AA v2 (Elo)",
+   "value": 1401,
+   "unit": "Elo",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "HLE-Diamond (no tools)",
+   "value": 26.1,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "SciCode",
+   "value": 58.5,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "AA-Omniscience Index",
+   "value": 25,
+   "unit": "index",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "Terminal-Bench 2.1 (Terminus 2 agent)",
+   "value": 76.4,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "DeepSWE 1.1 (best available/self-reported harness)",
+   "value": 60,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "ZeroBench",
+   "value": 50.0,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "BabyVision",
+   "value": 80.2,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
+  },
+  {
+   "model": "muse-spark-open",
+   "benchmark": "SimpleVQA",
+   "value": 73.6,
+   "unit": "%",
+   "publisher": "Meta",
+   "publisher_type": "claim",
+   "setting": "xhigh",
+   "source_url": "https://dev.meta.ai/models/muse-spark-open/",
+   "source_date": "2026-10-15",
+   "read_myself": true,
+   "note": "Figure read on the source page on 2026-10-26 (page opened with WebFetch or curl). Meta table; units not printed on the page, assumed % except Elo and index rows."
   }
  ]
 }

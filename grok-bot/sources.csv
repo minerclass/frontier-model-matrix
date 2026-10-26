@@ -112,7 +112,10 @@ grok47,AA Intelligence Index v4.3,46,index,independent,Artificial Analysis,xhigh
 wfull,AA Intelligence Index v4.3,56,index,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/muse-wonder,2026-10-12
 wonder,AA Intelligence Index v4.3,52,index,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/muse-wonder,2026-10-12
 spark13,AA Intelligence Index v4.3,48,index,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/muse-wonder,2026-10-12
-opus55,AA Intelligence Index v4.3,58,index,independent,Artificial Analysis,max; secondary source (Tokens or Towers) naming Opus 5.5 index leader,,https://www.tokensortowers.com/us/models/muse-wonder-full,2026-10-12
+opus55,AA Intelligence Index v4.3,58,index,independent,Artificial Analysis,max with fallback; confirmed on AA Kimi K3.1 Pro article (2026-10-23). Previously sourced second-hand from Tokens or Towers.,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+sonnet55,AA Intelligence Index v4.3,56,index,independent,Artificial Analysis,max with fallback,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,AA Intelligence Index v4.3,55,index,independent,Artificial Analysis,"reasoning model, AA launch test",,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+sparkopen,AA Intelligence Index v4.3,39,index,independent,Artificial Analysis,value quoted in AA Beam article,,https://artificialanalysis.ai/articles/reflection-beam,2026-10-16
 argon,Terminal-Bench 4.0,57,%,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs,2026-09-30
 astra,Terminal-Bench 4.0,59,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs,2026-09-30
 opus55,Terminal-Bench 4.0,60,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs,2026-09-30
@@ -143,3 +146,61 @@ fable51,SciCode,62.0,%,independent,Artificial Analysis,max,,https://artificialan
 wfull,SciCode,63,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/muse-wonder,2026-10-12
 wfull,CritPt,33,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/muse-wonder,2026-10-12
 grok47,SWE-Together,64.7,%,independent,SWE-Together evaluators,pass@1 after sandbox lockdown; 44/218 first-run trials fetched external code,,https://apidog.com/blog/grok-4-7-benchmarks/,2026-09
+kimi31,GDPval-AA (Elo),1846,Elo,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+opus55,GDPval-AA (Elo),1866,Elo,independent,Artificial Analysis,max with fallback (quoted in Kimi article),,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,Terminal-Bench 4.0,67,%,independent,Artificial Analysis,AA harness; AA calls it the highest score of any model on Terminal-Bench 4.0,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,AutomationBench-AA,73,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,Humanity's Last Exam,52,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,CritPt,25,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,SciCode,61,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,AA-Omniscience hallucination rate (lower better),44,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,AA-Omniscience Index,30,index,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks,2026-10-23
+kimi31,Terminal-Bench 4.0,65.7,%,claim,Moonshot AI,Claude-Code harness,,https://www.kimi.ai/blog/kimi-k3-1-pro,2026-10-23
+kimi31,BenchCAD,92.7,%,claim,Moonshot AI,with tools,,https://www.kimi.ai/blog/kimi-k3-1-pro,2026-10-23
+kimi31,OfficeQA Pro v2,64.4,%,claim,Moonshot AI,Moonshot internal benchmark; Moonshot claims state of the art,,https://www.kimi.ai/blog/kimi-k3-1-pro,2026-10-23
+opus55,BenchCAD,96.2,%,vendor-table,Moonshot AI,as reported in Moonshot launch post,,https://www.kimi.ai/blog/kimi-k3-1-pro,2026-10-23
+astra,BenchCAD,95.9,%,vendor-table,Moonshot AI,as reported in Moonshot launch post,,https://www.kimi.ai/blog/kimi-k3-1-pro,2026-10-23
+astra,"HealthBench Professional (AA, length-adjusted)",66.0,%,independent,Artificial Analysis,max,Graded by GPT-5.4 (low) per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+sol61,"HealthBench Professional (AA, length-adjusted)",65.1,%,independent,Artificial Analysis,max,Graded by GPT-5.4 (low) per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+sonnet55,"HealthBench Professional (AA, length-adjusted)",63.0,%,independent,Artificial Analysis,max with fallback,Graded by GPT-5.4 (low) per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+sol6,"HealthBench Professional (AA, length-adjusted)",62.3,%,independent,Artificial Analysis,max,Graded by GPT-5.4 (low) per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+luna,"HealthBench Professional (AA, length-adjusted)",61.9,%,independent,Artificial Analysis,max,Graded by GPT-5.4 (low) per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+opus55,"HealthBench Professional (AA, length-adjusted)",59.9,%,independent,Artificial Analysis,"max with fallback; raw (unadjusted) score 71.4, highest raw score",Graded by GPT-5.4 (low) per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+opus55,"HealthBench Professional (AA, raw)",71.4,%,independent,Artificial Analysis,max with fallback,Raw share of rubric points; not length-adjusted.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+sonnet55,"HealthBench (AA, length-adjusted)",62.1,%,independent,Artificial Analysis,max with fallback,Graded by GPT-4.1 per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+sol61,"HealthBench (AA, length-adjusted)",58.5,%,independent,Artificial Analysis,max,Graded by GPT-4.1 per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+luna,"HealthBench (AA, length-adjusted)",54.6,%,independent,Artificial Analysis,max,Graded by GPT-4.1 per OpenAI implementation.,https://artificialanalysis.ai/articles/healthbench-professional-health-conversations,2026-10-19
+opus55,FrontierCode 1.1 Main (AA),52,%,independent,Artificial Analysis,max with fallback; pass rate 58%,"Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value.",https://artificialanalysis.ai/articles/frontiercode,2026-10-12
+sol61,FrontierCode 1.1 Main (AA),49,%,independent,Artificial Analysis,max,"Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value.",https://artificialanalysis.ai/articles/frontiercode,2026-10-12
+fable51,FrontierCode 1.1 Main (AA),49,%,independent,Artificial Analysis,max with fallback,"Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value.",https://artificialanalysis.ai/articles/frontiercode,2026-10-12
+luna,FrontierCode 1.1 Main (AA),42,%,independent,Artificial Analysis,max,"Mean score over 3 attempts per task, Stirrup harness. Article says Astra (max) is 2 points below GPT-6.1 Sol; not recorded as a separate value.",https://artificialanalysis.ai/articles/frontiercode,2026-10-12
+opus55,FrontierCode 1.1 Main pass rate (AA),58,%,independent,Artificial Analysis,max with fallback,,https://artificialanalysis.ai/articles/frontiercode,2026-10-12
+haiku55,AA Decision Index v1.0,61,index,independent,Artificial Analysis,Low effort,,https://artificialanalysis.ai/articles/artificial-analysis-decision-index,2026-10-13
+luna,AA Decision Index v1.0,55,index,independent,Artificial Analysis,Low effort,,https://artificialanalysis.ai/articles/artificial-analysis-decision-index,2026-10-13
+astra,AA-Robotics v0.1,69,score,independent,Artificial Analysis,"Codex, high effort",Mean score per task (0 to 100).,https://artificialanalysis.ai/articles/aa-robotics,2026-10-14
+sol61,AA-Robotics v0.1,65,score,independent,Artificial Analysis,"Codex, high effort",Mean score per task (0 to 100).,https://artificialanalysis.ai/articles/aa-robotics,2026-10-14
+sonnet55,AA-3D (Elo),1194,Elo,independent,Artificial Analysis,max with fallback,Top four statistically tied per AA.,https://artificialanalysis.ai/articles/aa-3d,2026-10-12
+spark13,AA-3D (Elo),1035,Elo,independent,Artificial Analysis,max,7th place.,https://artificialanalysis.ai/articles/aa-3d,2026-10-12
+argon,Arena Text (overall),1517,Elo,independent,Arena (LMArena),Gemini 4 Argon (High),"Score +/- 7 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+opus55,Arena Text (overall),1509,Elo,independent,Arena (LMArena),Claude Opus 5.5 (High),"Score +/- 7 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+wonder,Arena Text (overall),1509,Elo,independent,Arena (LMArena),Muse Wonder (Max),"Score +/- 8 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+fable51,Arena Text (overall),1503,Elo,independent,Arena (LMArena),Claude Fable 5.1 (Max),"Score +/- 6 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+spark13,Arena Text (overall),1496,Elo,independent,Arena (LMArena),Muse Spark 1.3 (Max),"Score +/- 5 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+sol61,Arena Text (overall),1480,Elo,independent,Arena (LMArena),GPT-6.1 Sol (Max),"Score +/- 7 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+sonnet55,Arena Text (overall),1478,Elo,independent,Arena (LMArena),Claude Sonnet 5.5 (xHigh),"Score +/- 7 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+astra,Arena Text (overall),1476,Elo,independent,Arena (LMArena),GPT-6 Astra (Max),"Score +/- 6 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+sol6,Arena Text (overall),1459,Elo,independent,Arena (LMArena),GPT-6 Sol (Max),"Score +/- 6 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+luna,Arena Text (overall),1442,Elo,independent,Arena (LMArena),GPT-6 Luna (Max),"Score +/- 4 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+grok47,Arena Text (overall),1441,Elo,independent,Arena (LMArena),Grok 4.7 (xHigh),"Score +/- 6 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+haiku55,Arena Text (overall),1425,Elo,independent,Arena (LMArena),Claude Haiku 5.5 (High),"Score +/- 8 as shown on leaderboard dated Oct 22, 2026.",https://arena.ai/leaderboard/text,2026-10-22
+sparkopen,JobBench,61.8,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,MCP-Atlas,89.2,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,GDPval-AA v2 (Elo),1401,Elo,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,HLE-Diamond (no tools),26.1,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,SciCode,58.5,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,AA-Omniscience Index,25,index,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,Terminal-Bench 2.1 (Terminus 2 agent),76.4,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,DeepSWE 1.1 (best available/self-reported harness),60,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,ZeroBench,50.0,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,BabyVision,80.2,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+sparkopen,SimpleVQA,73.6,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
