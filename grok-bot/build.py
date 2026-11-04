@@ -32,6 +32,11 @@ S={
 'meta_spark13':('https://research.meta.ai/blog/introducing-muse-spark-1-3','2026-09-02','Meta AI Research: Introducing Muse Spark 1.3'),
 'anth_news':('https://www.anthropic.com/news','2026-10-26','Anthropic newsroom (release dates for Sonnet 5.5 and Haiku 5.5)'),
 'kimi_blog':('https://www.kimi.ai/blog/kimi-k3-1-pro','2026-10-23','Moonshot AI: Kimi K3.1 Pro tech blog'),
+'gblog_carbon':('https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/','2026-10-28','Google blog: Gemini 4 Carbon, our next frontier model'),
+'aa_carbon':('https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1','2026-10-28','Artificial Analysis: Gemini 4 Carbon is the new #1 on the Intelligence Index v5'),
+'oai_terra':('https://openai.com/index/introducing-gpt-6-1-terra','2026-10-26','OpenAI: Introducing GPT-6.1 Terra'),
+'aa_terra':('https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier','2026-10-26','Artificial Analysis: GPT-6.1 Terra pushes the cost efficiency frontier'),
+'aa_v5':('https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5','2026-10-27','Artificial Analysis: Announcing Intelligence Index v5'),
 }
 M=[ # id,name,maker,family,release,status,note
 ('argon','Gemini 4 Argon','Google','Gemini 4','2026-10-13','verified','GA Oct 13 per Google blog; AA tested a limited rollout Sep 30. Effort: high (highest available).'),
@@ -49,6 +54,8 @@ M=[ # id,name,maker,family,release,status,note
 ('spark13','Muse Spark 1.3','Meta','Muse Spark','2026-09-02','partial','Release date Sep 2, 2026 per Meta AI Research blog (read 2026-10-26).'),
 ('sparkopen','Muse Spark Open','Meta','Muse Spark','2026-10-15','verified','New 2026-10-26. Open-weight 816B total / 42B active, derived from Muse Spark (Aug 2026). Meta table setting: xhigh.'),
 ('kimi31','Kimi K3.1 Pro','Moonshot AI','Kimi K3.1','2026-10-23','verified','New entrant added 2026-10-26. API launch Oct 23, 2026 (Moonshot blog and AA article); weights promised by Nov 4, 2026. 2.8T total / 104B active.'),
+('carbon','Gemini 4 Carbon','Google','Gemini 4','2026-10-28','verified','New 2026-11-02. Announced Oct 28, 2026 (Google blog); limited access for selected cyber defenders and Fairwind Program partners, broader release promised with no date. Introductory price $2/$10, standard $4/$20.'),
+('terra61','GPT-6.1 Terra','OpenAI','GPT-6.1','2026-10-26','verified','New 2026-11-02. Released Oct 26, 2026 in ChatGPT Work, Codex, and the API (gpt-6.1-terra). $1/$5 per 1M tokens. Most OpenAI launch-post comparisons are relative (no absolute values), so only stated numbers are recorded.'),
 ]
 R=[]
 def r(m,b,v,t,rep,src,setting='',note='',unit='%'):
@@ -139,10 +146,48 @@ for m,v,ci,n in [('argon',1517,7,'Gemini 4 Argon (High)'),('opus55',1509,7,'Clau
 # Muse Spark Open, Meta model page table (opened page; column order checked in page HTML)
 for b,v,u in [('JobBench',61.8,'%'),('MCP-Atlas',89.2,'%'),('GDPval-AA v2 (Elo)',1401,'Elo'),('HLE-Diamond (no tools)',26.1,'%'),('SciCode',58.5,'%'),('AA-Omniscience Index',25,'index'),('Terminal-Bench 2.1 (Terminus 2 agent)',76.4,'%'),('DeepSWE 1.1 (best available/self-reported harness)',60,'%'),('ZeroBench',50.0,'%'),('BabyVision',80.2,'%'),('SimpleVQA',73.6,'%')]:
     r('sparkopen',b,v,'claim','Meta','meta_sparkopen','xhigh','Meta table; units not printed on the page, assumed % except Elo and index rows.',unit=u)
+# ---- 2026-11-02 weekly update (all pages opened on 2026-11-02) ----
+for b,v,n,u in [('SEC-bench Pro',88.2,'evaluated without guardrails; Google calls it state of the art','%'),('ExploitGym',54.8,'evaluated without guardrails','%'),('CWE-bench (Collinear)',71.0,'evaluated without guardrails','%'),('WebDev Arena (Elo)',1768,'Google says #4 on WebDev Arena, +89 Elo','Elo'),('Gray Swan IPI attack success rate (lower better)',0.0,'Gray Swan Indirect Prompt Injection benchmark','%')]:
+    r('carbon',b,v,'claim','Google','gblog_carbon',n,unit=u)
+r('terra61','Terminal-Bench 4.0',50.3,'claim','OpenAI','oai_terra','max reasoning effort','OpenAI: more than double GPT-5.6 Terra (21.5).')
+r('terra61','OpenAI internal error-inducing prompts, error rate (lower better)',16.7,'claim','OpenAI','oai_terra','low reasoning effort','OpenAI internal benchmark.')
+r('terra61','OpenAI internal error-inducing prompts, error rate (lower better)',4.3,'claim','OpenAI','oai_terra','max reasoning effort','OpenAI internal benchmark.')
+# AA Gemini 4 Carbon article
+r('carbon','AA Intelligence Index v5',59,'independent','Artificial Analysis','aa_carbon','high','#1 on v5 at publication.',unit='index')
+for m,v,n in [('carbon',59,'high, Antigravity CLI'),('opus55',62,'max, Claude Code')]:
+    r(m,'AA Coding Agent Index',v,'independent','Artificial Analysis','aa_carbon',n,'Index version not stated in the Carbon article (the Terra article calls it v2.0).',unit='index')
+r('carbon','Terminal-Bench 4.0',64,'independent','Artificial Analysis','aa_carbon','high','Ranked second per AA.')
+r('carbon','FrontierCode 1.1 (AA)',51,'independent','Artificial Analysis','aa_carbon','high','Ranked second per AA. Article names Claude Opus 5.5 (max) at 56% as the leader without saying which of the two benchmarks, so no Opus value recorded.')
+for m,v,n in [('carbon',1609,'high'),('argon',1483,'high'),('grok47',1638,'xhigh'),('wonder',1659,'max'),('kimi31',1678,'')]:
+    r(m,'AA-Briefcase (Elo)',v,'independent','Artificial Analysis','aa_carbon',n,unit='Elo')
+for m,v in [('carbon',54),('argon',46)]:
+    r(m,'AA-Omniscience v1.1 Index',v,'independent','Artificial Analysis','aa_carbon','high',unit='index')
+r('carbon','AA-Omniscience v1.1 accuracy',58,'independent','Artificial Analysis','aa_carbon','high')
+for m,v,n in [('carbon',11,'high'),('argon',4,'high'),('opus55',50,'max'),('astra',50,'max')]:
+    r(m,'AA-Omniscience v1.1 hallucination rate (lower better)',v,'independent','Artificial Analysis','aa_carbon',n,'Version assumed v1.1 from article context.')
+# AA GPT-6.1 Terra article
+for m,v,n in [('terra61',48,'best setting reported'),('sol61',54,''),('luna',31,'')]:
+    r(m,'AA Coding Agent Index v2.0',v,'independent','Artificial Analysis','aa_terra',n,unit='index')
+r('terra61','AA-Omniscience hallucination rate (lower better)',38,'independent','Artificial Analysis','aa_terra','','GPT-5.6 Terra was 88% per AA. AA gives no absolute Intelligence Index value in the article text (only "4 points below GPT-6.1 Sol at max"), so none recorded.')
+# AA Intelligence Index v5 launch
+for m,v,n in [('opus55',58,'max'),('astra',57,'max'),('sol61',55,'max'),('argon',50,'high'),('kimi31',46,'weights not yet released'),('haiku55',36,'max')]:
+    r(m,'AA Intelligence Index v5',v,'independent','Artificial Analysis','aa_v5',n,'v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.',unit='index')
+r('opus55','AA Intelligence Index v5',35,'independent','Artificial Analysis','aa_v5','low effort',unit='index')
+for m,v in [('opus55',46),('astra',42),('terra61',42),('sonnet55',42)]:
+    r(m,'FrontierCode 2.0 (AA)',v,'independent','Artificial Analysis','aa_v5','max','132 private tasks, 3 runs each in Stirrup harness.')
+for m,v,n in [('astra',63,'max'),('opus55',59,'max'),('sol61',58,'max'),('kimi31',34,''),('haiku55',20,'max')]:
+    r(m,'Terminal-Bench-Science (AA)',v,'independent','Artificial Analysis','aa_v5',n)
+for m,v,n in [('opus55',68,'max'),('astra',64,'max'),('fable51',60,'max'),('kimi31',37,'')]:
+    r(m,'HLE-Diamond (AA)',v,'independent','Artificial Analysis','aa_v5',n)
+for m,v,n in [('astra',72,'high'),('sol61',69,'max'),('opus55',61,'max'),('kimi31',45,'')]:
+    r(m,'CritPt v2 hard subset (AA)',v,'independent','Artificial Analysis','aa_v5',n)
+r('opus55','AA-Omniscience v1.1 Index',48,'independent','Artificial Analysis','aa_v5','max',unit='index')
+r('sonnet55','AA-Briefcase (Elo)',1812,'independent','Artificial Analysis','aa_v5','','Leads AA-Briefcase per AA v5 article.',unit='Elo')
+r('wfull','GDP.pdf (all-pass)',33,'independent','Artificial Analysis','aa_v5','','Leads GDP.pdf per AA v5 article.')
 PAIRS=[('argon','Terminal-Bench 4.0',57.4,57,'close'),('opus55','Terminal-Bench 4.0',66.4,60,'claim xhigh, Anthropic harness; AA max'),('astra','Terminal-Bench 4.0',58.2,59,'claim value from Google table, "as reported by OpenAI"'),('grok47','Terminal-Bench 4.0',37.6,33,'AA used Grok Build harness'),('wfull','Terminal-Bench 4.0',57.1,57,'close'),('grok47','DeepSWE v1.1',71.0,73,'independent higher than claim'),('argon','AutomationBench vs AA variant',51.3,78,'DIFFERENT variants: Zapier private set vs AutomationBench-AA'),('wfull','AutomationBench vs AA variant',45.4,71,'Labels conflict; likely different variants'),('fable51','DeepSWE v1.1 (Google table vs xAI table)',67.4,70.0,'two rival vendors report different Fable numbers'),('kimi31','Terminal-Bench 4.0',65.7,67,'claim Claude-Code harness; AA harness. Added 2026-10-26'),('sol61','HealthBench Professional',64.2,65.1,'both length-adjusted; OpenAI claim vs AA run. Added 2026-10-26'),('sol61','HealthBench',58.5,58.5,'both length-adjusted; identical. Added 2026-10-26')]
 pairs=[dict(model=a,benchmark=b,claim=c,independent=i,gap=round(i-c,1),note=n) for a,b,c,i,n in PAIRS]
-data=dict(as_of='2026-10-26',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
- not_found=['Any "GPT-6.1 Astra" or other GPT-6.1 variant besides Sol','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)'])
+data=dict(as_of='2026-11-02',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
+ not_found=['A released "GPT-6.1 Astra" (a Cleus blog post reports OpenAI cancelled its planned October release; not confirmed on an OpenAI page). GPT-6.1 Terra is now tracked','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)','Absolute values behind the relative comparisons in the GPT-6.1 Terra launch post (Agents Last Exam, MMMU-Pro, OSWorld 2.1, Terminal-Bench-Science 0.1)','Gemini 4 Carbon evaluation table (published only as an image on the Google blog; not transcribed)','Claude, Grok, and Muse model releases between Oct 26 and Nov 2, 2026 (none found)'])
 w=csv.writer(open('sources.csv','w',newline=''),lineterminator='\n')
 w.writerow(['model','benchmark','value','unit','type','reporter','setting','note','source','date'])
 for x in R: w.writerow([x[k] for k in ['model','benchmark','value','unit','type','reporter','setting','note','source','date']])

@@ -204,3 +204,59 @@ sparkopen,DeepSWE 1.1 (best available/self-reported harness),60,%,claim,Meta,xhi
 sparkopen,ZeroBench,50.0,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
 sparkopen,BabyVision,80.2,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
 sparkopen,SimpleVQA,73.6,%,claim,Meta,xhigh,"Meta table; units not printed on the page, assumed % except Elo and index rows.",https://dev.meta.ai/models/muse-spark-open/,2026-10-15
+carbon,SEC-bench Pro,88.2,%,claim,Google,evaluated without guardrails; Google calls it state of the art,,https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/,2026-10-28
+carbon,ExploitGym,54.8,%,claim,Google,evaluated without guardrails,,https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/,2026-10-28
+carbon,CWE-bench (Collinear),71.0,%,claim,Google,evaluated without guardrails,,https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/,2026-10-28
+carbon,WebDev Arena (Elo),1768,Elo,claim,Google,"Google says #4 on WebDev Arena, +89 Elo",,https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/,2026-10-28
+carbon,Gray Swan IPI attack success rate (lower better),0.0,%,claim,Google,Gray Swan Indirect Prompt Injection benchmark,,https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/,2026-10-28
+terra61,Terminal-Bench 4.0,50.3,%,claim,OpenAI,max reasoning effort,OpenAI: more than double GPT-5.6 Terra (21.5).,https://openai.com/index/introducing-gpt-6-1-terra,2026-10-26
+terra61,"OpenAI internal error-inducing prompts, error rate (lower better)",16.7,%,claim,OpenAI,low reasoning effort,OpenAI internal benchmark.,https://openai.com/index/introducing-gpt-6-1-terra,2026-10-26
+terra61,"OpenAI internal error-inducing prompts, error rate (lower better)",4.3,%,claim,OpenAI,max reasoning effort,OpenAI internal benchmark.,https://openai.com/index/introducing-gpt-6-1-terra,2026-10-26
+carbon,AA Intelligence Index v5,59,index,independent,Artificial Analysis,high,#1 on v5 at publication.,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,AA Coding Agent Index,59,index,independent,Artificial Analysis,"high, Antigravity CLI",Index version not stated in the Carbon article (the Terra article calls it v2.0).,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+opus55,AA Coding Agent Index,62,index,independent,Artificial Analysis,"max, Claude Code",Index version not stated in the Carbon article (the Terra article calls it v2.0).,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,Terminal-Bench 4.0,64,%,independent,Artificial Analysis,high,Ranked second per AA.,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,FrontierCode 1.1 (AA),51,%,independent,Artificial Analysis,high,"Ranked second per AA. Article names Claude Opus 5.5 (max) at 56% as the leader without saying which of the two benchmarks, so no Opus value recorded.",https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,AA-Briefcase (Elo),1609,Elo,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+argon,AA-Briefcase (Elo),1483,Elo,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+grok47,AA-Briefcase (Elo),1638,Elo,independent,Artificial Analysis,xhigh,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+wonder,AA-Briefcase (Elo),1659,Elo,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+kimi31,AA-Briefcase (Elo),1678,Elo,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,AA-Omniscience v1.1 Index,54,index,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+argon,AA-Omniscience v1.1 Index,46,index,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,AA-Omniscience v1.1 accuracy,58,%,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+carbon,AA-Omniscience v1.1 hallucination rate (lower better),11,%,independent,Artificial Analysis,high,Version assumed v1.1 from article context.,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+argon,AA-Omniscience v1.1 hallucination rate (lower better),4,%,independent,Artificial Analysis,high,Version assumed v1.1 from article context.,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+opus55,AA-Omniscience v1.1 hallucination rate (lower better),50,%,independent,Artificial Analysis,max,Version assumed v1.1 from article context.,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+astra,AA-Omniscience v1.1 hallucination rate (lower better),50,%,independent,Artificial Analysis,max,Version assumed v1.1 from article context.,https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1,2026-10-28
+terra61,AA Coding Agent Index v2.0,48,index,independent,Artificial Analysis,best setting reported,,https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier,2026-10-26
+sol61,AA Coding Agent Index v2.0,54,index,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier,2026-10-26
+luna,AA Coding Agent Index v2.0,31,index,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier,2026-10-26
+terra61,AA-Omniscience hallucination rate (lower better),38,%,independent,Artificial Analysis,,"GPT-5.6 Terra was 88% per AA. AA gives no absolute Intelligence Index value in the article text (only ""4 points below GPT-6.1 Sol at max""), so none recorded.",https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier,2026-10-26
+opus55,AA Intelligence Index v5,58,index,independent,Artificial Analysis,max,"v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+astra,AA Intelligence Index v5,57,index,independent,Artificial Analysis,max,"v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+sol61,AA Intelligence Index v5,55,index,independent,Artificial Analysis,max,"v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+argon,AA Intelligence Index v5,50,index,independent,Artificial Analysis,high,"v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+kimi31,AA Intelligence Index v5,46,index,independent,Artificial Analysis,weights not yet released,"v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+haiku55,AA Intelligence Index v5,36,index,independent,Artificial Analysis,max,"v5 (Oct 27, 2026) is a new composite; not comparable with v4.3.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+opus55,AA Intelligence Index v5,35,index,independent,Artificial Analysis,low effort,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+opus55,FrontierCode 2.0 (AA),46,%,independent,Artificial Analysis,max,"132 private tasks, 3 runs each in Stirrup harness.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+astra,FrontierCode 2.0 (AA),42,%,independent,Artificial Analysis,max,"132 private tasks, 3 runs each in Stirrup harness.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+terra61,FrontierCode 2.0 (AA),42,%,independent,Artificial Analysis,max,"132 private tasks, 3 runs each in Stirrup harness.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+sonnet55,FrontierCode 2.0 (AA),42,%,independent,Artificial Analysis,max,"132 private tasks, 3 runs each in Stirrup harness.",https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+astra,Terminal-Bench-Science (AA),63,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+opus55,Terminal-Bench-Science (AA),59,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+sol61,Terminal-Bench-Science (AA),58,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+kimi31,Terminal-Bench-Science (AA),34,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+haiku55,Terminal-Bench-Science (AA),20,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+opus55,HLE-Diamond (AA),68,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+astra,HLE-Diamond (AA),64,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+fable51,HLE-Diamond (AA),60,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+kimi31,HLE-Diamond (AA),37,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+astra,CritPt v2 hard subset (AA),72,%,independent,Artificial Analysis,high,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+sol61,CritPt v2 hard subset (AA),69,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+opus55,CritPt v2 hard subset (AA),61,%,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+kimi31,CritPt v2 hard subset (AA),45,%,independent,Artificial Analysis,,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+opus55,AA-Omniscience v1.1 Index,48,index,independent,Artificial Analysis,max,,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+sonnet55,AA-Briefcase (Elo),1812,Elo,independent,Artificial Analysis,,Leads AA-Briefcase per AA v5 article.,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27
+wfull,GDP.pdf (all-pass),33,%,independent,Artificial Analysis,,Leads GDP.pdf per AA v5 article.,https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5,2026-10-27

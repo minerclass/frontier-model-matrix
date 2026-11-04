@@ -1,4 +1,4 @@
-Written on: cloud · grok-bot · 2026-10-26
+Written on: cloud · grok-bot · 2026-11-02
 
 # Grok Bot compilation notes
 
@@ -7,7 +7,7 @@ Written on: cloud · grok-bot · 2026-10-26
 - Computer: cloud (Grok Bot box)
 - Format: atlas.json uses grok-bot-atlas-v1. index.html is built by build.py from the same records; data.json was removed on 2026-10-13 with Micah's approval.
 
-First pass compiled 2026-10-13, independently of other harnesses. Weekly update 2026-10-26 covers releases and results from Oct 13 to Oct 26, 2026; see CHANGES.md for every added record and its source.
+First pass compiled 2026-10-13, independently of other harnesses. Weekly update 2026-10-26 covers releases and results from Oct 13 to Oct 26, 2026. Weekly update 2026-11-02 covers Oct 26 to Nov 2, 2026 and adds Gemini 4 Carbon, GPT-6.1 Terra, and Artificial Analysis Intelligence Index v5 results (261 records total, 56 new, all first-hand from 5 pages). See CHANGES.md for every added record and its source.
 
 ## Sources: first-hand vs second-hand
 
