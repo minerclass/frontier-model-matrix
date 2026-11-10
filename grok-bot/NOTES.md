@@ -67,3 +67,7 @@ By publisher_type: claim 59, rival table 62, independent 84. Unclassified: 0.
 - template.html: hero text and data date updated, timeline axis extended to Oct 31, and colors added for new models.
 - shots/ re-rendered from the new index.html.
 - No new frontier models from Google, OpenAI, Anthropic, or xAI between Oct 13 and Oct 26.
+
+## Weekly update 2026-11-09
+
+Covers Nov 2 to Nov 9, 2026. Adds GPT-6 Cyber and Inkling 2 Small, VIALS-AA, and Decision Index v2 figures (301 records total, 40 new, all first-hand from 5 pages: OpenAI GPT-6 Cyber post, Irregular, AA Inkling 2 Small, AA VIALS-AA, AA Decision Index v2). See CHANGES.md.

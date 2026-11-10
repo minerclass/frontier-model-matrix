@@ -37,6 +37,11 @@ S={
 'oai_terra':('https://openai.com/index/introducing-gpt-6-1-terra','2026-10-26','OpenAI: Introducing GPT-6.1 Terra'),
 'aa_terra':('https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier','2026-10-26','Artificial Analysis: GPT-6.1 Terra pushes the cost efficiency frontier'),
 'aa_v5':('https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5','2026-10-27','Artificial Analysis: Announcing Intelligence Index v5'),
+'aa_inkling':('https://artificialanalysis.ai/articles/thinking-machines-releases-inkling-2-small-highest-scoring-open-weights-model-outside-of-chinia-upon-weights-release-it','2026-11-05','Artificial Analysis: Thinking Machines Inkling 2 Small'),
+'oai_cyber':('https://openai.com/index/introducing-gpt-6-cyber','2026-11-05','OpenAI: Introducing GPT-6 Cyber'),
+'irr_cyber':('https://www.irregular.com/research/assessing-gpt-6-cyber-against-offensive-security-benchmarks','2026-11-05','Irregular: Assessing GPT-6 Cyber Against Offensive Security Benchmarks'),
+'aa_vials':('https://artificialanalysis.ai/articles/vials-aa','2026-11-06','Artificial Analysis: VIALS-AA launch article'),
+'aa_dec2':('https://artificialanalysis.ai/articles/decision-index-v2','2026-11-08','Artificial Analysis: Introducing the Decision Index v2'),
 }
 M=[ # id,name,maker,family,release,status,note
 ('argon','Gemini 4 Argon','Google','Gemini 4','2026-10-13','verified','GA Oct 13 per Google blog; AA tested a limited rollout Sep 30. Effort: high (highest available).'),
@@ -56,6 +61,8 @@ M=[ # id,name,maker,family,release,status,note
 ('kimi31','Kimi K3.1 Pro','Moonshot AI','Kimi K3.1','2026-10-23','verified','New entrant added 2026-10-26. API launch Oct 23, 2026 (Moonshot blog and AA article); weights promised by Nov 4, 2026. 2.8T total / 104B active.'),
 ('carbon','Gemini 4 Carbon','Google','Gemini 4','2026-10-28','verified','New 2026-11-02. Announced Oct 28, 2026 (Google blog); limited access for selected cyber defenders and Fairwind Program partners, broader release promised with no date. Introductory price $2/$10, standard $4/$20.'),
 ('terra61','GPT-6.1 Terra','OpenAI','GPT-6.1','2026-10-26','verified','New 2026-11-02. Released Oct 26, 2026 in ChatGPT Work, Codex, and the API (gpt-6.1-terra). $1/$5 per 1M tokens. Most OpenAI launch-post comparisons are relative (no absolute values), so only stated numbers are recorded.'),
+('cyber','GPT-6 Cyber','OpenAI','GPT-6','2026-11-05','verified','New 2026-11-09. Announced Nov 5, 2026. Cybersecurity model; API and Codex for a select group of approved Daybreak Red customers, broader Daybreak Red access promised. OpenAI rates it Critical in cyber under its Preparedness Framework. Not a general-purpose model, so only cyber figures exist.'),
+('inkling2s','Inkling 2 Small','Thinking Machines','Inkling','2026-11-05','verified','New entrant added 2026-11-09. Proprietary at launch (Tinker platform), Apache 2.0 weights planned, date unconfirmed. 594B total / 17B active, $0.30/$1.00 per 1M tokens (AA article, Nov 5, 2026).'),
 ]
 R=[]
 def r(m,b,v,t,rep,src,setting='',note='',unit='%'):
@@ -184,10 +191,45 @@ for m,v,n in [('astra',72,'high'),('sol61',69,'max'),('opus55',61,'max'),('kimi3
 r('opus55','AA-Omniscience v1.1 Index',48,'independent','Artificial Analysis','aa_v5','max',unit='index')
 r('sonnet55','AA-Briefcase (Elo)',1812,'independent','Artificial Analysis','aa_v5','','Leads AA-Briefcase per AA v5 article.',unit='Elo')
 r('wfull','GDP.pdf (all-pass)',33,'independent','Artificial Analysis','aa_v5','','Leads GDP.pdf per AA v5 article.')
+# ---- 2026-11-09 weekly update (all pages opened on 2026-11-09) ----
+# GPT-6 Cyber, OpenAI launch post
+r('cyber','ExploitGym',48.5,'claim','OpenAI','oai_cyber','remote-target exploitation; OpenAI compares with GPT-5.6 Cyber at 32.1')
+r('cyber','Offensive web pentest recall (OpenAI new eval)',40.3,'claim','OpenAI','oai_cyber','recall of vulnerabilities, no source access')
+r('astra','Offensive web pentest recall (OpenAI new eval)',32.0,'vendor-table','OpenAI','oai_cyber','GPT-6 Astra as reported in the GPT-6 Cyber post')
+r('cyber','RemoteExploitBench tasks completed',95,'claim','OpenAI','oai_cyber','OpenAI new benchmark (GitLab, PostgreSQL, Jenkins targets); GPT-6 Astra with Daybreak Blue refused 100% of tasks')
+r('cyber','ExploitGym Honeypot, stayed in scope',99.93,'claim','OpenAI','oai_cyber','without deployment safety prompt; GPT-5.6 Cyber was 94.49')
+r('cyber','ExploitGym Honeypot, stayed in scope',100,'claim','OpenAI','oai_cyber','with deployment safety prompt')
+# GPT-6 Cyber, Irregular (independent; OpenAI collaborated on the evaluation)
+r('cyber','FrontierCyber challenges solved (of 288)',90,'independent','Irregular','irr_cyber','','Irregular worked with OpenAI on this evaluation. Count of challenges solved, not a percent.',unit='challenges')
+r('astra','FrontierCyber challenges solved (of 288)',96,'independent','Irregular','irr_cyber','same benchmark snapshot','Irregular says the difference does not establish a capability regression.',unit='challenges')
+r('cyber','CyScenarioBench scenarios solved at least once (of 11)',11,'independent','Irregular','irr_cyber','','',unit='scenarios')
+r('astra','CyScenarioBench scenarios solved at least once (of 11)',8,'independent','Irregular','irr_cyber','','',unit='scenarios')
+r('cyber','CyScenarioBench average success rate',61,'independent','Irregular','irr_cyber','','Irregular says this is 7 points above GPT-6 Astra; the Astra value is not stated, so none recorded.')
+r('cyber','Irregular Atomic Challenges solved (of 22)',22,'independent','Irregular','irr_cyber','','',unit='challenges')
+for b,v in [('vulnerability research and exploitation',97),('network attack simulation',98),('evasion',63)]:
+    r('cyber','Irregular Atomic Challenges average success, '+b,v,'independent','Irregular','irr_cyber')
+# Inkling 2 Small, AA article (index v5.0.1)
+r('inkling2s','AA Intelligence Index v5',31,'independent','Artificial Analysis','aa_inkling','Index v5.0.1; AA says it matches Gemini 3.8 Flash (high)','v5 is a new composite; not comparable with v4.3.',unit='index')
+for b,v,n in [('AutomationBench-AA',46,''),('FrontierCode 2.0 (AA)',25,''),('HLE-Diamond (AA)',29,''),('CritPt v2 hard subset (AA)',56,'AA writes "CritPt v2"; hard-subset label assumed from v5 naming'),('Terminal-Bench 4.0',13,''),('AA-Omniscience v1.1 hallucination rate (lower better)',27,''),('AA-Omniscience v1.1 accuracy',34,'')]:
+    r('inkling2s',b,v,'independent','Artificial Analysis','aa_inkling',n)
+r('inkling2s','AA-Omniscience v1.1 Index',16,'independent','Artificial Analysis','aa_inkling','','AA calls it the net score.',unit='index')
+for b,v,u in [('AA-Briefcase (Elo)',1527,'Elo'),('AA-3D (Elo)',1021,'Elo'),('Code2Video-AA (Elo)',1020,'Elo')]:
+    r('inkling2s',b,v,'independent','Artificial Analysis','aa_inkling',unit=u)
+r('sonnet55','FrontierCode 2.0 (AA)',11,'independent','Artificial Analysis','aa_inkling','medium effort','Quoted in the Inkling 2 Small article; the v5 launch row (42) is at max.')
+r('sonnet55','Terminal-Bench 4.0',30,'independent','Artificial Analysis','aa_inkling','medium effort','Quoted in the Inkling 2 Small article.')
+r('sonnet55','AA-Briefcase (Elo)',1439,'independent','Artificial Analysis','aa_inkling','medium effort','Quoted in the Inkling 2 Small article.',unit='Elo')
+# VIALS-AA launch (pass^3, Stirrup harness, 161 tasks; scores stated in the key findings)
+for m,v,n in [('carbon',64,'high'),('astra',63,'max'),('opus55',61,'max with fallback'),('sonnet55',60,'max with fallback'),('sol61',59,'max'),('kimi31',45,'max')]:
+    r(m,'VIALS-AA (pass^3)',v,'independent','Artificial Analysis','aa_vials',n,'Share of 161 tasks answered correctly in all three repeats; Stirrup harness; graded by GPT-6 Luna (medium). Results as of Nov 6, 2026.')
+# Decision Index v2 (language-model rows named in the article)
+for m,v in [('haiku55',77),('luna',76)]:
+    r(m,'AA Decision Index v2',v,'independent','Artificial Analysis','aa_dec2','Max','v2 (Nov 8, 2026) uses a new Decision Score; not comparable with v1.0 (61 and 55 on Oct 13).',unit='index')
+r('haiku55','AA-Paperclip (share of documents all 15 answers correct)',92,'independent','Artificial Analysis','aa_dec2','Max','Private AA benchmark, 1,500 documents.')
+r('luna','AA-Paperclip (share of documents all 15 answers correct)',86,'independent','Artificial Analysis','aa_dec2','Max','Private AA benchmark, 1,500 documents.')
 PAIRS=[('argon','Terminal-Bench 4.0',57.4,57,'close'),('opus55','Terminal-Bench 4.0',66.4,60,'claim xhigh, Anthropic harness; AA max'),('astra','Terminal-Bench 4.0',58.2,59,'claim value from Google table, "as reported by OpenAI"'),('grok47','Terminal-Bench 4.0',37.6,33,'AA used Grok Build harness'),('wfull','Terminal-Bench 4.0',57.1,57,'close'),('grok47','DeepSWE v1.1',71.0,73,'independent higher than claim'),('argon','AutomationBench vs AA variant',51.3,78,'DIFFERENT variants: Zapier private set vs AutomationBench-AA'),('wfull','AutomationBench vs AA variant',45.4,71,'Labels conflict; likely different variants'),('fable51','DeepSWE v1.1 (Google table vs xAI table)',67.4,70.0,'two rival vendors report different Fable numbers'),('kimi31','Terminal-Bench 4.0',65.7,67,'claim Claude-Code harness; AA harness. Added 2026-10-26'),('sol61','HealthBench Professional',64.2,65.1,'both length-adjusted; OpenAI claim vs AA run. Added 2026-10-26'),('sol61','HealthBench',58.5,58.5,'both length-adjusted; identical. Added 2026-10-26')]
 pairs=[dict(model=a,benchmark=b,claim=c,independent=i,gap=round(i-c,1),note=n) for a,b,c,i,n in PAIRS]
-data=dict(as_of='2026-11-02',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
- not_found=['A released "GPT-6.1 Astra" (a Cleus blog post reports OpenAI cancelled its planned October release; not confirmed on an OpenAI page). GPT-6.1 Terra is now tracked','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)','Absolute values behind the relative comparisons in the GPT-6.1 Terra launch post (Agents Last Exam, MMMU-Pro, OSWorld 2.1, Terminal-Bench-Science 0.1)','Gemini 4 Carbon evaluation table (published only as an image on the Google blog; not transcribed)','Claude, Grok, and Muse model releases between Oct 26 and Nov 2, 2026 (none found)'])
+data=dict(as_of='2026-11-09',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
+ not_found=['Window Nov 2 to Nov 9 checked, not added: Meta specialized Muse models (Nov 6, no scores in the post text read); Kimi K3.1 Pro Highspeed and weights; Tencent Hy4 (Nov 4) and Baidu ERNIE 5.5 Flash Base (Nov 5), no benchmark pages opened; Gemini Omni 1.2 Flash (video, out of scope); GPT-6 Astra ExploitGym 42.43 appears only in a search summary, not recorded; no new Anthropic or xAI/SpaceXAI model (newsrooms read 2026-11-09)','A released "GPT-6.1 Astra" (a Cleus blog post reports OpenAI cancelled its planned October release; not confirmed on an OpenAI page). GPT-6.1 Terra is now tracked','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)','Absolute values behind the relative comparisons in the GPT-6.1 Terra launch post (Agents Last Exam, MMMU-Pro, OSWorld 2.1, Terminal-Bench-Science 0.1)','Gemini 4 Carbon evaluation table (published only as an image on the Google blog; not transcribed)','Claude, Grok, and Muse model releases between Oct 26 and Nov 2, 2026 (none found)'])
 w=csv.writer(open('sources.csv','w',newline=''),lineterminator='\n')
 w.writerow(['model','benchmark','value','unit','type','reporter','setting','note','source','date'])
 for x in R: w.writerow([x[k] for k in ['model','benchmark','value','unit','type','reporter','setting','note','source','date']])
