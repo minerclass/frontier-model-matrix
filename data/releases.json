@@ -1,9 +1,9 @@
 [
   {
-    "date": "2026-11-12",
-    "title": "Revision 3: October–November 2026 frontier update",
+    "date": "2026-11-13",
+    "title": "Revision 3: visual atlas, dark-mode toggle & Oct–Nov frontier update",
     "harness": "cursorbench",
-    "note": "Updates CursorBench 4.0 to the 90-row 12 Nov 2026 board (adding Gemini 4 Carbon, Gemini 4 Hydrogen, Claude Fable 5.2, Muse Wonder, and DeepSeek V4.1 Flash 1017 while preserving three older rows from 13 Oct) and adds primary cards and independent indexes through 12 Nov 2026."
+    "note": "Adds interactive lineage schematics, claims-vs-independent dot-plots, cost-vs-score Pareto charts, and a default dark-mode toggle; updates CursorBench 4.0 and adds Gemini 4 Carbon, Gemini 4 Hydrogen, Claude Fable 5.2, GPT-6.1 Terra, Muse Ember, Muse Spark Open, Kimi K3.1 Pro, DeepSeek V4.1 Flash 1017, AA v5.0/MKA, and Vals v2.2."
   },
   {
     "date": "2026-11-12",

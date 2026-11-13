@@ -1,15 +1,15 @@
-Written on: surface-arm · cursor · 2026-11-12
+Written on: surface-arm · cursor · 2026-11-13
 
 # Cursor compilation notes
 
-Revision 3. Prompt: Micah's 12 Nov 2026 instruction to update the model Atlas for Gemini 4 Hydrogen, Gemini 4 Carbon, and other recent frontier releases, continuing from the Frontier Benchmark Atlas brief (`HARNESS.md`). Revision 1 is commits `e4ba379` and `058c977`. Revision 2 is commit `b362d95` (13 Oct 2026).
+Revision 3. Prompt: Micah's 12–13 Nov 2026 instructions to update the model Atlas for Gemini 4 Hydrogen, Gemini 4 Carbon, and other recent frontier releases, set it up in dark mode with a toggle, and make it visual, continuing from the Frontier Benchmark Atlas brief (`HARNESS.md`). Revision 1 is commits `e4ba379` and `058c977`. Revision 2 is commit `b362d95` (13 Oct 2026).
 
 ## Who compiled it
 
 - Harness: cursor
 - Computer: surface-arm (`MSURFACE32ARM64`)
 - Model: Gemini 4 Carbon (Cursor session model for Revision 3; Revision 2 ran on the earlier Cursor session model where the picker listed the Grok 4.7 family)
-- Compile date: 2026-11-12 (first compiled 2026-10-13)
+- Compile date: 2026-11-13 (first compiled 2026-10-13)
 
 ## What changed in Revision 3
 
@@ -20,7 +20,7 @@ Revision 3. Prompt: Micah's 12 Nov 2026 instruction to update the model Atlas fo
 5. **Open-weight frontier cards (Kimi K3.1 Pro and DeepSeek V4.1 Flash 1017)**: Added `data/harnesses/moonshot-kimi-k3-1.json` (23 Oct 2026) and `data/harnesses/deepseek-v4-1-flash.json` (17 Oct 2026) from their official Hugging Face model cards.
 6. **CursorBench 4.0 refresh**: Updated `data/harnesses/cursorbench.json` to all 90 rows on the 12 Nov 2026 CursorBench board, adding Gemini 4 Carbon (High 60.4%, Medium 60.1%, Low 58.6%), Claude Fable 5.2 (Max 60.0% down to Low 53.2%), Gemini 4 Hydrogen (High 54.3%, Medium 46.7%, Low 27.9%), Muse Wonder (Max 50.4% down to Minimal 34.2%), and DeepSeek V4.1 Flash 1017 (Max 47.7% down to Low 44.9%). The three rows from the 13 Oct 2026 board that no longer appear on the 12 Nov 2026 board (Gemini 4 Argon Minimal 48.8% and Gemini 3.8 Flash High/Medium) are preserved with `sourceDate: "2026-10-13"` and notes.
 7. **Independent evaluators (Artificial Analysis v5.0 / MKA and Vals AI v2.2)**: Updated `data/harnesses/artificial-analysis.json` with AA Intelligence Index v5.0 (launched 27 Oct 2026, read from the 12 Nov 2026 LLM Leaderboard and AA's October–November articles) and Multimodal Knowledge Agent (MKA Climb WSR, 10 Nov 2026), while keeping v4.3 separate. Added `data/harnesses/vals-ai.json` for Vals Index v2.2 and its standalone component leaderboards (`Finance Agent v2.1`, `EMB v1.1`, `Terminal-Bench 4.0` in `mini-swe-agent`, `Legal Research Bench`, `Tax Agent Bench`, `HLAB-Vals-1.1`, and `Vibe Code Bench v1.1`).
-8. **Builder fix for lower-is-better benchmarks**: Updated `build.py` so `best_row` picks the lowest cost on `higherIsBetter: false` benchmarks (such as cost per task) instead of the highest cost, and formatted four- and five-digit dollar balances cleanly for Vending-Bench 2.
+8. **Visual Atlas & Dark-Mode Toggle**: Rebuilt the frontend (`assets/site.css`, `assets/site.js`, and `build.py`) to open in dark mode by default with a persistent header light/dark toggle (`localStorage`), five interactive visual stations on `index.html` (Lineage & Routing Schematic with live Model Inspector, Side-by-Side Claims vs. Independent Dot-Plot using distinct shape and color markers, Log-Cost vs. Score Pareto Frontier Scatterplot with effort trajectories, Chronological Release Timeline, and expandable Cross-Publisher Matrix), and inline visual score bars plus provenance badges on all 13 harness pages and 35 model pages. Also updated `build.py` so `best_row` picks the lowest cost on `higherIsBetter: false` benchmarks.
 
 ## How model names and non-releases were read
 

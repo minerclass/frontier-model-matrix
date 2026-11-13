@@ -27,15 +27,22 @@ Then open `http://127.0.0.1:8765/`. The pages also open as files, because the bu
 
 Do not copy a score from one harness file into another. The model page collects every harness that already named that model.
 
-## Pages
+## Pages & Visual Stations
 
-- `index.html` lines up benchmarks that more than one harness published.
-- `harnesses/` is one page per publisher, including how that publisher compiled the score.
-- `models/` is one page per model, repeating each harness's cells for that model.
+All pages open in dark mode by default with a persistent light/dark toggle in the header.
+
+- `index.html` is the interactive Visual Atlas:
+  1. **Lineage & Routing Schematic** with a live Model Inspector card
+  2. **Claims vs. Independent Dot-Plot** (distinct circle, diamond, square, and triangle markers; never averages across setups)
+  3. **Cost vs. Score Pareto Frontier Scatterplot** (logarithmic per-task USD with reasoning-effort trajectories)
+  4. **Chronological Release Timeline** (September–November 2026)
+  5. **Cross-Publisher Benchmark Matrix** (inline visual score bars and provenance badges)
+- `harnesses/` is one visual scorecard page per publisher, including how that publisher compiled the score.
+- `models/` is one profile page per model, repeating each harness's cells and provenance badges for that model.
 
 ## Current sources
 
-Updated through 12 Nov 2026 (Revision 3). Primary sources read directly: CursorBench 4.0 (90 rows on 12 Nov 2026, plus three preserved rows from 13 Oct 2026), Google DeepMind's Gemini 4 Argon (13 Oct), Gemini 4 Carbon (10 Nov), and Gemini 4 Hydrogen (12 Nov) model cards and methodology pages, OpenAI's GPT-6 Astra, GPT-6 Sol/Luna, GPT-6.1 Sol, and GPT-6.1 Terra (26 Oct) pages, Anthropic's Opus 5.5, Sonnet 5.5, Haiku 5.5, and Claude Fable 5.2 / Mythos 5.2 (9 Nov) posts, xAI's Grok 4.7 post, Meta's Muse Wonder, Muse Spark Open (15 Oct), and Muse Ember (9 Nov) posts and evaluation reports, Moonshot AI's Kimi K3.1 Pro card (23 Oct), DeepSeek's V4.1 Flash 1017 card (17 Oct), Artificial Analysis's Index v5.0 leaderboard and October–November articles, and Vals AI's Index v2.2 and component leaderboards.
+Updated through 13 Nov 2026 (Revision 3). Primary sources read directly: CursorBench 4.0 (90 rows on 12 Nov 2026, plus three preserved rows from 13 Oct 2026), Google DeepMind's Gemini 4 Argon (13 Oct), Gemini 4 Carbon (10 Nov), and Gemini 4 Hydrogen (12 Nov) model cards and methodology pages, OpenAI's GPT-6 Astra, GPT-6 Sol/Luna, GPT-6.1 Sol, and GPT-6.1 Terra (26 Oct) pages, Anthropic's Opus 5.5, Sonnet 5.5, Haiku 5.5, and Claude Fable 5.2 / Mythos 5.2 (9 Nov) posts, xAI's Grok 4.7 post, Meta's Muse Wonder, Muse Spark Open (15 Oct), and Muse Ember (9 Nov) posts and evaluation reports, Moonshot AI's Kimi K3.1 Pro card (23 Oct), DeepSeek's V4.1 Flash 1017 card (17 Oct), Artificial Analysis's Index v5.0 leaderboard and October–November articles, and Vals AI's Index v2.2 and component leaderboards.
 
 Watermelon is the reported codename for Muse Wonder and Muse Wonder Full. The repository uses Meta's shipping names.
 

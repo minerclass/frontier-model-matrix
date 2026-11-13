@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GPT-6 Sol</title>
-  <link rel="stylesheet" href="../assets/site.css">
+  <title>GPT-6 Sol · Frontier Model Matrix</title>
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem("fmm-theme");
+        document.documentElement.setAttribute("data-theme", saved === "light" ? "light" : "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="../assets/site.css?v=5">
+  <script src="../assets/site.js?v=5" defer></script>
 </head>
 <body>
   <header class="site">
-    <a href="../index.html">Frontier model matrix</a>
-    <nav>
-      <a href="https://minerclass.github.io/frontier-benchmark-atlas/">Atlas hub</a>
-      <a href="../index.html">Comparison</a>
-      <a href="../harnesses/index.html">Harnesses</a>
-      <a href="../models/index.html">Models</a>
-      <a href="../NOTES.md">Notes</a>
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Frontier Model Matrix</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="https://minerclass.github.io/frontier-benchmark-atlas/">Atlas hub</a><a href="../index.html">Visual Atlas</a><a href="../harnesses/index.html">Harnesses</a><a href="../models/index.html" aria-current="page">Models</a><a href="../NOTES.md">Notes</a>
+      <button type="button" id="theme-toggle" class="theme-btn" aria-label="Dark mode" aria-pressed="true" onclick="window.__fmmToggleTheme&&window.__fmmToggleTheme()">
+        <span>Dark mode</span>
+      </button>
     </nav>
   </header>
   <main>
     
-    <p class='kicker'>OpenAI · GPT-6</p>
-    <h1>GPT-6 Sol</h1>
-    <p>Powers ChatGPT&#x27;s GPT-6 Instant, Medium, High, and Extra High settings.</p>
-    <p>This page repeats every stored cell for this model. Read each block as that harness compiled it. Do not treat two blocks as one experiment.</p>
-    <h2><a href='../harnesses/anthropic-claude.html'>Anthropic Claude 5.5 and Fable 5.2 posts</a></h2><p class='meta'>Anthropic · read 2026-11-12</p><h3>Chartography (no tools)</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>53.6% · Max</td><td>Publisher did not say who ran it</td><td>Competitor cell on Anthropic&#x27;s Sonnet 5.5 table.</td></tr></tbody></table></div><h3>FrontierCode v1.1 main</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>49.3% · Best reported</td><td>Publisher did not say who ran it</td><td>Competitor cell on Anthropic&#x27;s Sonnet 5.5 table.</td></tr></tbody></table></div><h3>AA-Briefcase v1.1</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>1483 Elo · Max</td><td>Quoted from another lab</td><td>Sonnet 5.5 table.</td></tr></tbody></table></div><h3>GDPval-AA v2.1</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>1487 Elo · Max</td><td>Quoted from another lab</td><td>Sonnet 5.5 post.</td></tr></tbody></table></div><h2><a href='../harnesses/openai-gpt-6.html'>OpenAI GPT-6 and GPT-6.1 family</a></h2><p class='meta'>OpenAI · read 2026-11-12</p><h3>DeepSWE v1.1</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>68.8% · Max</td><td>Measured by this publisher</td><td>Printed on the 22 Sep 2026 Sol and Luna post.</td></tr></tbody></table></div><h3>OSWorld 2.0 offline partial</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>60.5% · Extra High</td><td>Measured by this publisher</td><td>22 Sep 2026 post. Compared there with Opus 5 medium at 60.3%.</td></tr></tbody></table></div><h3>AutomationBench</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>33.2% · Extra High</td><td>Measured by this publisher</td><td>22 Sep 2026 comparison, $0.27 per task. This is not Sol&#x27;s maximum if a higher effort exists and was not printed.</td></tr></tbody></table></div><h3>Agents&#x27; Last Exam</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>56.4% · Max</td><td>Measured by this publisher</td><td>22 Sep 2026 Sol post.</td></tr></tbody></table></div><h2><a href='../harnesses/vals-ai.html'>Vals AI leaderboards</a></h2><p class='meta'>Vals AI · read 2026-11-12</p><h3>Terminal-Bench 4.0, Vals AI (mini-swe-agent)</h3><div class='table-wrap'><table><thead><tr><th>Score</th><th>Origin</th><th>Note</th></tr></thead><tbody><tr><td>44.4% · Max</td><td>Measured by this publisher</td><td></td></tr></tbody></table></div>
+    <section class="sheet hero-sheet">
+      <span class="kicker" style="color:var(--lab-openai)">OpenAI · GPT-6</span>
+      <h1>GPT-6 Sol</h1>
+      <p class="lede">Powers ChatGPT&#x27;s GPT-6 Instant, Medium, High, and Extra High settings.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span class="badge">9 total figures</span>
+        <span class="badge badge-claim">4 own claims</span>
+        <span class="badge badge-independent">1 independent runs</span>
+        <span class="badge badge-rival">4 rival tables</span>
+      </div>
+      <p class="meta">Read each publisher block as that source compiled it; do not average across blocks.</p>
+    </section>
+    <section class='sheet'><div class='section-head'><div><span class='eyebrow'>Anthropic · read 2026-11-12</span><h2><a href='../harnesses/anthropic-claude.html'>Anthropic Claude 5.5 and Fable 5.2 posts</a></h2></div><span class='badge'>Company claim</span></div><div style='display:grid;gap:6px'><h3>Chartography (no tools)</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>53.6%</span><span class='score-effort'>Max</span></div><div class='bar-track'><div class='bar-fill' style='width:53.6%;--bar-color:var(--stance-rival)'></div></div></div></div></td><td><span class='badge badge-rival'>Rival table / quoted</span> <span class='badge badge-unspecified'>Origin unspecified</span></td><td>Competitor cell on Anthropic&#x27;s Sonnet 5.5 table.</td></tr></tbody></table></div></div><div style='display:grid;gap:6px'><h3>FrontierCode v1.1 main</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>49.3%</span><span class='score-effort'>Best reported</span></div><div class='bar-track'><div class='bar-fill' style='width:49.3%;--bar-color:var(--stance-rival)'></div></div></div></div></td><td><span class='badge badge-rival'>Rival table / quoted</span> <span class='badge badge-unspecified'>Origin unspecified</span></td><td>Competitor cell on Anthropic&#x27;s Sonnet 5.5 table.</td></tr></tbody></table></div></div><div style='display:grid;gap:6px'><h3>AA-Briefcase v1.1</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>1,483 Elo</span><span class='score-effort'>Max</span></div><div class='bar-track'><div class='bar-fill' style='width:40.4%;--bar-color:var(--stance-rival)'></div></div></div></div></td><td><span class='badge badge-rival'>Rival table / quoted</span> <span class='badge badge-quoted'>Quoted external</span></td><td>Sonnet 5.5 table.</td></tr></tbody></table></div></div><div style='display:grid;gap:6px'><h3>GDPval-AA v2.1</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>1,487 Elo</span><span class='score-effort'>Max</span></div><div class='bar-track'><div class='bar-fill' style='width:41.0%;--bar-color:var(--stance-rival)'></div></div></div></div></td><td><span class='badge badge-rival'>Rival table / quoted</span> <span class='badge badge-quoted'>Quoted external</span></td><td>Sonnet 5.5 post.</td></tr></tbody></table></div></div></section><section class='sheet'><div class='section-head'><div><span class='eyebrow'>OpenAI · read 2026-11-12</span><h2><a href='../harnesses/openai-gpt-6.html'>OpenAI GPT-6 and GPT-6.1 family</a></h2></div><span class='badge'>Company claim</span></div><div style='display:grid;gap:6px'><h3>DeepSWE v1.1</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>68.8%</span><span class='score-effort'>Max</span></div><div class='bar-track'><div class='bar-fill' style='width:68.8%;--bar-color:var(--stance-claim)'></div></div></div></div></td><td><span class='badge badge-claim'>Own lab claim</span> <span class='badge badge-measured'>Measured by publisher</span></td><td>Printed on the 22 Sep 2026 Sol and Luna post.</td></tr></tbody></table></div></div><div style='display:grid;gap:6px'><h3>OSWorld 2.0 offline partial</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>60.5%</span><span class='score-effort'>Extra High</span></div><div class='bar-track'><div class='bar-fill' style='width:60.5%;--bar-color:var(--stance-claim)'></div></div></div></div></td><td><span class='badge badge-claim'>Own lab claim</span> <span class='badge badge-measured'>Measured by publisher</span></td><td>22 Sep 2026 post. Compared there with Opus 5 medium at 60.3%.</td></tr></tbody></table></div></div><div style='display:grid;gap:6px'><h3>AutomationBench</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>33.2%</span><span class='score-effort'>Extra High</span></div><div class='bar-track'><div class='bar-fill' style='width:33.2%;--bar-color:var(--stance-claim)'></div></div></div></div></td><td><span class='badge badge-claim'>Own lab claim</span> <span class='badge badge-measured'>Measured by publisher</span></td><td>22 Sep 2026 comparison, $0.27 per task. This is not Sol&#x27;s maximum if a higher effort exists and was not printed.</td></tr></tbody></table></div></div><div style='display:grid;gap:6px'><h3>Agents&#x27; Last Exam</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>56.4%</span><span class='score-effort'>Max</span></div><div class='bar-track'><div class='bar-fill' style='width:56.4%;--bar-color:var(--stance-claim)'></div></div></div></div></td><td><span class='badge badge-claim'>Own lab claim</span> <span class='badge badge-measured'>Measured by publisher</span></td><td>22 Sep 2026 Sol post.</td></tr></tbody></table></div></div></section><section class='sheet'><div class='section-head'><div><span class='eyebrow'>Vals AI · read 2026-11-12</span><h2><a href='../harnesses/vals-ai.html'>Vals AI leaderboards</a></h2></div><span class='badge'>Independent index</span></div><div style='display:grid;gap:6px'><h3>Terminal-Bench 4.0, Vals AI (mini-swe-agent)</h3><div class='table-wrap'><table><thead><tr><th scope='col'>Score &amp; effort</th><th scope='col'>Provenance</th><th scope='col'>Note</th></tr></thead><tbody><tr><td><div class='score-cell'><div class='score-bar-wrap'><div><span class='score-num'>44.4%</span><span class='score-effort'>Max</span></div><div class='bar-track'><div class='bar-fill' style='width:44.4%;--bar-color:var(--stance-indep)'></div></div></div></div></td><td><span class='badge badge-independent'>Independent run</span> <span class='badge badge-measured'>Measured by publisher</span></td><td></td></tr></tbody></table></div></div></section>
     
   </main>
-  <footer>
-    <p>Published scores only. This repository does not test models. A blank cell was not published by that harness.</p>
+  <footer class="site-footer">
+    <span>Published scores only · Never averages company claims with independent runs · Blank cells mean unpublished</span>
+    <span>Cursor compilation · Revision 3 (13 Nov 2026) · <a href="https://minerclass.github.io/frontier-benchmark-atlas/">Frontier Benchmark Atlas</a></span>
   </footer>
 </body>
 </html>

@@ -2,7 +2,7 @@
   "compiler": "cursor",
   "computer": "surface-arm",
   "revision": 3,
-  "compiledOn": "2026-11-12",
+  "compiledOn": "2026-11-13",
   "brief": "Frontier Benchmark Atlas brief, surface-arm/claude-code, 2026-10-13",
   "hub": "https://minerclass.github.io/frontier-benchmark-atlas/",
   "figures": [
