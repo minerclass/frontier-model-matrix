@@ -2,10 +2,10 @@
   "id": "meta-muse-wonder",
   "title": "Meta Muse Wonder table",
   "publisher": "Meta",
-  "readOn": "2026-10-13",
+  "readOn": "2026-11-12",
   "url": "https://dev.meta.ai/resources/blog/build-with-muse-wonder",
   "kind": "Company claim",
-  "summary": "Meta's 12 Oct 2026 developer table for Muse Wonder and Muse Wonder Full. Press coverage on 13 Oct calls the family Watermelon. Meta's own posts use the Wonder names.",
+  "summary": "Meta's 12 Oct 2026 developer table and model card for Muse Wonder and Muse Wonder Full. Press coverage on 13 Oct calls the family Watermelon. Meta's own posts use the Wonder names.",
   "howItCompiles": [
     "Wonder and Wonder Full cells are Meta's reported results at max effort unless a row says otherwise.",
     "SWE-Marathon for Wonder Full is xhigh.",
@@ -16,7 +16,7 @@
   "limits": [
     "Wonder Full has no per-token price and is limited to Muse Code Power and Maximum.",
     "Wonder API price is $4 input and $20 output per million tokens, with a 1M context.",
-    "Neither Wonder model is on CursorBench.",
+    "Muse Wonder now appears on CursorBench (50.4% at Max); Muse Wonder Full remains absent from CursorBench.",
     "AutomationBench-AA is not the Zapier AutomationBench used by OpenAI and Google."
   ],
   "benchmarks": [
@@ -125,7 +125,7 @@
       "higherIsBetter": true,
       "about": "Clean-room program reconstruction with mini-swe-agent. Opus leads.",
       "rows": [
-        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.0, "origin": "measured", "readDirectly": false, "note": "Meta developer table. The 59.0 cell was confirmed from a primary-source reading of that table after the page text extract dropped it. The other four cells on this row were in the extract."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.0, "origin": "measured", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Read directly on the Muse Wonder model card on 12 Nov 2026."},
         {"modelId": "muse-wonder", "effort": "Max", "score": 50.0, "origin": "measured", "note": "Meta developer table."},
         {"modelId": "claude-fable-5-1", "effort": "Max", "score": 55.5, "origin": "unspecified", "note": "Meta developer table."},
         {"modelId": "gpt-6-astra", "effort": "Max", "score": 52.5, "origin": "unspecified", "note": "Meta developer table."},
@@ -151,12 +151,41 @@
       "name": "MemoryBench",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Meta's internal memory test. Wonder is a tenth of a point above Wonder Full. Fable's cell was not cleanly readable, so it is omitted.",
+      "about": "Meta's internal memory test. Wonder is a tenth of a point above Wonder Full.",
       "rows": [
-        {"modelId": "muse-wonder-full", "effort": "Max", "score": 85.5, "origin": "measured", "note": "Meta internal benchmark."},
-        {"modelId": "muse-wonder", "effort": "Max", "score": 85.6, "origin": "measured", "note": "Meta internal benchmark."},
-        {"modelId": "gpt-6-astra", "effort": "Max", "score": 81.4, "origin": "unspecified", "note": "Meta developer table."},
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 81.5, "origin": "unspecified", "note": "Meta developer table."}
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 85.5, "origin": "measured", "sourceDate": "2026-10-13", "note": "Meta internal benchmark."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 85.6, "origin": "measured", "sourceDate": "2026-10-13", "note": "Meta internal benchmark."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 79.0, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Read directly on the Muse Wonder model card on 12 Nov 2026."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 81.4, "origin": "unspecified", "sourceDate": "2026-10-13", "note": "Meta developer table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 81.5, "origin": "unspecified", "sourceDate": "2026-10-13", "note": "Meta developer table."}
+      ]
+    },
+    {
+      "id": "personal-superintelligence-index",
+      "name": "Personal Superintelligence Index",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Meta's internal composite index of personal and knowledge work on the Muse Wonder model card.",
+      "rows": [
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 59.1, "origin": "measured", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 55.2, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Muse Wonder model card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 54.5, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Muse Wonder model card."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 54.3, "origin": "measured", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 49.9, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Muse Wonder model card."}
+      ]
+    },
+    {
+      "id": "osworld-2-1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "OSWorld V2.1 partial-credit computer-use score on the Muse Wonder model card.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 81.8, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Muse Wonder model card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 80.7, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Muse Wonder model card."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 78.4, "origin": "measured", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12"},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 75.8, "origin": "unspecified", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12", "note": "Muse Wonder model card."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 72.6, "origin": "measured", "sourceUrl": "https://research.meta.ai/static/muse-wonder-model-card", "sourceDate": "2026-10-12"}
       ]
     }
   ]

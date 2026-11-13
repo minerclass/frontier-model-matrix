@@ -1,20 +1,20 @@
 {
   "id": "anthropic-claude",
-  "title": "Anthropic Claude 5.5 posts",
+  "title": "Anthropic Claude 5.5 and Fable 5.2 posts",
   "publisher": "Anthropic",
-  "readOn": "2026-10-13",
+  "readOn": "2026-11-12",
   "url": "https://www.anthropic.com/claude-opus-5-5",
   "kind": "Company claim",
-  "summary": "Headline scores from Anthropic's Opus 5.5 post on 22 Sep 2026 and the Sonnet 5.5 post. CursorBench cells match Cursor's board. Several GPT cells are quoted from OpenAI.",
+  "summary": "Headline scores from Anthropic's Claude Opus 5.5 post (22 Sep 2026), Claude Sonnet 5.5 post (28 Sep 2026), Claude Haiku 5.5 post (7 Oct 2026), and Claude Fable 5.2 and Mythos 5.2 post (9 Nov 2026). Each row carries the sourceUrl and sourceDate of the post that printed it.",
   "howItCompiles": [
-    "Opus 5.5 results use adaptive thinking at max effort unless the post names another effort.",
-    "Terminal-Bench for Opus 5.5 is xhigh. Astra's Terminal-Bench cell is quoted from OpenAI.",
-    "Sonnet 5.5 cells come from the Sonnet post. FrontierCode for Sonnet is the extra-high figure, 52.1%. Max is 46.2% and is not the cell stored here.",
-    "AutomationBench was run by Zapier. Anthropic says safeguard interventions counted as failures."
+    "Opus 5.5, Sonnet 5.5, Haiku 5.5, and Fable 5.2 cells use each model's highest-available effort with safeguards on unless the post names another effort or notes Mythos / without-safeguards runs.",
+    "Fable 5.2 and Mythos 5.2 share the same underlying model; Fable 5.2 carries cyber and biology safeguards for general availability ($8 input / $40 output per million tokens), while Mythos 5.2 is restricted to Anthropic's Verification Programs.",
+    "Haiku 5.5 ($0.10 / $0.50 up to 100k tokens) is Anthropic's first Haiku-class model with an adjustable effort setting.",
+    "AutomationBench, AA-Briefcase, GDPval-AA, and CursorBench rows quoted by Anthropic are marked quoted or unspecified according to how Anthropic attributed them."
   ],
   "limits": [
-    "Sonnet has no AutomationBench or HLE cell on the Sonnet table, so those rows are omitted.",
-    "GDPval-AA is Elo and is stored separately from percent scores."
+    "On CyScenarioBench, Anthropic notes that each lab's scores are based on unique tasks, so CyScenarioBench rows are not common-task comparisons.",
+    "GDPval-AA and AA-Briefcase Elo scores are kept separate from percent rubric scores."
   ],
   "benchmarks": [
     {
@@ -22,14 +22,46 @@
       "name": "Terminal-Bench 4.0",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Anthropic's terminal scores. Sonnet's headline is above Opus on this test and below Opus on CursorBench.",
+      "about": "Anthropic's terminal coding scores across the Opus 5.5, Sonnet 5.5, and Haiku 5.5 posts.",
       "rows": [
-        {"modelId": "claude-opus-5-5", "effort": "Extra High", "score": 66.4, "origin": "measured", "note": "Opus 5.5 post. Standard error stated as ±2.6 points."},
-        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 55.8, "origin": "measured", "note": "Opus 5.5 post."},
-        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 52.3, "origin": "measured", "note": "Opus 5.5 post."},
-        {"modelId": "claude-sonnet-5-5", "effort": "Best reported", "score": 70.6, "origin": "measured", "note": "Sonnet 5.5 post."},
-        {"modelId": "gpt-6-astra", "effort": "High", "score": 57.9, "origin": "quoted", "note": "Anthropic says this is OpenAI's figure."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "quoted", "note": "Anthropic says this is OpenAI's figure."}
+        {"modelId": "claude-sonnet-5-5", "effort": "Best reported", "score": 70.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post, read directly on 12 Nov 2026."},
+        {"modelId": "claude-opus-5-5", "effort": "Extra High", "score": 66.4, "origin": "measured", "sourceDate": "2026-10-13", "note": "Opus 5.5 post. Standard error stated as ±2.6 points."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 55.8, "origin": "measured", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 52.3, "origin": "measured", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 39.2, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 post."},
+        {"modelId": "claude-sonnet-5", "effort": "Best reported", "score": 10.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post."},
+        {"modelId": "gpt-6-astra", "effort": "High", "score": 57.9, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Anthropic says this is OpenAI's figure."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Anthropic says this is OpenAI's figure."},
+        {"modelId": "gpt-6-luna", "effort": "Best reported", "score": 16.4, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Competitor cell on Anthropic's Haiku 5.5 table."}
+      ]
+    },
+    {
+      "id": "frontiercode-2-0",
+      "name": "FrontierCode 2.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Merge-style real-repository coding tasks on Anthropic's Fable 5.2 post. Kept separate from Artificial Analysis's Stirrup run (FrontierCode 2.0-AA) and from FrontierCode v1.1 main.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Extra High", "score": 49.1, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 post. High effort is 45.3% in prose."},
+        {"modelId": "claude-fable-5-2", "effort": "High", "score": 45.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 post prose, roughly half the cost per task of Opus 5.5 Max."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 45.5, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 42.8, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Competitor cell on Anthropic's Fable 5.2 table."},
+        {"modelId": "gemini-4-carbon", "effort": "Medium", "score": 41.1, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Competitor cell on Anthropic's Fable 5.2 table (labeled Medium effort)."},
+        {"modelId": "claude-fable-5-1", "effort": "Extra High", "score": 32.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."}
+      ]
+    },
+    {
+      "id": "frontierswe-v2",
+      "name": "FrontierSWE v2",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Agentic software engineering tasks on Anthropic's Fable 5.2 table.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 69.9, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 65.5, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Proximal leaderboard and Google's Argon/Carbon cards."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 62.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table; matches Google's Argon/Carbon cards."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 61.2, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Google's Carbon card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 56.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table; matches Google's Argon/Carbon cards."}
       ]
     },
     {
@@ -37,13 +69,14 @@
       "name": "CursorBench 4.0",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Anthropic's CursorBench headlines. They match Cursor's Max rows.",
+      "about": "Anthropic's CursorBench headlines on the Opus 5.5 and Sonnet 5.5 posts. They match Cursor's Max rows.",
       "rows": [
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 57.8, "origin": "quoted", "note": "Matches cursor.com. Anthropic also says medium effort scores 52.5%."},
-        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 51.8, "origin": "quoted", "note": "Matches cursor.com."},
-        {"modelId": "claude-opus-5", "effort": "Max", "score": 46.6, "origin": "quoted", "note": "Matches cursor.com."},
-        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 55.5, "origin": "quoted", "note": "Sonnet 5.5 post. Matches cursor.com."},
-        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 41.7, "origin": "quoted", "note": "Matches cursor.com."}
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 57.8, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Matches cursor.com. Anthropic also says medium effort scores 52.5%."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 55.5, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post. Matches cursor.com."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 51.8, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Matches cursor.com."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 46.6, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Matches cursor.com."},
+        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 41.7, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Matches cursor.com."},
+        {"modelId": "claude-sonnet-5", "effort": "Max", "score": 34.1, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post. Matches cursor.com."}
       ]
     },
     {
@@ -51,13 +84,158 @@
       "name": "AutomationBench",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Zapier results cited by Anthropic.",
+      "about": "Zapier business-workflow scores cited across Anthropic's Opus 5.5 and Fable 5.2 posts.",
       "rows": [
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 40.0, "origin": "quoted", "note": "Zapier early access, without fallback. Google's card later prints 42.5%."},
-        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "note": "Zapier, via the Opus 5.5 post."},
-        {"modelId": "claude-opus-5", "effort": "Max", "score": 26.9, "origin": "quoted", "note": "Zapier public leaderboard, via Anthropic."},
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 41.4, "origin": "quoted", "note": "Zapier public leaderboard, via Anthropic."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 28.8, "origin": "quoted", "note": "Zapier, via Anthropic. OpenAI's own table prints 18.1%."}
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 53.9, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Zapier public leaderboard, cited on Anthropic's Fable 5.2 table; matches Carbon card."},
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 51.4, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Zapier result cited on Anthropic's Fable 5.2 table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 42.5, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Updated Opus 5.5 cell on the Fable 5.2 table (matches Zapier public board and Google's cards)."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (early access)", "score": 40.0, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 launch post (Zapier early access, without fallback)."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 41.4, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Zapier public leaderboard, via Anthropic."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Zapier, via Opus 5.5 and Fable 5.2 posts."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 28.8, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Zapier, via Anthropic. OpenAI's own Astra table prints 18.1%."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 26.9, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Zapier public leaderboard, via Anthropic."}
+      ]
+    },
+    {
+      "id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench Science 0.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Agentic scientific research tasks on Anthropic's Fable 5.2 table.",
+      "rows": [
+        {"modelId": "claude-mythos-5-2", "effort": "Max", "score": 75.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Mythos 5.2 cell on Anthropic's Fable 5.2 table."},
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 74.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 with safeguards on."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 68.1, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches OpenAI's Terra chart and Google's Argon card."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 64.8, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Google's Carbon card (Terminal-Bench-Science 0.1 AA)."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 58.7, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "With safeguards on."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 52.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Google's Argon card."}
+      ]
+    },
+    {
+      "id": "osworld-2-1-offline",
+      "name": "OSWorld 2.1 offline partial",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Partial reward on the offline subset of OSWorld 2.1 across Anthropic's Fable 5.2 and Haiku 5.5 tables.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 89.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 87.2, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table; matches Carbon card."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 83.9, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 reference column (offline subset). Sonnet 5.5 post also prints 80.1% on full OSWorld 2.1."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 83.5, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table. Carbon card cites 76.8%."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 81.5, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Google's Carbon card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 79.5, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Competitor cell on Anthropic's Fable 5.2 table. OpenAI's Terra chart prints 80.9%."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 72.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 table (offline subset)."},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 48.9, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Competitor cell on Anthropic's Haiku 5.5 table."}
+      ]
+    },
+    {
+      "id": "wandr-relaxed",
+      "name": "WANDR (relaxed score)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Perplexity's agentic search and large data-collection benchmark on Anthropic's Fable 5.2 table.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 82.1, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 72.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 68.7, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"}
+      ]
+    },
+    {
+      "id": "robodojo-sim",
+      "name": "RoboDojo Sim",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Simulated two-arm robot control from camera images, run internally by Anthropic at highest-available effort.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 64.9, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 39.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 29.8, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Run internally by Anthropic on the same harness."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 27.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"}
+      ]
+    },
+    {
+      "id": "benchcad-2-1-tools",
+      "name": "BenchCAD 2.1 (with tools)",
+      "unit": "index",
+      "higherIsBetter": true,
+      "about": "Hardware engineering geometry and circuit matching scored 0-100 with partial credit, reported in Anthropic's Fable 5.2 post.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 83.5, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 65.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 44.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"}
+      ]
+    },
+    {
+      "id": "remote-labor-index",
+      "name": "Remote Labor Index (RLI)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Knowledge-work benchmark on Anthropic's Fable 5.2 table.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "High", "score": 41.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 21.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 20.8, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Competitor cell on Anthropic's Fable 5.2 table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 17.9, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"}
+      ]
+    },
+    {
+      "id": "hle-with-tools",
+      "name": "Humanity's Last Exam (with tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Multidisciplinary reasoning with tools across Anthropic's Fable 5.2, Sonnet 5.5, and Haiku 5.5 posts.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 74.2, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 67.7, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 65.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 64.5, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28"},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 57.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07"},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 57.2, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Competitor cell on Anthropic's Fable 5.2 table."},
+        {"modelId": "claude-sonnet-5", "effort": "Max", "score": 54.9, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28"}
+      ]
+    },
+    {
+      "id": "chartography-no-tools",
+      "name": "Chartography (no tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Visual chart recognition without tools across Anthropic's Fable 5.2, Sonnet 5.5, and Haiku 5.5 posts.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 73.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Medium effort scores 66.4% in prose."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 72.5, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Google's Carbon card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 71.0, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Matches Google's Argon and Carbon cards."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 64.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 61.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28"},
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 53.6, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Competitor cell on Anthropic's Sonnet 5.5 table."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 46.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 44.8, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 29.1, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Competitor cell on Anthropic's Haiku 5.5 table."},
+        {"modelId": "claude-sonnet-5", "effort": "Max", "score": 15.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28"}
+      ]
+    },
+    {
+      "id": "cve-rediscovery",
+      "name": "CVE Rediscovery",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Anthropic internal evaluation across 1,829 published CVEs (October 2026 run, Mythos / without cyber safeguards).",
+      "rows": [
+        {"modelId": "claude-mythos-5-2", "effort": "Max", "score": 89.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-opus-5-5", "effort": "Max (without safeguards)", "score": 81.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"},
+        {"modelId": "claude-mythos-5-1", "effort": "Max", "score": 78.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09"}
+      ]
+    },
+    {
+      "id": "cyscenariobench",
+      "name": "CyScenarioBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Cybersecurity scenario evaluation on Anthropic's Fable 5.2 table. Anthropic's footnote states each lab's score is based on unique tasks.",
+      "rows": [
+        {"modelId": "claude-mythos-5-2", "effort": "Max", "score": 76.3, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Anthropic task split."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (without safeguards)", "score": 67.6, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Anthropic task split."},
+        {"modelId": "claude-mythos-5-1", "effort": "Max", "score": 61.7, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Anthropic task split."},
+        {"modelId": "gpt-6-cyber", "effort": "Best reported", "score": 61.0, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "OpenAI GPT-6 Cyber score cited by Anthropic; based on unique tasks."}
       ]
     },
     {
@@ -65,13 +243,50 @@
       "name": "FrontierCode v1.1 main",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Merge-style coding score. The id is unique to this metric.",
+      "about": "Merge-style coding score across Anthropic's Opus 5.5, Sonnet 5.5, and Haiku 5.5 posts.",
       "rows": [
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 54.4, "origin": "measured", "note": "Opus 5.5 post. The post also says medium effort scores 54.6%."},
-        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 50.3, "origin": "measured", "note": "Opus 5.5 post."},
-        {"modelId": "claude-sonnet-5-5", "effort": "Extra High", "score": 52.1, "origin": "measured", "note": "Sonnet post. Max is 46.2%."},
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 53.3, "origin": "quoted", "note": "Opus 5.5 post, taken from OpenAI."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 47.5, "origin": "quoted", "note": "Opus 5.5 post."}
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 54.4, "origin": "measured", "sourceDate": "2026-10-13", "note": "Opus 5.5 post. The post also says medium effort scores 54.6%."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Extra High", "score": 52.1, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post. Max is 46.2%."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 50.3, "origin": "measured", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "gpt-6-sol", "effort": "Best reported", "score": 49.3, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Competitor cell on Anthropic's Sonnet 5.5 table."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 46.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 post."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 47.5, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 53.3, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 post, taken from OpenAI."},
+        {"modelId": "claude-sonnet-5", "effort": "Best reported", "score": 42.4, "origin": "measured", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post."},
+        {"modelId": "gpt-6-luna", "effort": "Best reported", "score": 42.4, "origin": "unspecified", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Competitor cell on Anthropic's Haiku 5.5 table."}
+      ]
+    },
+    {
+      "id": "aa-briefcase-v1-1-rubric",
+      "name": "AA-Briefcase v1.1 (rubric %)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Rubric percentage row for AA-Briefcase v1.1 on Anthropic's Fable 5.2 table.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 66.1, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Artificial Analysis rubric %, cited on Fable 5.2 table."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 61.8, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Artificial Analysis rubric %, cited on Fable 5.2 table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 61.5, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Artificial Analysis rubric %, cited on Fable 5.2 table."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 61.2, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Artificial Analysis rubric %, cited on Fable 5.2 table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 52.0, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Artificial Analysis rubric %, cited on Fable 5.2 table."}
+      ]
+    },
+    {
+      "id": "aa-briefcase-v1-1",
+      "name": "AA-Briefcase v1.1",
+      "unit": "elo",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis AA-Briefcase v1.1 Elo ratings printed across Anthropic's Fable 5.2, Sonnet 5.5, and Haiku 5.5 posts.",
+      "rows": [
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 1824, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 reference column (1811 on the earlier Sonnet 5.5 post)."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 1800, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table (1822 on the earlier Sonnet 5.5 post)."},
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 1785, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 1669, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 1611, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 1578, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 1569, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-fable-and-mythos-5-2", "sourceDate": "2026-11-09", "note": "Fable 5.2 table."},
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 1483, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 table."},
+        {"modelId": "claude-sonnet-5", "effort": "Max", "score": 1359, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 table."},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 1336, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 table."}
       ]
     },
     {
@@ -79,13 +294,18 @@
       "name": "GDPval-AA v2.1",
       "unit": "elo",
       "higherIsBetter": true,
-      "about": "Artificial Analysis Elo for professional work, as printed by Anthropic.",
+      "about": "Artificial Analysis Elo for professional work across Anthropic's Opus 5.5, Sonnet 5.5, and Haiku 5.5 posts.",
       "rows": [
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 1846, "origin": "quoted", "note": "Opus 5.5 post."},
-        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 1735, "origin": "quoted", "note": "Opus 5.5 post."},
-        {"modelId": "claude-opus-5", "effort": "Max", "score": 1708, "origin": "quoted", "note": "Opus 5.5 post."},
-        {"modelId": "gpt-6-astra", "effort": "Max", "score": 1542, "origin": "quoted", "note": "Opus 5.5 post."},
-        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 1588, "origin": "quoted", "note": "Opus 5.5 post."}
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 1846, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 and Sonnet 5.5 posts."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 1844, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post (1840 on the Haiku 5.5 reference column)."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 1735, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 1708, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 1620, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 post."},
+        {"modelId": "gpt-5-6-sol", "effort": "Max", "score": 1588, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 1542, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Opus 5.5 post."},
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 1487, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post."},
+        {"modelId": "claude-sonnet-5", "effort": "Max", "score": 1449, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-sonnet-5-5", "sourceDate": "2026-09-28", "note": "Sonnet 5.5 post."},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 1437, "origin": "quoted", "sourceUrl": "https://www.anthropic.com/claude-haiku-5-5", "sourceDate": "2026-10-07", "note": "Haiku 5.5 post."}
       ]
     }
   ]

@@ -1,5 +1,71 @@
 [
   {
+    "date": "2026-11-12",
+    "title": "Revision 3: October–November 2026 frontier update",
+    "harness": "cursorbench",
+    "note": "Updates CursorBench 4.0 to the 90-row 12 Nov 2026 board (adding Gemini 4 Carbon, Gemini 4 Hydrogen, Claude Fable 5.2, Muse Wonder, and DeepSeek V4.1 Flash 1017 while preserving three older rows from 13 Oct) and adds primary cards and independent indexes through 12 Nov 2026."
+  },
+  {
+    "date": "2026-11-12",
+    "title": "Gemini 4 Hydrogen",
+    "harness": "google-hydrogen-card",
+    "note": "Google DeepMind's fast, efficient Gemini 4 model adapted from Carbon ($1.50 / $7.50 per 1M tokens), compared against Sonnet 5.5 and GPT-6.1 Terra."
+  },
+  {
+    "date": "2026-11-12",
+    "title": "Vals AI Index v2.2 and component leaderboards",
+    "harness": "vals-ai",
+    "note": "Independent evaluations across Finance Agent v2.1, EMB v1.1, Terminal-Bench 4.0 (mini-swe-agent), Legal Research Bench, HLAB-Vals-1.1, and Tax Agent Bench."
+  },
+  {
+    "date": "2026-11-10",
+    "title": "Gemini 4 Carbon general availability and model card",
+    "harness": "google-carbon-card",
+    "note": "Google DeepMind's frontier reasoning model based on Argon ($4 / $20 standard, $2 / $10 through 30 Nov 2026), after late-October Fairwind and AA preview."
+  },
+  {
+    "date": "2026-11-10",
+    "title": "Artificial Analysis MKA and Index v5.0 leaderboard",
+    "harness": "artificial-analysis",
+    "note": "Artificial Analysis Intelligence Index v5.0 (launched 27 Oct 2026) and Multimodal Knowledge Agent (MKA) Climb WSR."
+  },
+  {
+    "date": "2026-11-09",
+    "title": "Claude Fable 5.2 and Claude Mythos 5.2",
+    "harness": "anthropic-claude",
+    "note": "Anthropic's upgraded technical flagship ($8 / $40 per 1M tokens) and its Verification-Program counterpart Mythos 5.2."
+  },
+  {
+    "date": "2026-11-09",
+    "title": "Muse Ember",
+    "harness": "meta-muse-ember",
+    "note": "Meta's smallest Muse model ($0.10 / $0.50 per 1M tokens up to 200K), trained using Muse Wonder Full."
+  },
+  {
+    "date": "2026-10-26",
+    "title": "GPT-6.1 Terra",
+    "harness": "openai-gpt-6",
+    "note": "OpenAI's fast computer-use and coding model ($1 / $5 per 1M tokens) in Work, Codex, and the API. Vega-Lite chart series read directly."
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Kimi K3.1 Pro",
+    "harness": "moonshot-kimi-k3-1",
+    "note": "Moonshot AI's 2.8T / 104B-active multimodal agentic model ($2 / $10 per 1M tokens)."
+  },
+  {
+    "date": "2026-10-17",
+    "title": "DeepSeek V4.1 Flash 1017",
+    "harness": "deepseek-v4-1-flash",
+    "note": "MIT-licensed revision of DeepSeek V4.1 Flash, now serving deepseek-flash and scored on CursorBench."
+  },
+  {
+    "date": "2026-10-15",
+    "title": "Muse Spark Open",
+    "harness": "meta-muse-ember",
+    "note": "Meta's 816B / 42B-active open-weight MoE under the Muse Model License."
+  },
+  {
     "date": "2026-10-13",
     "title": "Revision 2: atlas figure file",
     "harness": "cursorbench",
@@ -21,13 +87,25 @@
     "date": "2026-10-12",
     "title": "Artificial Analysis Muse Wonder index",
     "harness": "artificial-analysis",
-    "note": "Independent index. Separate from Meta's own table."
+    "note": "Independent index (v4.3). Separate from Meta's own table."
+  },
+  {
+    "date": "2026-10-07",
+    "title": "Claude Haiku 5.5",
+    "harness": "anthropic-claude",
+    "note": "Anthropic's fast small model with adjustable effort ($0.10 / $0.50 up to 100K tokens)."
   },
   {
     "date": "2026-09-29",
     "title": "GPT-6.1 Sol",
     "harness": "openai-gpt-6",
-    "note": "Work and Codex model. The DeepSWE absolute is derived from OpenAI's 6.4-point claim."
+    "note": "Work and Codex model. The DeepSWE absolute is derived from OpenAI's 6.4-point claim; Terra-page charts add multi-effort Sol figures."
+  },
+  {
+    "date": "2026-09-28",
+    "title": "Claude Sonnet 5.5",
+    "harness": "anthropic-claude",
+    "note": "Mid-tier Claude 5.5 model ($2 / $10 per 1M tokens), read directly from Anthropic's launch page."
   },
   {
     "date": "2026-09-22",

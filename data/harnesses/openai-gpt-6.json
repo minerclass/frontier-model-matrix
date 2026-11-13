@@ -1,19 +1,20 @@
 {
   "id": "openai-gpt-6",
-  "title": "OpenAI GPT-6 family",
+  "title": "OpenAI GPT-6 and GPT-6.1 family",
   "publisher": "OpenAI",
-  "readOn": "2026-10-13",
+  "readOn": "2026-11-12",
   "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
   "kind": "Company claim",
-  "summary": "OpenAI's published scores for GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, and the GPT-6.1 Sol claim. ChatGPT's GPT-6 control is a thinking slider over Sol and Astra, not a separate scored model.",
+  "summary": "OpenAI's published scores across GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, GPT-6.1 Sol (29 Sep 2026), and GPT-6.1 Terra (26 Oct 2026). ChatGPT's GPT-6 control is a thinking slider over Sol and Astra, while GPT-6.1 Sol and GPT-6.1 Terra are Work, Codex, and API models.",
   "howItCompiles": [
-    "Astra scores come from the Astra launch page. The page says scores are the maximum at any effort unless a table names an effort.",
-    "Sol and Luna scores come from the 22 Sep 2026 Sol and Luna post, at the effort named in each row.",
-    "GPT-6.1 Sol's DeepSWE cell is derived. OpenAI printed a 6.4 point gain over GPT-6 Sol's best and did not print the absolute.",
-    "Competitor cells on these pages are quotes from other labs when OpenAI says so."
+    "Astra scores come from the Astra launch page and from the Vega-Lite chart payloads embedded in the 26 Oct 2026 GPT-6.1 Terra launch page.",
+    "Sol and Luna scores come from the 22 Sep 2026 Sol and Luna post and the GPT-6.1 Terra comparison charts.",
+    "GPT-6.1 Terra and GPT-6.1 Sol multi-effort scores come directly from the Vega-Lite chart specs on https://openai.com/index/introducing-gpt-6-1-terra.",
+    "GPT-6.1 Sol's DeepSWE cell is derived: OpenAI printed a 6.4 point gain over GPT-6 Sol's best (68.8%) and did not print the absolute."
   ],
   "limits": [
-    "None of GPT-6 Astra, GPT-6 Sol, GPT-6.1 Sol, or GPT-6 Luna has a CursorBench row in the 13 Oct 2026 read.",
+    "None of GPT-6 Astra, GPT-6 Sol, GPT-6.1 Sol, GPT-6.1 Terra, or GPT-6 Luna has a CursorBench row in the 12 Nov 2026 read.",
+    "OSWorld 2.1 on the GPT-6.1 Terra page is kept separate from OSWorld 2.0 on the earlier Astra and Sol pages.",
     "A derived cell is not a number OpenAI printed."
   ],
   "panels": [
@@ -23,7 +24,8 @@
       "rows": [
         ["GPT-6 Instant, Medium, High, Extra High", "GPT-6 Sol", "Chat"],
         ["GPT-6 Pro", "GPT-6 Astra", "Chat, on eligible paid plans"],
-        ["GPT-6.1 Sol", "GPT-6.1 Sol", "ChatGPT Work and Codex"],
+        ["GPT-6.1 Sol", "GPT-6.1 Sol", "ChatGPT Work, Codex, and API"],
+        ["GPT-6.1 Terra", "GPT-6.1 Terra", "ChatGPT Work, Codex, and API ($1 / $5 per 1M tokens)"],
         ["GPT-6 Luna", "GPT-6 Luna", "API, Work, and Codex"],
         ["Free and Go default", "GPT-5.6 Luna", "Chat"]
       ]
@@ -37,13 +39,13 @@
       "higherIsBetter": true,
       "about": "Long-horizon software engineering tasks in real repositories.",
       "rows": [
-        {"modelId": "gpt-6-luna", "effort": "Max", "score": 66.6, "origin": "measured", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
-        {"modelId": "gpt-6-sol", "effort": "Max", "score": 68.8, "origin": "measured", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 74.1, "origin": "measured", "note": "Printed on the Astra page."},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 66.6, "origin": "measured", "sourceDate": "2026-10-13", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 68.8, "origin": "measured", "sourceDate": "2026-10-13", "note": "Printed on the 22 Sep 2026 Sol and Luna post."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 74.1, "origin": "measured", "sourceDate": "2026-10-13", "note": "Printed on the Astra page."},
         {"modelId": "gpt-6-1-sol", "effort": "Lower than Sol max", "score": 75.2, "origin": "derived", "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-sol/", "sourceDate": "2026-09-29", "note": "68.8 plus the 6.4 point gain OpenAI stated on 29 Sep 2026. The 68.8 is on the Sol and Luna post. The 6.1 post does not print 75.2."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 72.7, "origin": "measured", "note": "Printed on the Astra coding table."},
-        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 67.4, "origin": "quoted", "note": "Printed on the Astra coding table as a competitor cell."},
-        {"modelId": "claude-fable-5", "effort": "Extra High", "score": 69.9, "origin": "quoted", "note": "Sol and Luna post, Fable 5 at xhigh, used because a Fable 5.1 cell was unavailable for that comparison."}
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 72.7, "origin": "measured", "sourceDate": "2026-10-13", "note": "Printed on the Astra coding table."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 67.4, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Printed on the Astra coding table as a competitor cell."},
+        {"modelId": "claude-fable-5", "effort": "Extra High", "score": 69.9, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Sol and Luna post, Fable 5 at xhigh, used because a Fable 5.1 cell was unavailable for that comparison."}
       ]
     },
     {
@@ -51,11 +53,30 @@
       "name": "OSWorld 2.0 offline partial",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Partial reward on the offline set of OSWorld 2.0, v2026.08.08, as OpenAI describes it.",
+      "about": "Partial reward on the offline set of OSWorld 2.0, v2026.08.08, as OpenAI describes it on the Sol and Astra pages.",
       "rows": [
-        {"modelId": "gpt-6-sol", "effort": "Extra High", "score": 60.5, "origin": "measured", "note": "22 Sep 2026 post. Compared there with Opus 5 medium at 60.3%."},
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 72.6, "origin": "measured", "note": "Astra page."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 65.7, "origin": "measured", "note": "Astra computer-use table."}
+        {"modelId": "gpt-6-sol", "effort": "Extra High", "score": 60.5, "origin": "measured", "sourceDate": "2026-10-13", "note": "22 Sep 2026 post. Compared there with Opus 5 medium at 60.3%."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 72.6, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra page."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 65.7, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra computer-use table."}
+      ]
+    },
+    {
+      "id": "osworld-2-1-offline",
+      "name": "OSWorld 2.1 offline partial",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Offline-set OSWorld 2.1 chart on OpenAI's 26 Oct 2026 GPT-6.1 Terra launch page.",
+      "rows": [
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 83.9, "origin": "unspecified", "costUsd": 5.74, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Competitor point on OpenAI's Terra chart; matches Anthropic's Haiku 5.5 reference column."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 80.9, "origin": "measured", "costUsd": 8.17, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 78.0, "origin": "measured", "costUsd": 1.15, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 74.2, "origin": "measured", "costUsd": 1.19, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Extra High", "score": 71.3, "origin": "measured", "costUsd": 0.62, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "High", "score": 68.7, "origin": "measured", "costUsd": 0.51, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Medium", "score": 66.7, "origin": "measured", "costUsd": 0.50, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Low", "score": 53.8, "origin": "measured", "costUsd": 0.36, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-5-6-terra", "effort": "Max", "score": 57.1, "origin": "measured", "costUsd": 4.76, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 55.5, "origin": "measured", "costUsd": 0.30, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."}
       ]
     },
     {
@@ -65,12 +86,12 @@
       "higherIsBetter": true,
       "about": "Zapier-style business workflows. Keep this id separate from AutomationBench-AA.",
       "rows": [
-        {"modelId": "gpt-6-sol", "effort": "Extra High", "score": 33.2, "origin": "measured", "note": "22 Sep 2026 comparison, $0.27 per task. This is not Sol's maximum if a higher effort exists and was not printed."},
-        {"modelId": "gpt-6-astra", "effort": "Low", "score": 30.3, "origin": "measured", "note": "The low-effort cell in the Sol comparison. Astra's higher published cell on its own page is 41.4%."},
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 41.4, "origin": "measured", "note": "Astra professional table."},
-        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "note": "Sol post, with Opus 5 fallback. OpenAI says fallback cost is omitted."},
-        {"modelId": "claude-opus-5", "effort": "Max", "score": 26.9, "origin": "quoted", "note": "Sol post."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 18.1, "origin": "measured", "note": "Astra professional table. Anthropic later quotes Zapier at 28.8% for this model."}
+        {"modelId": "gpt-6-sol", "effort": "Extra High", "score": 33.2, "origin": "measured", "sourceDate": "2026-10-13", "note": "22 Sep 2026 comparison, $0.27 per task. This is not Sol's maximum if a higher effort exists and was not printed."},
+        {"modelId": "gpt-6-astra", "effort": "Low", "score": 30.3, "origin": "measured", "sourceDate": "2026-10-13", "note": "The low-effort cell in the Sol comparison. Astra's higher published cell on its own page is 41.4%."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 41.4, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra professional table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Sol post, with Opus 5 fallback. OpenAI says fallback cost is omitted."},
+        {"modelId": "claude-opus-5", "effort": "Max", "score": 26.9, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Sol post."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 18.1, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra professional table. Anthropic later quotes Zapier at 28.8% for this model."}
       ]
     },
     {
@@ -78,12 +99,54 @@
       "name": "Terminal-Bench 4.0",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Terminal tasks. OpenAI's Astra table.",
+      "about": "Terminal tasks across OpenAI's Astra table and the 26 Oct 2026 GPT-6.1 Terra chart.",
       "rows": [
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 57.9, "origin": "measured", "note": "Astra coding table."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "measured", "note": "Astra coding table."},
-        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 55.8, "origin": "quoted", "note": "Astra coding table."},
-        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 52.6, "origin": "quoted", "note": "Astra coding table. Anthropic's own Opus 5 cell is 52.3%."}
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 70.6, "origin": "unspecified", "costUsd": 10.44, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Competitor curve on OpenAI's Terra chart; matches Anthropic's Sonnet 5.5 headline."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 58.2, "origin": "measured", "costUsd": 10.34, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart (matches Google's Argon card; High is 58.1% and Xhigh is 57.9%)."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 57.9, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra coding table."},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 55.9, "origin": "measured", "costUsd": 1.98, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-sol", "effort": "Medium", "score": 52.7, "origin": "measured", "costUsd": 1.02, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 50.3, "origin": "measured", "costUsd": 1.84, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch post and chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Extra High", "score": 46.4, "origin": "measured", "costUsd": 0.99, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "High", "score": 41.8, "origin": "measured", "costUsd": 0.65, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Medium", "score": 35.8, "origin": "measured", "costUsd": 0.46, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Low", "score": 24.8, "origin": "measured", "costUsd": 0.24, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 37.3, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra coding table."},
+        {"modelId": "gpt-5-6-terra", "effort": "Max", "score": 21.5, "origin": "measured", "costUsd": 5.25, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch post and chart."},
+        {"modelId": "claude-fable-5-1", "effort": "Best reported", "score": 55.8, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Astra coding table."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 52.6, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Astra coding table. Anthropic's own Opus 5 cell is 52.3%."}
+      ]
+    },
+    {
+      "id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench Science 0.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Scientific research terminal tasks on OpenAI's 26 Oct 2026 GPT-6.1 Terra chart.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 64.6, "origin": "measured", "sourceUrl": "https://openai.com/index/gpt-6-astra/", "sourceDate": "2026-09-14", "note": "Printed on the original GPT-6 Astra launch table."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 68.1, "origin": "measured", "costUsd": 23.80, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Updated Astra Max point on the 26 Oct 2026 Terra launch chart."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallbacks)", "score": 63.3, "origin": "unspecified", "costUsd": 23.21, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Competitor point on OpenAI's Terra chart; matches Google's Argon card."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 58.3, "origin": "measured", "costUsd": 4.15, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart; beats GPT-6.1 Sol at Max."},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 57.0, "origin": "measured", "costUsd": 5.47, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Extra High", "score": 43.4, "origin": "measured", "costUsd": 1.72, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "High", "score": 39.7, "origin": "measured", "costUsd": 1.24, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Medium", "score": 34.3, "origin": "measured", "costUsd": 0.95, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Low", "score": 24.3, "origin": "measured", "costUsd": 0.47, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."}
+      ]
+    },
+    {
+      "id": "mmmu-pro-vision",
+      "name": "MMMU-Pro (Vision)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Visual reasoning chart on OpenAI's 26 Oct 2026 GPT-6.1 Terra launch page.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 86.7, "origin": "measured", "costUsd": 0.065, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26"},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 86.3, "origin": "measured", "costUsd": 0.013, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26"},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 85.5, "origin": "measured", "costUsd": 0.012, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26"},
+        {"modelId": "gpt-5-6-terra", "effort": "Max", "score": 81.7, "origin": "measured", "costUsd": 0.079, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26"},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 79.9, "origin": "measured", "costUsd": 0.0021, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26"}
       ]
     },
     {
@@ -91,12 +154,19 @@
       "name": "Agents' Last Exam",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "Professional workflows on a computer, as OpenAI describes the exam.",
+      "about": "Professional workflows on a computer (Agents' Last Exam v1 across OpenAI's Astra, Sol, and GPT-6.1 Terra pages).",
       "rows": [
-        {"modelId": "gpt-6-sol", "effort": "Max", "score": 56.4, "origin": "measured", "note": "22 Sep 2026 post."},
-        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 59.3, "origin": "measured", "note": "Astra computer-use table."},
-        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 53.6, "origin": "measured", "note": "Astra computer-use table."},
-        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 55.5, "origin": "quoted", "note": "Astra computer-use table."}
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 63.2, "origin": "unspecified", "costUsd": 8.82, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Competitor point on OpenAI's Terra chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 60.0, "origin": "measured", "costUsd": 1.01, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-astra", "effort": "Best reported", "score": 59.3, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra computer-use table (also Max $7.24 on Terra chart)."},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 58.6, "origin": "measured", "costUsd": 2.00, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Extra High", "score": 58.5, "origin": "measured", "costUsd": 0.66, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-6-1-terra", "effort": "Medium", "score": 57.6, "origin": "measured", "costUsd": 0.29, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Ties Astra Medium (57.6% at $4.82) on OpenAI's Terra chart."},
+        {"modelId": "gpt-6-sol", "effort": "Max", "score": 56.4, "origin": "measured", "sourceDate": "2026-10-13", "note": "22 Sep 2026 Sol post."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 55.5, "origin": "quoted", "sourceDate": "2026-10-13", "note": "Astra computer-use table."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 53.6, "origin": "measured", "sourceDate": "2026-10-13", "note": "Astra computer-use table."},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 50.9, "origin": "measured", "costUsd": 0.14, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."},
+        {"modelId": "gpt-5-6-terra", "effort": "Max", "score": 50.7, "origin": "measured", "costUsd": 3.58, "sourceUrl": "https://openai.com/index/introducing-gpt-6-1-terra", "sourceDate": "2026-10-26", "note": "Terra launch chart."}
       ]
     }
   ]

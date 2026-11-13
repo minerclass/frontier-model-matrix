@@ -1,0 +1,152 @@
+{
+  "id": "google-hydrogen-card",
+  "title": "Gemini 4 Hydrogen model card",
+  "publisher": "Google DeepMind",
+  "readOn": "2026-11-12",
+  "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
+  "kind": "Company claim",
+  "summary": "The 10-benchmark comparison table on the Gemini 4 Hydrogen model card (12 Nov 2026) against Claude Sonnet 5.5 and GPT-6.1 Terra, plus the AA Intelligence Index v5.0 scores reported in Google's launch post.",
+  "howItCompiles": [
+    "Google's methodology page (deepmind.google/models/evals-methodology/gemini-4-hydrogen) documents which rows Google self-computed and which came from Artificial Analysis, Andon Labs, or official public leaderboards.",
+    "Hydrogen offers four thinking levels: low, medium, high (default), and xhigh. Card results use the highest thinking setting unless noted; Terminal-Bench 4.1 uses high effort.",
+    "Flat API pricing across the 1M context window is $1.50 input and $7.50 output per million tokens."
+  ],
+  "limits": [
+    "Terminal-Bench 4.1 (cheating-adjusted) has no GPT-6.1 Terra score on the card, so that cell is omitted.",
+    "Google self-computed Sonnet 5.5 on Agents' Last Exam v1.1 and OSWorld-2.1, and GPT-6.1 Terra on Chartography; those competitor rows stay rival on the hub."
+  ],
+  "benchmarks": [
+    {
+      "id": "swe-sweep",
+      "name": "SWE-sweep",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Subtask-weighted bug-discovery and repair reward. Hydrogen ran in Antigravity-CLI v1.4.8.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 13.5, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed by Google in Antigravity-CLI v1.4.8 with safety filters enabled."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 5.8, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Official SWE-sweep public leaderboard, cited by Google."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 3.1, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Official SWE-sweep public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4-1",
+      "name": "Terminal-Bench 4.1 (cheating-adjusted)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Cheating-adjusted accuracy on Terminal-Bench 4.1. Kept separate from Terminal-Bench 4.0.",
+      "rows": [
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 63.9, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Official Terminal-Bench 4.1 public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-hydrogen", "effort": "High", "score": 57.0, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed in mini-swe-agent vision harness at high effort, averaged over 5 attempts."},
+        {"modelId": "gemini-3-8-flash", "effort": "High", "score": 18.2, "origin": "measured", "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/", "sourceDate": "2026-11-12", "note": "Google's 12 Nov 2026 Hydrogen launch post baseline."}
+      ]
+    },
+    {
+      "id": "agents-last-exam-v1-1",
+      "name": "Agents' Last Exam v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Averaged rubric Score on the 122-task v1.1 benchmark (17 Oct 2026 release) with a 5-hour window.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 71.6, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed by Google in Antigravity-CLI v1.4.8."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 69.8, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Official public leaderboard, cited by Google."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 60.4, "origin": "measured", "sourceDate": "2026-11-12", "note": "Computed by Google in ALE-Claw under the same 5-hour setup."}
+      ]
+    },
+    {
+      "id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis's business-workflow leaderboard as cited on the Hydrogen card (after AA's v5 rubric update).",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 76.1, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis leaderboard, cited on the Hydrogen card."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 71.8, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis leaderboard, cited on the Hydrogen card."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 60.2, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis leaderboard, cited on the Hydrogen card."}
+      ]
+    },
+    {
+      "id": "vending-bench-2",
+      "name": "Vending-Bench 2",
+      "unit": "usd",
+      "higherIsBetter": true,
+      "about": "Simulated business bank balance ($) from Andon Labs' official public leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 14549, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 11165, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 9107, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Andon Labs public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "osworld-2-1-offline",
+      "name": "OSWorld 2.1 offline partial",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Partial score on the 82-task offline subset of OSWorld 2.1.",
+      "rows": [
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 83.9, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed by Google; matches OpenAI's Terra-chart figure for Sonnet 5.5."},
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 77.6, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed by Google in Gemini CUA harness, maxed over 3 single-attempt runs."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 74.2, "origin": "quoted", "sourceDate": "2026-11-12", "note": "OpenAI GPT-6.1 Terra system card/launch page, cited by Google."}
+      ]
+    },
+    {
+      "id": "mka-climb-wsr",
+      "name": "MKA (Climb WSR)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Multimodal Knowledge Agent Climb Weighted Satisfaction Rate over complex visual files.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 53.4, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed by Google."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 52.0, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis MKA leaderboard, cited by Google."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 43.8, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis MKA leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "chartography-no-tools",
+      "name": "Chartography (no tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Visual chart recognition without tools following the Surge leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 66.6, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed without tools following Surge protocol."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 63.2, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed by Google without tools following Surge protocol."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 61.6, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Anthropic Sonnet 5.5 system card/post, cited by Google."}
+      ]
+    },
+    {
+      "id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench Science 0.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Scientific research terminal workflows.",
+      "rows": [
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 59.9, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Official Terminal-Bench-Science public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 58.3, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Official Terminal-Bench-Science public leaderboard, cited by Google; matches OpenAI's Terra chart."},
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 51.4, "origin": "measured", "sourceDate": "2026-11-12", "note": "Self-computed in mini-swe-agent vision harness, averaged over 5 attempts."}
+      ]
+    },
+    {
+      "id": "hle-diamond",
+      "name": "HLE-Diamond",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "1,000-question closed-book reasoning and knowledge subset of Humanity's Last Exam, sourced from Artificial Analysis.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 58.8, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis leaderboard, cited by Google."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 53.3, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis leaderboard, cited by Google."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 47.3, "origin": "quoted", "sourceDate": "2026-11-12", "note": "Artificial Analysis leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "aa-intelligence-index-v5-0",
+      "name": "AA Intelligence Index v5.0",
+      "unit": "index",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis Intelligence Index v5.0 figures quoted in Google's 12 Nov 2026 Hydrogen launch post.",
+      "rows": [
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 54, "origin": "quoted", "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/", "sourceDate": "2026-11-12", "note": "Artificial Analysis, quoted in Google's Hydrogen launch post."},
+        {"modelId": "gemini-4-hydrogen", "effort": "High", "score": 51, "origin": "quoted", "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/", "sourceDate": "2026-11-12", "note": "Default high thinking setting; Artificial Analysis, quoted in Google's Hydrogen launch post."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 50, "origin": "quoted", "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/", "sourceDate": "2026-11-12", "note": "Artificial Analysis, quoted in Google's Hydrogen launch post."}
+      ]
+    }
+  ]
+}

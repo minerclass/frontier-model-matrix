@@ -1,0 +1,254 @@
+{
+  "id": "google-carbon-card",
+  "title": "Gemini 4 Carbon model card",
+  "publisher": "Google DeepMind",
+  "readOn": "2026-11-12",
+  "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+  "kind": "Company claim",
+  "summary": "The 17-benchmark evaluation table on the Gemini 4 Carbon model card, published 10 Nov 2026 (reporting October 2026 results). Carbon leads 15 of 17 rows on this card; Astra leads FrontierSWE 2 and Opus 5.5 leads OSWorld-2.1.",
+  "howItCompiles": [
+    "Google's methodology page (deepmind.google/models/evals-methodology/gemini-4-carbon) states which rows were self-computed by Google and which were sourced from Artificial Analysis, Vals AI, Zapier, Andon Labs, Proximal, Surge, Collinear AI, or rival reports.",
+    "Carbon and Argon rows self-computed by Google are marked measured; rows Google cites from external leaderboards or rival reports are marked quoted with the named source.",
+    "GraphWalks 256k-to-1M was self-computed by Google for all five models, so competitor rows stay rival on the atlas hub because Google ran them rather than their makers.",
+    "Cybersecurity results (CWE-bench v1, ExploitGym, SEC-bench Pro) reflect Carbon when accessed through Google's Fairwind Program for verified defenders."
+  ],
+  "limits": [
+    "Standard pricing is $4 input and $20 output per million tokens, with a 50% launch discount ($2 / $10) through 30 Nov 2026.",
+    "Agents' Last Exam v1.1 uses the 17 Oct 2026 122-task release in the ALE-Claw harness and is kept separate from v1."
+  ],
+  "benchmarks": [
+    {
+      "id": "aa-intelligence-index-v5-0",
+      "name": "AA Intelligence Index v5.0",
+      "unit": "index",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis Intelligence Index v5.0 as cited on the Carbon card.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 59, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis Intelligence Index v5.0, cited on the Carbon card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 58, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis Intelligence Index v5.0, cited on the Carbon card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 57, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis Intelligence Index v5.0, cited on the Carbon card."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 50, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis Intelligence Index v5.0, cited on the Carbon card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 49, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis Intelligence Index v5.0, cited on the Carbon card."}
+      ]
+    },
+    {
+      "id": "vals-index-v2-2",
+      "name": "Vals Index v2.2",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Vals AI's October 2026 v2.2 economic-sector index as cited on the Carbon card.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 70.4, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Vals AI v2.2, cited on the Carbon card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 70.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Vals AI v2.2, cited on the Carbon card."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 69.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Vals AI v2.2, cited on the Carbon card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 65.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Vals AI v2.2, cited on the Carbon card."}
+      ]
+    },
+    {
+      "id": "swe-sweep",
+      "name": "SWE-sweep",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Subtask-weighted bug-discovery and repair reward. Google ran Carbon in mini-swe-agent; competitor rows come from the public SWE-sweep leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 9.6, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google in mini-swe-agent."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 9.5, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official SWE-sweep public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 4.3, "origin": "measured", "sourceDate": "2026-11-10", "note": "Carbon model card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 3.6, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official SWE-sweep public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 2.9, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official SWE-sweep public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "frontierswe-v2",
+      "name": "FrontierSWE v2",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Proximal's FrontierSWE 2 leaderboard as printed on the Carbon card.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 65.5, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Proximal official public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 62.3, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Proximal official public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 61.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Proximal official public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 56.3, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Proximal official public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 55.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Proximal official public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4.0-aa",
+      "name": "Terminal-Bench 4.0, Artificial Analysis",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis's Terminal-Bench 4.0 run as cited on the Carbon card.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 65.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 59.6, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 59.1, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 57.1, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 52.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."}
+      ]
+    },
+    {
+      "id": "agents-last-exam-v1-1",
+      "name": "Agents' Last Exam v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Averaged rubric Score on the 122-task v1.1 benchmark (17 Oct 2026 release) with a 5-hour window.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 77.4, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google in the ALE-Claw harness."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 73.1, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 71.6, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 69.0, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google in the ALE-Claw harness."}
+      ]
+    },
+    {
+      "id": "osworld-2-1-offline",
+      "name": "OSWorld 2.1 offline partial",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Partial score on the 82-task offline (no-internet) subset of OSWorld 2.1.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 87.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Anthropic system card, cited by Google."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 81.5, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google in Gemini CUA harness, maxed over 3 single-attempt runs."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 80.9, "origin": "quoted", "sourceDate": "2026-11-10", "note": "OpenAI published evaluation, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 76.8, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Anthropic system card, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 74.7, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google in Gemini CUA harness."}
+      ]
+    },
+    {
+      "id": "automationbench",
+      "name": "AutomationBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Zapier private-set public leaderboard cited on the Carbon card.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 53.9, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official Zapier public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 51.3, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official Zapier public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 42.5, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official Zapier public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 41.4, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official Zapier public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 31.4, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Official Zapier public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "vending-bench-2",
+      "name": "Vending-Bench 2",
+      "unit": "usd",
+      "higherIsBetter": true,
+      "about": "Simulated business bank balance ($) from Andon Labs' official public leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 16484, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 15515, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 13718, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 9235, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 5422, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "chartography-no-tools",
+      "name": "Chartography (no tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Visual chart recognition without tools following the Surge public leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 72.5, "origin": "measured", "sourceDate": "2026-11-10", "note": "Evaluated without tools following Surge protocol."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 71.6, "origin": "measured", "sourceDate": "2026-11-10", "note": "Evaluated without tools following Surge protocol."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 71.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 66.3, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google. Anthropic's Fable 5.2 post prints 64.4%."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 46.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google. Anthropic's Fable 5.2 post prints 44.8%."}
+      ]
+    },
+    {
+      "id": "blueprint-bench-2",
+      "name": "Blueprint-Bench 2",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Similarity score from Andon Labs' official public leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 58.6, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 54.4, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 51.2, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 49.7, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 41.9, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Andon Labs public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "graphwalks-256k-1m",
+      "name": "GraphWalks (256k to 1M, BFS F1)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "200 long-context GraphWalks BFS problems between 256k and 1M tokens, self-computed by Google for all models.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 96.2, "origin": "measured", "sourceDate": "2026-11-10"},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 84.2, "origin": "measured", "sourceDate": "2026-11-10"},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 71.8, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google on its 200-problem subset."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 66.8, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google on its 200-problem subset."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 65.0, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed by Google on its 200-problem subset."}
+      ]
+    },
+    {
+      "id": "riemannbench",
+      "name": "RiemannBench",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Mathematical reasoning from the Surge public leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 80.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 76.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 72.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 69.6, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 65.6, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Surge public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "terminal-bench-science-0-1-aa",
+      "name": "Terminal-Bench-Science 0.1 (AA)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis's Terminal-Bench-Science 0.1 run as cited on the Carbon card. Kept separate from provider self-runs.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 64.8, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 63.3, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 59.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 52.9, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 43.3, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Artificial Analysis, cited on the Carbon card."}
+      ]
+    },
+    {
+      "id": "cwe-bench-v1",
+      "name": "CWE-bench v1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Collinear AI / Artificial Analysis vulnerability remediation pass@1 leaderboard.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "Fairwind", "score": 71.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Collinear AI / AA public leaderboard, accessed via Fairwind Program."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 68.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Collinear AI / AA public leaderboard, cited by Google."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 68.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Collinear AI / AA public leaderboard, cited by Google."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 67.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Collinear AI / AA public leaderboard, cited by Google."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 58.0, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Collinear AI / AA public leaderboard, cited by Google."}
+      ]
+    },
+    {
+      "id": "exploitgym",
+      "name": "ExploitGym",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Vulnerability exploitation success rate without internet access.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "Fairwind", "score": 54.8, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed in Antigravity harness via Fairwind Program."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 42.4, "origin": "quoted", "sourceDate": "2026-11-10", "note": "OpenAI system card/report, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 42.0, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed in Antigravity harness."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 34.5, "origin": "quoted", "sourceDate": "2026-11-10", "note": "Anthropic system card, cited by Google."}
+      ]
+    },
+    {
+      "id": "sec-bench-pro",
+      "name": "SEC-bench Pro",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Pass@1 on the 183-task May 2026 JavaScript engine vulnerability split.",
+      "rows": [
+        {"modelId": "gemini-4-carbon", "effort": "Fairwind", "score": 88.2, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed in Antigravity harness via Fairwind Program, averaged over 3 attempts."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 85.4, "origin": "quoted", "sourceDate": "2026-11-10", "note": "OpenAI system card/report, cited by Google."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 83.4, "origin": "measured", "sourceDate": "2026-11-10", "note": "Self-computed in Antigravity harness."}
+      ]
+    }
+  ]
+}

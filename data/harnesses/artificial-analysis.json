@@ -2,31 +2,172 @@
   "id": "artificial-analysis",
   "title": "Artificial Analysis",
   "publisher": "Artificial Analysis",
-  "readOn": "2026-10-13",
-  "url": "https://artificialanalysis.ai/articles/muse-wonder",
+  "readOn": "2026-11-12",
+  "url": "https://artificialanalysis.ai/leaderboards/models",
   "kind": "Independent index",
-  "summary": "Artificial Analysis measurements from the 12 Oct 2026 Muse Wonder article. These are separate from Meta's developer table, including where both mention Terminal-Bench.",
+  "summary": "Artificial Analysis independent evaluations across the 12 Nov 2026 LLM Leaderboard (Intelligence Index v5.0), the 26 Oct–10 Nov 2026 model and benchmark articles (GPT-6.1 Terra, Index v5.0, Gemini 4 Carbon, Muse Ember, and MKA), and the preserved 12 Oct 2026 Muse Wonder Index v4.3 article.",
   "howItCompiles": [
-    "Intelligence Index v4.3 combines ten evaluations AA runs.",
-    "The article gives Spark 1.3, Wonder, and Wonder Full at max effort.",
-    "Coding Agents Index scores are for the named agent product: Muse Code for Muse models.",
-    "Cost per index task is AA's estimate for its own task mix. It is not a CursorBench task cost."
+    "Intelligence Index v5.0 (launched 27 Oct 2026) combines nine evaluations across knowledge work, coding, science, and general reasoning, with 60% of the index on private or held-out test sets.",
+    "Index v4.3 scores from the 12 Oct 2026 Muse Wonder article are kept on separate benchmark ids so they are never mixed with v5.0.",
+    "Coding Agents Index scores run each model inside a real coding agent product (Claude Code, Antigravity CLI, Muse Code, or Codex).",
+    "MKA (Multimodal Knowledge Agent, launched 10 Nov 2026 with Google DeepMind) runs 200 private visual knowledge-work tasks in AA's Stirrup harness and grades Climb WSR."
   ],
   "limits": [
-    "Wonder Full has no token price, so AA does not publish a cost per task for it.",
-    "AA's Terminal-Bench percent for Wonder Full is 57, which the article calls level with Gemini 4 Argon high on AA's run. That is not Anthropic's 66.4%."
+    "On the 12 Nov 2026 live v5.0 leaderboard, Gemini 4 Carbon (high) is 60 and Claude Opus 5.5 (max) is 59, one point above the 59 and 58 printed at Index v5 launch on 27–28 Oct 2026 as AA added models and recalibrated.",
+    "Muse Wonder Full has no per-token API price, so AA does not publish a cost per task for it."
   ],
   "benchmarks": [
     {
-      "id": "aa-intelligence-index-v4-3",
-      "name": "AA Intelligence Index v4.3",
+      "id": "aa-intelligence-index-v5-0",
+      "name": "AA Intelligence Index v5.0",
       "unit": "index",
       "higherIsBetter": true,
-      "about": "Composite index. Opus 5.5 leads the models named in the article's comparison set at 58, from Meta's chart as read by later coverage. This file stores the three Muse scores AA printed in prose.",
+      "about": "Artificial Analysis Intelligence Index v5.0 from the 12 Nov 2026 LLM Leaderboard.",
       "rows": [
-        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 48, "origin": "measured", "note": "AA article, 12 Oct 2026."},
-        {"modelId": "muse-wonder", "effort": "Max", "score": 52, "origin": "measured", "note": "AA article, 12 Oct 2026."},
-        {"modelId": "muse-wonder-full", "effort": "Max", "score": 56, "origin": "measured", "note": "AA article, 12 Oct 2026."}
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 65, "origin": "measured", "costUsd": 26.54, "sourceDate": "2026-11-12", "note": "Default fallback; #1 of 111 models on AA LLM Leaderboard."},
+        {"modelId": "claude-fable-5-2", "effort": "Extra High", "score": 62, "origin": "measured", "costUsd": 14.83, "sourceDate": "2026-11-12"},
+        {"modelId": "claude-fable-5-2", "effort": "High", "score": 62, "origin": "measured", "costUsd": 9.08, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 60, "origin": "measured", "costUsd": 7.76, "sourceDate": "2026-11-12", "note": "12 Nov 2026 leaderboard after AA's November recalibration."},
+        {"modelId": "gemini-4-carbon", "effort": "High (28 Oct launch)", "score": 59, "origin": "measured", "costUsd": 7.76, "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28", "note": "28 Oct 2026 AA Carbon launch article."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 59, "origin": "measured", "costUsd": 10.04, "sourceDate": "2026-11-12", "note": "12 Nov 2026 leaderboard after AA's November recalibration."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (27 Oct v5 launch)", "score": 58, "origin": "measured", "costUsd": 10.04, "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "27 Oct 2026 AA Index v5 launch article."},
+        {"modelId": "gemini-4-carbon", "effort": "Medium", "score": 58, "origin": "measured", "costUsd": 6.59, "sourceDate": "2026-11-12"},
+        {"modelId": "claude-opus-5-5", "effort": "Extra High", "score": 57, "origin": "measured", "costUsd": 6.05, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 57, "origin": "measured", "costUsd": 6.24, "sourceDate": "2026-11-12"},
+        {"modelId": "claude-fable-5-2", "effort": "Medium", "score": 56, "origin": "measured", "costUsd": 3.80, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-astra", "effort": "Extra High", "score": 55, "origin": "measured", "costUsd": 3.66, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 55, "origin": "measured", "costUsd": 1.27, "sourceDate": "2026-11-12"},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 55, "origin": "measured", "costUsd": 10.02, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-carbon", "effort": "Low", "score": 54, "origin": "measured", "costUsd": 7.19, "sourceDate": "2026-11-12"},
+        {"modelId": "claude-fable-5-2", "effort": "Low", "score": 54, "origin": "measured", "costUsd": 3.10, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 54, "origin": "measured", "costUsd": 3.16, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 51, "origin": "measured", "costUsd": 0.96, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "High", "score": 51, "origin": "measured", "costUsd": 1.87, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 50, "origin": "measured", "costUsd": 9.95, "sourceDate": "2026-11-12"},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 50, "origin": "measured", "sourceDate": "2026-11-12", "note": "No token price published."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 46, "origin": "measured", "costUsd": 3.68, "sourceDate": "2026-11-12", "note": "Top open-weights model on AA v5.0."},
+        {"modelId": "gpt-6-1-terra", "effort": "Extra High", "score": 45, "origin": "measured", "costUsd": 0.40, "sourceDate": "2026-11-12"},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 44, "origin": "measured", "costUsd": 6.95, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-terra", "effort": "High", "score": 42, "origin": "measured", "costUsd": 0.26, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "Medium", "score": 41, "origin": "measured", "costUsd": 0.80, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-terra", "effort": "Medium", "score": 38, "origin": "measured", "costUsd": 0.17, "sourceDate": "2026-11-12"},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 36, "origin": "measured", "costUsd": 0.41, "sourceDate": "2026-11-12"},
+        {"modelId": "muse-ember", "effort": "Max", "score": 36, "origin": "measured", "costUsd": 0.14, "sourceDate": "2026-11-12", "note": "Cheapest model scoring 36 or higher."},
+        {"modelId": "grok-4-7", "effort": "Extra High", "score": 35, "origin": "measured", "costUsd": 7.77, "sourceDate": "2026-11-12"},
+        {"modelId": "muse-ember", "effort": "Extra High", "score": 34, "origin": "measured", "costUsd": 0.12, "sourceDate": "2026-11-12"},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 33, "origin": "measured", "costUsd": 0.60, "sourceDate": "2026-11-12"},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 32, "origin": "measured", "costUsd": 5.01, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-3-8-flash", "effort": "High", "score": 31, "origin": "measured", "costUsd": 7.77, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-terra", "effort": "Low", "score": 29, "origin": "measured", "costUsd": 0.07, "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 28, "origin": "measured", "costUsd": 0.15, "sourceDate": "2026-11-12"},
+        {"modelId": "glm-5-3-flash", "effort": "Max", "score": 28, "origin": "measured", "costUsd": 0.58, "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "Low", "score": 27, "origin": "measured", "costUsd": 0.29, "sourceDate": "2026-11-12"},
+        {"modelId": "muse-spark-open", "effort": "Extra High", "score": 25, "origin": "measured", "costUsd": 2.02, "sourceDate": "2026-11-12"}
+      ]
+    },
+    {
+      "id": "aa-index-v5-task-cost",
+      "name": "AA cost per Intelligence Index v5.0 task",
+      "unit": "usd",
+      "higherIsBetter": false,
+      "about": "Estimated dollars per Artificial Analysis Intelligence Index v5.0 task from the 12 Nov 2026 leaderboard and 27 Oct 2026 v5 article.",
+      "rows": [
+        {"modelId": "gpt-6-1-terra", "effort": "Low", "score": 0.07, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "muse-ember", "effort": "Extra High", "score": 0.12, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "muse-ember", "effort": "Max", "score": 0.14, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-luna", "effort": "Max", "score": 0.15, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "Low", "score": 0.29, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 0.41, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 0.60, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 0.96, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 1.27, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "High", "score": 1.87, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "muse-spark-open", "effort": "Extra High", "score": 2.02, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-hydrogen", "effort": "Extra High", "score": 3.16, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 3.68, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 6.24, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 6.95, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 7.76, "origin": "measured", "sourceDate": "2026-11-12", "note": "At $4/$20 standard pricing."},
+        {"modelId": "grok-4-7", "effort": "Extra High", "score": 7.77, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "claude-fable-5-2", "effort": "High", "score": 9.08, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 9.95, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 10.02, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 10.04, "origin": "measured", "sourceDate": "2026-11-12"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 13.04, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "Index v5 launch article."},
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 26.54, "origin": "measured", "sourceDate": "2026-11-12"}
+      ]
+    },
+    {
+      "id": "mka-climb-wsr",
+      "name": "MKA (Climb WSR)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Multimodal Knowledge Agent Climb WSR from Artificial Analysis's 10 Nov 2026 launch article.",
+      "rows": [
+        {"modelId": "claude-fable-5-2", "effort": "Max", "score": 57.0, "origin": "measured", "costUsd": 31.97, "sourceUrl": "https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent", "sourceDate": "2026-11-10", "note": "AA MKA launch article."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 54.0, "origin": "measured", "costUsd": 6.29, "sourceUrl": "https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent", "sourceDate": "2026-11-10", "note": "AA MKA launch article."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 53.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent", "sourceDate": "2026-11-10", "note": "AA MKA launch article."}
+      ]
+    },
+    {
+      "id": "frontiercode-2-0-aa",
+      "name": "FrontierCode 2.0-AA",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Cognition's 132-task private FrontierCode 2.0 benchmark run in AA's Stirrup harness.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 46.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "AA Index v5 launch article."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 42.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "AA Index v5 launch article."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max", "score": 42.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "AA Index v5 launch article."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 42.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "AA Index v5 launch article."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 34.9, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09", "note": "AA Muse Ember article."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 28.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "AA Index v5 launch article."},
+        {"modelId": "muse-ember", "effort": "Max", "score": 27.2, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09", "note": "AA Muse Ember article."}
+      ]
+    },
+    {
+      "id": "terminal-bench-science-0-1-aa",
+      "name": "Terminal-Bench-Science 0.1 (AA)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "70 agentic scientific research terminal tasks as reported in AA's 27 Oct 2026 Index v5 article.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 63.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "Rounded in AA v5 prose (63.3% on Carbon card)."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 59.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 58.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 34.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 20.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 13.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"}
+      ]
+    },
+    {
+      "id": "hle-diamond",
+      "name": "HLE-Diamond",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "1,000-question closed-book Humanity's Last Exam subset as reported in AA's 27 Oct 2026 Index v5 article.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 68.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 64.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 60.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 37.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"}
+      ]
+    },
+    {
+      "id": "aa-briefcase-v1-1",
+      "name": "AA-Briefcase v1.1",
+      "unit": "elo",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis long-horizon knowledge-work Elo ratings reported in AA's October–November 2026 articles.",
+      "rows": [
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 1812, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27"},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 1678, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28"},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 1659, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28"},
+        {"modelId": "grok-4-7", "effort": "Extra High", "score": 1638, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28"},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 1609, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28"},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 1574, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09"},
+        {"modelId": "muse-ember", "effort": "Max", "score": 1521, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09"},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 1483, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28"}
       ]
     },
     {
@@ -34,13 +175,20 @@
       "name": "AA Coding Agents Index",
       "unit": "index",
       "higherIsBetter": true,
-      "about": "Agent-product coding index.",
+      "about": "Agent-product coding index across AA's October–November 2026 articles. Note that AA launched Coding Agent Index v2.0 in late October 2026; each row states its article date.",
       "rows": [
-        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 54, "origin": "measured", "note": "Muse Code."},
-        {"modelId": "muse-wonder", "effort": "Max", "score": 63, "origin": "measured", "note": "Muse Code."},
-        {"modelId": "muse-wonder-full", "effort": "Max", "score": 68, "origin": "measured", "note": "Muse Code. AA says this ties Claude Code with Sonnet 5.5."},
-        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 68, "origin": "measured", "note": "Claude Code, from the same AA paragraph."},
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 66, "origin": "measured", "note": "Claude Code, from the same AA paragraph."}
+        {"modelId": "muse-wonder-full", "effort": "Max (v1, Muse Code)", "score": 68, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "Muse Code (12 Oct 2026 article, ties Sonnet 5.5 on v1)."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max (v1, Claude Code)", "score": 68, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "Claude Code (12 Oct 2026 article)."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (v1, Claude Code)", "score": 66, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "Claude Code (12 Oct 2026 article)."},
+        {"modelId": "muse-wonder", "effort": "Max (v1, Muse Code)", "score": 63, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "Muse Code (12 Oct 2026 article)."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (v2.0, Claude Code)", "score": 62, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28", "note": "Claude Code on Coding Agent Index v2.0."},
+        {"modelId": "gemini-4-carbon", "effort": "High (v2.0, Antigravity CLI)", "score": 59, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28", "note": "Antigravity CLI on Coding Agent Index v2.0."},
+        {"modelId": "muse-spark-1-3", "effort": "Max (v1, Muse Code)", "score": 54, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "Muse Code (12 Oct 2026 article)."},
+        {"modelId": "gpt-6-1-sol", "effort": "Max (v2.0, Codex)", "score": 54, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier", "sourceDate": "2026-10-26", "note": "Codex on Coding Agent Index v2.0."},
+        {"modelId": "gpt-6-1-terra", "effort": "Max (v2.0, Codex)", "score": 48, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier", "sourceDate": "2026-10-26", "note": "Codex on Coding Agent Index v2.0."},
+        {"modelId": "muse-ember", "effort": "Max (v2.0, Muse Code)", "score": 46, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09", "note": "Muse Code on Coding Agent Index v2.0."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max (v2.0, Claude Code)", "score": 37, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09", "note": "Claude Code on Coding Agent Index v2.0."},
+        {"modelId": "gpt-6-luna", "effort": "Max (v2.0, Codex)", "score": 31, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier", "sourceDate": "2026-10-26", "note": "Codex on Coding Agent Index v2.0."}
       ]
     },
     {
@@ -48,28 +196,44 @@
       "name": "Terminal-Bench 4.0, Artificial Analysis",
       "unit": "percent",
       "higherIsBetter": true,
-      "about": "AA's own before-and-after for the Muse line. Rounded to the percent AA printed.",
+      "about": "Artificial Analysis's own Terminal-Bench 4.0 evaluations across its October–November 2026 articles.",
       "rows": [
-        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 33, "origin": "measured", "note": "AA article."},
-        {"modelId": "muse-wonder", "effort": "Max", "score": 52, "origin": "measured", "note": "AA article."},
-        {"modelId": "muse-wonder-full", "effort": "Max", "score": 57, "origin": "measured", "note": "AA article. Meta's table cites a more precise 57.1."}
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 67.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5", "sourceDate": "2026-10-27", "note": "AA Index v5 launch article."},
+        {"modelId": "gemini-4-carbon", "effort": "High", "score": 64.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1", "sourceDate": "2026-10-28", "note": "AA Carbon article (Antigravity CLI coding-agent breakdown; Index run on Carbon card is 65.2%)."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 57.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA Wonder article. Meta's table cites 57.1%."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 52.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA Wonder article."},
+        {"modelId": "muse-ember", "effort": "Max", "score": 40.9, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09", "note": "AA Muse Ember article."},
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 33.0, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA Wonder article."},
+        {"modelId": "claude-haiku-5-5", "effort": "Max", "score": 32.8, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index", "sourceDate": "2026-11-09", "note": "AA Muse Ember article."}
+      ]
+    },
+    {
+      "id": "aa-intelligence-index-v4-3",
+      "name": "AA Intelligence Index v4.3",
+      "unit": "index",
+      "higherIsBetter": true,
+      "about": "Preserved composite index v4.3 from the 12 Oct 2026 Muse Wonder article (superseded by v5.0 on 27 Oct 2026).",
+      "rows": [
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 48, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article, 12 Oct 2026."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 52, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article, 12 Oct 2026."},
+        {"modelId": "muse-wonder-full", "effort": "Max", "score": 56, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article, 12 Oct 2026."}
       ]
     },
     {
       "id": "aa-index-task-cost",
-      "name": "AA cost per Intelligence Index task",
+      "name": "AA cost per Intelligence Index task (v4.3)",
       "unit": "usd",
       "higherIsBetter": false,
-      "about": "Estimated dollars per AA index task. Lower is cheaper. Wonder Full is omitted because it has no token price.",
+      "about": "Preserved estimated dollars per AA Index v4.3 task from the 12 Oct 2026 Muse Wonder article.",
       "rows": [
-        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 0.72, "origin": "measured", "note": "AA article."},
-        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 1.60, "origin": "measured", "note": "AA article."},
-        {"modelId": "gemini-4-argon", "effort": "High", "score": 1.99, "origin": "measured", "note": "AA article."},
-        {"modelId": "gpt-6-astra", "effort": "Max", "score": 3.26, "origin": "measured", "note": "AA article."},
-        {"modelId": "muse-wonder", "effort": "Max", "score": 4.52, "origin": "measured", "note": "AA article. Driven by input tokens at $4 per million."},
-        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 5.46, "origin": "measured", "note": "AA article, with fallback."},
-        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 5.98, "origin": "measured", "note": "AA article, with fallback."},
-        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 7.63, "origin": "measured", "note": "AA article, with fallback."}
+        {"modelId": "gpt-6-1-sol", "effort": "Max", "score": 0.72, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article."},
+        {"modelId": "muse-spark-1-3", "effort": "Max", "score": 1.60, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article."},
+        {"modelId": "gemini-4-argon", "effort": "High", "score": 1.99, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article (at 50% launch discount)."},
+        {"modelId": "gpt-6-astra", "effort": "Max", "score": 3.26, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article."},
+        {"modelId": "muse-wonder", "effort": "Max", "score": 4.52, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article. Driven by input tokens at $4 per million."},
+        {"modelId": "claude-sonnet-5-5", "effort": "Max", "score": 5.46, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article, with fallback."},
+        {"modelId": "claude-opus-5-5", "effort": "Max", "score": 5.98, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article, with fallback."},
+        {"modelId": "claude-fable-5-1", "effort": "Max", "score": 7.63, "origin": "measured", "sourceUrl": "https://artificialanalysis.ai/articles/muse-wonder", "sourceDate": "2026-10-12", "note": "AA article, with fallback."}
       ]
     }
   ]

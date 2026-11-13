@@ -1,0 +1,97 @@
+{
+  "id": "deepseek-v4-1-flash",
+  "title": "DeepSeek V4.1 Flash 1017 model card",
+  "publisher": "DeepSeek",
+  "readOn": "2026-11-12",
+  "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "kind": "Company claim",
+  "summary": "DeepSeek's 17 Oct 2026 MIT-licensed model card for DeepSeek-V4.1-Flash-1017, compared against GLM 5.3, GPT-5.6 Sol, and Claude Opus 5.",
+  "howItCompiles": [
+    "DeepSeek uses the Claude Code harness for Terminal-Bench 4.0 and the Mini-SWE-V2 harness for DeepSWE v1.1.",
+    "ProgramBench here uses binary task scoring (29.1% for 1017, 37.0% for Opus 5) and is kept on programbench-binary so it is not confused with Meta's continuous ProgramBench row.",
+    "Chartography on DeepSeek's card is evaluated with tools and is kept separate from Chartography (no tools)."
+  ],
+  "limits": [
+    "DeepSeek's launch table compares 1017 only with pre-September 2026 models (Kimi K3, GLM-5.3, GPT-5.6 Sol, and Claude Opus 5), not with Claude 5.5, GPT-6, or Gemini 4.",
+    "GLM-5.3's HLE cell on DeepSeek's card is marked text-only subset (†) while the other models are full HLE without tools, so GLM-5.3 is noted accordingly."
+  ],
+  "benchmarks": [
+    {
+      "id": "deepswe-v1.1",
+      "name": "DeepSWE v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "DeepSeek's DeepSWE v1.1 row (Mini-SWE-V2 harness for DeepSeek).",
+      "rows": [
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 77.0, "origin": "measured", "sourceDate": "2026-10-17", "note": "Mini-SWE-V2 harness."},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 74.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Competitor cell on DeepSeek's 1017 card."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 73.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Competitor cell on DeepSeek's 1017 card (OpenAI Astra table prints 72.7%)."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 66.9, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Competitor cell on DeepSeek's 1017 card."}
+      ]
+    },
+    {
+      "id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "DeepSeek's Terminal-Bench 4.0 row (Claude Code harness for DeepSeek).",
+      "rows": [
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 51.8, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Competitor cell on DeepSeek's 1017 card (Anthropic prints 52.3%, OpenAI 52.6%)."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 42.3, "origin": "measured", "sourceDate": "2026-10-17", "note": "Claude Code harness."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 39.9, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Competitor cell on DeepSeek's 1017 card (OpenAI prints 37.3%)."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 37.9, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Competitor cell on DeepSeek's 1017 card."}
+      ]
+    },
+    {
+      "id": "programbench-binary",
+      "name": "ProgramBench (binary >=95%)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Binary ProgramBench pass rate where a task counts only at >=95% reconstruction.",
+      "rows": [
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 37.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 29.1, "origin": "measured", "sourceDate": "2026-10-17"},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 23.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 19.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."}
+      ]
+    },
+    {
+      "id": "automation-bench-v1-0-6",
+      "name": "Automation-Bench v1.0.6",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Open-source Automation-Bench v1.0.6 row on DeepSeek's 1017 card. Kept separate from Zapier's private AutomationBench and AA's AutomationBench-AA.",
+      "rows": [
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 60.5, "origin": "measured", "sourceDate": "2026-10-17"},
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 50.3, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 48.8, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 45.8, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."}
+      ]
+    },
+    {
+      "id": "hle-no-tools",
+      "name": "Humanity's Last Exam (no tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Humanity's Last Exam without tools on DeepSeek's 1017 card.",
+      "rows": [
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 56.3, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 44.5, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 42.6, "origin": "measured", "sourceDate": "2026-10-17", "note": "Full multimodal HLE without tools (text-only subset is 44.0%)."},
+        {"modelId": "glm-5-3", "effort": "Max (text-only subset)", "score": 42.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "Marked † (text-only subset) on DeepSeek's 1017 card."}
+      ]
+    },
+    {
+      "id": "chartography-with-tools",
+      "name": "Chartography (with tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Chartography with tools on DeepSeek's 1017 card.",
+      "rows": [
+        {"modelId": "claude-opus-5", "effort": "Best reported", "score": 84.0, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 83.0, "origin": "measured", "sourceDate": "2026-10-17"},
+        {"modelId": "gpt-5-6-sol", "effort": "Best reported", "score": 79.9, "origin": "unspecified", "sourceDate": "2026-10-17", "note": "DeepSeek 1017 card."}
+      ]
+    }
+  ]
+}

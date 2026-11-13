@@ -1,0 +1,183 @@
+{
+  "id": "moonshot-kimi-k3-1",
+  "title": "Moonshot AI Kimi K3.1 Pro model card",
+  "publisher": "Moonshot AI",
+  "readOn": "2026-11-12",
+  "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+  "kind": "Company claim",
+  "summary": "Moonshot AI's Kimi K3.1 Pro model card (23 Oct 2026, 2.8T total / 104B active MoE) comparing Kimi K3.1 Pro at max effort against Claude Fable 5.1, GPT-6 Astra, Claude Opus 5.5, DeepSeek V4.1 Flash 1017, and GLM 5.3.",
+  "howItCompiles": [
+    "Kimi K3.1 Pro runs at max reasoning effort (`temperature = 1.0`, `top-p = 0.95`). Coding benchmarks use the Claude Code harness; OSWorld V2.1 uses Kimi Agent.",
+    "Moonshot's footnotes identify where competitor rows come from model blog posts, technical reports, Artificial Analysis, Vals AI, or Moonshot's own internal runs.",
+    "ProgramBench on Moonshot's card uses binary task scoring (>=95% counts as 1, otherwise 0) and is kept on its own benchmark id so it is not confused with Meta's continuous ProgramBench row."
+  ],
+  "limits": [
+    "On Terminal-Bench-Science 0.1, Moonshot's footnote states that the 15.7 cell in the DeepSeek column is for the older DeepSeek V4.1 Flash from the official leaderboard (internal 1017 run was 9.3), so that cell is omitted for 1017 here.",
+    "API pricing is $2 input and $10 output per million tokens."
+  ],
+  "benchmarks": [
+    {
+      "id": "terminal-bench-4.0",
+      "name": "Terminal-Bench 4.0",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Kimi K3.1 Pro evaluated in Claude Code; competitor cells cited from release posts or the official Terminal-Bench leaderboard.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 66.4, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Anthropic Opus 5.5 post, cited by Moonshot."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 65.7, "origin": "measured", "sourceDate": "2026-10-23", "note": "Claude Code harness."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 58.2, "origin": "quoted", "sourceDate": "2026-10-23", "note": "OpenAI / Terminal-Bench leaderboard, cited by Moonshot."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 57.9, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Terminal-Bench leaderboard, cited by Moonshot (matches Argon and Grok 4.7 tables)."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 42.3, "origin": "quoted", "sourceDate": "2026-10-23", "note": "DeepSeek 1017 release card, cited by Moonshot."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 41.8, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Official Terminal-Bench leaderboard, cited by Moonshot."}
+      ]
+    },
+    {
+      "id": "deepswe-v1.1",
+      "name": "DeepSWE v1.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Kimi K3.1 Pro evaluated in Claude Code; competitor scores cited from each lab's technical report.",
+      "rows": [
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 77.0, "origin": "quoted", "sourceDate": "2026-10-23", "note": "DeepSeek 1017 release card, cited by Moonshot."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 75.5, "origin": "measured", "sourceDate": "2026-10-23", "note": "Claude Code harness."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 74.2, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Opus 5.5 report, cited by Moonshot."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 74.1, "origin": "quoted", "sourceDate": "2026-10-23", "note": "OpenAI Astra report, cited by Moonshot."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 67.4, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Fable 5.1 system card, cited by Moonshot."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 66.9, "origin": "quoted", "sourceDate": "2026-10-23", "note": "GLM-5.3 report, cited by Moonshot."}
+      ]
+    },
+    {
+      "id": "swe-marathon",
+      "name": "SWE-Marathon",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "SWE-Marathon v1.1 row on Moonshot's card (Kimi and DeepSeek in Claude Code; others from the official leaderboard).",
+      "rows": [
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 51.7, "origin": "measured", "sourceDate": "2026-10-23", "note": "Claude Code harness."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 46.3, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Official leaderboard, cited by Moonshot; matches Meta Wonder table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 45.6, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Official leaderboard, cited by Moonshot; matches Meta Wonder table."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 42.5, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Official leaderboard, cited by Moonshot; matches Meta Wonder table."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 42.5, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Official leaderboard, cited by Moonshot."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 40.0, "origin": "measured", "sourceDate": "2026-10-23", "note": "Evaluated by Moonshot in Claude Code."}
+      ]
+    },
+    {
+      "id": "terminal-bench-science-0.1",
+      "name": "Terminal-Bench Science 0.1",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Kimi K3.1 Pro evaluated in Claude Code; competitor cells from the Terminal-Bench-Science leaderboard.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 68.1, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Terminal-Bench-Science leaderboard, cited by Moonshot."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 63.3, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Terminal-Bench-Science leaderboard, cited by Moonshot."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 40.0, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Terminal-Bench-Science leaderboard, cited by Moonshot."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 38.1, "origin": "measured", "sourceDate": "2026-10-23", "note": "Claude Code harness."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 9.3, "origin": "measured", "sourceDate": "2026-10-23", "note": "Moonshot footnote 2: internal Claude Code evaluation of 1017 (table cell 15.7 is the older V4.1 Flash)."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 8.1, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Terminal-Bench-Science leaderboard, cited by Moonshot."}
+      ]
+    },
+    {
+      "id": "hle-with-tools",
+      "name": "Humanity's Last Exam (with tools)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "HLE-Full (2,500 questions) with tools on Moonshot's card.",
+      "rows": [
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 70.0, "origin": "measured", "sourceDate": "2026-10-23"},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 67.7, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches Anthropic."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 65.6, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches Anthropic."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 62.5, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches GLM-5.3 self-report."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 58.8, "origin": "unspecified", "sourceDate": "2026-10-23", "note": "Moonshot K3.1 Pro table."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 57.2, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches Anthropic's Fable 5.2 table."}
+      ]
+    },
+    {
+      "id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis AutomationBench-AA scores cited on Moonshot's card.",
+      "rows": [
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 73.3, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 69.5, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 68.5, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 66.6, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 62.2, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 59.4, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."}
+      ]
+    },
+    {
+      "id": "gdpval-aa-v2-1",
+      "name": "GDPval-AA v2.1",
+      "unit": "elo",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis GDPval-AA v2.1 Elo scores cited on Moonshot's card.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 1866, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 1846, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 1754, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 1746, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 1650, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 1573, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."}
+      ]
+    },
+    {
+      "id": "aa-briefcase-v1-1",
+      "name": "AA-Briefcase v1.1",
+      "unit": "elo",
+      "higherIsBetter": true,
+      "about": "Artificial Analysis AA-Briefcase v1.1 Elo scores cited on Moonshot's card.",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 1803, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 1678, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 1672, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 1570, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 1569, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 1507, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Artificial Analysis, cited by Moonshot."}
+      ]
+    },
+    {
+      "id": "osworld-2-1-partial",
+      "name": "OSWorld 2.1 (partial)",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "OSWorld V2.1 computer use on Moonshot's card (Kimi in Kimi Agent harness; Astra cited from Muse Wonder report).",
+      "rows": [
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 81.8, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches Muse Wonder model card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 80.7, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches Muse Wonder model card."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 79.6, "origin": "measured", "sourceDate": "2026-10-23", "note": "Kimi Agent harness."},
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 75.8, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Cited from Muse Wonder technical report."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 69.3, "origin": "unspecified", "sourceDate": "2026-10-23", "note": "Moonshot K3.1 Pro table."}
+      ]
+    },
+    {
+      "id": "gpqa-diamond",
+      "name": "GPQA Diamond",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "Graduate scientific reasoning without tools on Moonshot's card.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 96.1, "origin": "unspecified", "sourceDate": "2026-10-23", "note": "Moonshot K3.1 Pro table."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 94.2, "origin": "measured", "sourceDate": "2026-10-23"},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 93.9, "origin": "unspecified", "sourceDate": "2026-10-23", "note": "Moonshot K3.1 Pro table."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 93.7, "origin": "unspecified", "sourceDate": "2026-10-23", "note": "Moonshot K3.1 Pro table."},
+        {"modelId": "deepseek-v4-1-flash-1017", "effort": "Max", "score": 92.2, "origin": "unspecified", "sourceDate": "2026-10-23", "note": "Moonshot K3.1 Pro table."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 91.7, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Matches Artificial Analysis / Muse Spark Open card."}
+      ]
+    },
+    {
+      "id": "exploitgym",
+      "name": "ExploitGym",
+      "unit": "percent",
+      "higherIsBetter": true,
+      "about": "6-hour vulnerability exploitation evaluation on Moonshot's card.",
+      "rows": [
+        {"modelId": "gpt-6-astra", "effort": "Max (w/ fallback)", "score": 42.4, "origin": "quoted", "sourceDate": "2026-10-23", "note": "OpenAI report, cited by Moonshot; matches Carbon card."},
+        {"modelId": "claude-opus-5-5", "effort": "Max (w/ fallback)", "score": 34.5, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Anthropic report, cited by Moonshot; matches Carbon card."},
+        {"modelId": "claude-fable-5-1", "effort": "Max (w/ fallback)", "score": 30.4, "origin": "quoted", "sourceDate": "2026-10-23", "note": "Anthropic report, cited by Moonshot."},
+        {"modelId": "kimi-k3-1-pro", "effort": "Max", "score": 20.7, "origin": "measured", "sourceDate": "2026-10-23", "note": "Kimi Code harness, 6-hour budget."},
+        {"modelId": "glm-5-3", "effort": "Max", "score": 15.0, "origin": "quoted", "sourceDate": "2026-10-23", "note": "GLM-5.3 report, cited by Moonshot."}
+      ]
+    }
+  ]
+}

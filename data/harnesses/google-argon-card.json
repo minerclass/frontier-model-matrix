@@ -65,6 +65,24 @@
       {"modelId": "claude-fable-5-1", "score": 52.6, "origin": "unspecified", "note": "Matches Anthropic."},
       {"modelId": "claude-opus-5-5", "score": 63.3, "origin": "unspecified", "note": "Anthropic prints 58.7%."}
     ]},
+    {"id": "chartography-no-tools", "name": "Chartography (no tools)", "unit": "percent", "higherIsBetter": true, "about": "Visual chart recognition without tools on the Argon card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 71.6, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 71.0, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."},
+      {"modelId": "claude-fable-5-1", "score": 46.2, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."},
+      {"modelId": "claude-opus-5-5", "score": 66.3, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."}
+    ]},
+    {"id": "riemannbench", "name": "RiemannBench", "unit": "percent", "higherIsBetter": true, "about": "Mathematical reasoning row on the Argon card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 76.0, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 72.0, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."},
+      {"modelId": "claude-fable-5-1", "score": 65.6, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."},
+      {"modelId": "claude-opus-5-5", "score": 69.6, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."}
+    ]},
+    {"id": "graphwalks-256k-1m", "name": "GraphWalks (256k to 1M, BFS F1)", "unit": "percent", "higherIsBetter": true, "about": "Long-context GraphWalks row on the Argon card.", "rows": [
+      {"modelId": "gemini-4-argon", "score": 84.2, "origin": "measured"},
+      {"modelId": "gpt-6-astra", "score": 71.8, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."},
+      {"modelId": "claude-fable-5-1", "score": 65.0, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."},
+      {"modelId": "claude-opus-5-5", "score": 66.8, "origin": "unspecified", "note": "Competitor cell on Google's Argon card."}
+    ]},
     {"id": "cwe-bench-v1", "name": "CWE-bench v1", "unit": "percent", "higherIsBetter": true, "about": "Vulnerability remediation. Argon and Astra tie on this card.", "rows": [
       {"modelId": "gemini-4-argon", "score": 68.0, "origin": "measured"},
       {"modelId": "gpt-6-astra", "score": 68.0, "origin": "unspecified", "note": "Tie with Argon on Google's card."},

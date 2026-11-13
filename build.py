@@ -23,6 +23,8 @@ PUBLISHER_LAB = {
     "xAI": "xAI",
     "Meta": "Meta",
     "Cursor": "Cursor",
+    "DeepSeek": "DeepSeek",
+    "Moonshot AI": "Moonshot AI",
 }
 
 ORIGIN_LABEL = {
@@ -63,7 +65,7 @@ def fmt_score(benchmark: dict, row: dict) -> str:
     elif unit == "index":
         text = f"{score:.0f}"
     elif unit == "usd":
-        text = f"${score:.2f}"
+        text = f"${score:,.0f}" if score >= 100 and float(score).is_integer() else f"${score:,.2f}"
     else:
         text = str(score)
     effort = row.get("effort")
@@ -214,6 +216,7 @@ def collect_benchmarks(harnesses: list[dict]) -> dict[str, dict]:
                 "id": bench["id"],
                 "name": bench["name"],
                 "unit": bench["unit"],
+                "higherIsBetter": bench["higherIsBetter"],
                 "harnesses": {},
             })
             bucket["harnesses"][harness["id"]] = {
@@ -223,11 +226,11 @@ def collect_benchmarks(harnesses: list[dict]) -> dict[str, dict]:
     return found
 
 
-def best_row(rows: list[dict], model_id: str) -> dict | None:
+def best_row(rows: list[dict], model_id: str, higher_is_better: bool = True) -> dict | None:
     matching = [row for row in rows if row["modelId"] == model_id]
     if not matching:
         return None
-    return max(matching, key=lambda row: row["score"])
+    return max(matching, key=lambda row: row["score"]) if higher_is_better else min(matching, key=lambda row: row["score"])
 
 
 def render_index(models: dict, releases: list[dict], harnesses: list[dict]) -> str:
@@ -254,15 +257,16 @@ def render_index(models: dict, releases: list[dict], harnesses: list[dict]) -> s
         for model_id in model_ids:
             cells = [f"<a href='models/{esc(model_id)}.html'>{esc(model_name(models, model_id))}</a>"]
             for harness_id in harness_ids:
-                row = best_row(bench["harnesses"][harness_id]["rows"], model_id)
+                row = best_row(bench["harnesses"][harness_id]["rows"], model_id, bench["higherIsBetter"])
                 if row is None:
                     cells.append("")
                 else:
                     cells.append(esc(f"{fmt_score({'unit': bench['unit']}, row)} ({row['origin']})"))
             rows.append(cells)
+        best_word = "highest" if bench["higherIsBetter"] else "lowest"
         contested.append(
             f"<h2>{esc(bench['name'])}</h2>"
-            f"<p class='meta'>Same benchmark id across harnesses. A cell is that harness's highest published score for the model, with effort and origin. An empty cell means that harness did not publish one.</p>"
+            f"<p class='meta'>Same benchmark id across harnesses. A cell is that harness's {best_word} published score for the model, with effort and origin. An empty cell means that harness did not publish one.</p>"
             + render_table(headers, rows)
         )
     body = f"""
@@ -380,8 +384,8 @@ def write_figures(models: dict, harnesses: list[dict]) -> int:
     payload = {
         "compiler": "cursor",
         "computer": "surface-arm",
-        "revision": 2,
-        "compiledOn": "2026-10-13",
+        "revision": 3,
+        "compiledOn": "2026-11-12",
         "brief": "Frontier Benchmark Atlas brief, surface-arm/claude-code, 2026-10-13",
         "hub": HUB,
         "figures": figures,
