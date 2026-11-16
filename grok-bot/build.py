@@ -37,6 +37,21 @@ S={
 'oai_terra':('https://openai.com/index/introducing-gpt-6-1-terra','2026-10-26','OpenAI: Introducing GPT-6.1 Terra'),
 'aa_terra':('https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier','2026-10-26','Artificial Analysis: GPT-6.1 Terra pushes the cost efficiency frontier'),
 'aa_v5':('https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5','2026-10-27','Artificial Analysis: Announcing Intelligence Index v5'),
+'aa_inkling':('https://artificialanalysis.ai/articles/thinking-machines-releases-inkling-2-small-highest-scoring-open-weights-model-outside-of-chinia-upon-weights-release-it','2026-11-05','Artificial Analysis: Thinking Machines Inkling 2 Small'),
+'oai_cyber':('https://openai.com/index/introducing-gpt-6-cyber','2026-11-05','OpenAI: Introducing GPT-6 Cyber'),
+'irr_cyber':('https://www.irregular.com/research/assessing-gpt-6-cyber-against-offensive-security-benchmarks','2026-11-05','Irregular: Assessing GPT-6 Cyber Against Offensive Security Benchmarks'),
+'anth_fable52':('https://www.anthropic.com/claude-fable-and-mythos-5-2','2026-11-09','Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2'),
+'anth_fable52_sc':('https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf','2026-11-09','Claude Fable 5.2 and Claude Mythos 5.2 System Card'),
+'aa_changelog':('https://artificialanalysis.ai/changelog','2026-11-16','Artificial Analysis changelog (Intelligence Index values per model and effort)'),
+'aa_ember':('https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index','2026-11-09','Artificial Analysis: Meta Muse Ember scores 36 on the Intelligence Index'),
+'meta_ember':('https://research.meta.ai/blog/muse-ember','2026-11-09','Meta AI Research: Introducing Muse Ember'),
+'gblog_hydrogen':('https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/','2026-11-12','Google blog: Introducing Gemini 4 Hydrogen'),
+'gcard_hydrogen':('https://deepmind.google/models/model-cards/gemini-4-hydrogen/','2026-11-12','Google DeepMind Gemini 4 Hydrogen model card'),
+'aa_mka':('https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent','2026-11-10','Artificial Analysis: Multimodal Knowledge Agent (MKA) benchmark'),
+'aa_cai21':('https://ashutoshai.com/ai-compass/2026/11/13/artificial-analysis-coding-agent-index-v2-1/','2026-11-14','AI Compass summary of Artificial Analysis Coding Agent Index v2.1 (secondary)'),
+'aa_vials_li':('https://www.linkedin.com/posts/artificial-analysis_take-away-its-tools-and-claude-fable-52-activity-7526430779967438848-WHgu','2026-11-11','Artificial Analysis LinkedIn post on VIALS-AA with and without tools'),
+'aa_vials':('https://artificialanalysis.ai/articles/vials-aa','2026-11-06','Artificial Analysis: VIALS-AA launch article'),
+'aa_dec2':('https://artificialanalysis.ai/articles/decision-index-v2','2026-11-08','Artificial Analysis: Introducing the Decision Index v2'),
 }
 M=[ # id,name,maker,family,release,status,note
 ('argon','Gemini 4 Argon','Google','Gemini 4','2026-10-13','verified','GA Oct 13 per Google blog; AA tested a limited rollout Sep 30. Effort: high (highest available).'),
@@ -56,6 +71,12 @@ M=[ # id,name,maker,family,release,status,note
 ('kimi31','Kimi K3.1 Pro','Moonshot AI','Kimi K3.1','2026-10-23','verified','New entrant added 2026-10-26. API launch Oct 23, 2026 (Moonshot blog and AA article); weights promised by Nov 4, 2026. 2.8T total / 104B active.'),
 ('carbon','Gemini 4 Carbon','Google','Gemini 4','2026-10-28','verified','New 2026-11-02. Announced Oct 28, 2026 (Google blog); limited access for selected cyber defenders and Fairwind Program partners, broader release promised with no date. Introductory price $2/$10, standard $4/$20.'),
 ('terra61','GPT-6.1 Terra','OpenAI','GPT-6.1','2026-10-26','verified','New 2026-11-02. Released Oct 26, 2026 in ChatGPT Work, Codex, and the API (gpt-6.1-terra). $1/$5 per 1M tokens. Most OpenAI launch-post comparisons are relative (no absolute values), so only stated numbers are recorded.'),
+('cyber','GPT-6 Cyber','OpenAI','GPT-6','2026-11-05','verified','New 2026-11-09. Announced Nov 5, 2026. Cybersecurity model; API and Codex for a select group of approved Daybreak Red customers, broader Daybreak Red access promised. OpenAI rates it Critical in cyber under its Preparedness Framework. Not a general-purpose model, so only cyber figures exist.'),
+('inkling2s','Inkling 2 Small','Thinking Machines','Inkling','2026-11-05','verified','New entrant added 2026-11-09. Proprietary at launch (Tinker platform), Apache 2.0 weights planned, date unconfirmed. 594B total / 17B active, $0.30/$1.00 per 1M tokens (AA article, Nov 5, 2026).'),
+('fable52','Claude Fable 5.2','Anthropic','Claude Fable','2026-11-09','verified','New 2026-11-16. Released Nov 9, 2026 with Claude Mythos 5.2 (same underlying model; Mythos has looser cyber and biology safeguards, vetted access only). Fable 5.2 is generally available. $8/$40 per 1M tokens per secondary coverage.'),
+('mythos52','Claude Mythos 5.2','Anthropic','Claude Fable','2026-11-09','partial','New 2026-11-16. Limited to vetted organizations. Only the Mythos-specific rows in Anthropic launch table are recorded.'),
+('hydrogen','Gemini 4 Hydrogen','Google','Gemini 4','2026-11-12','verified','New 2026-11-16. Released Nov 12, 2026 (Google blog) across Gemini API, app, Search, Antigravity. Execution-focused model, 1M-token context. $1.50/$7.50 per 1M tokens per secondary tracker.'),
+('ember','Muse Ember','Meta','Muse Ember','2026-11-09','verified','New 2026-11-16. Released Nov 9, 2026. Meta smallest, most efficient Muse model, $0.10 in / $0.50 out per 1M tokens (AA article).'),
 ]
 R=[]
 def r(m,b,v,t,rep,src,setting='',note='',unit='%'):
@@ -184,10 +205,104 @@ for m,v,n in [('astra',72,'high'),('sol61',69,'max'),('opus55',61,'max'),('kimi3
 r('opus55','AA-Omniscience v1.1 Index',48,'independent','Artificial Analysis','aa_v5','max',unit='index')
 r('sonnet55','AA-Briefcase (Elo)',1812,'independent','Artificial Analysis','aa_v5','','Leads AA-Briefcase per AA v5 article.',unit='Elo')
 r('wfull','GDP.pdf (all-pass)',33,'independent','Artificial Analysis','aa_v5','','Leads GDP.pdf per AA v5 article.')
+# ---- 2026-11-09 weekly update (all pages opened on 2026-11-09) ----
+# GPT-6 Cyber, OpenAI launch post
+r('cyber','ExploitGym',48.5,'claim','OpenAI','oai_cyber','remote-target exploitation; OpenAI compares with GPT-5.6 Cyber at 32.1')
+r('cyber','Offensive web pentest recall (OpenAI new eval)',40.3,'claim','OpenAI','oai_cyber','recall of vulnerabilities, no source access')
+r('astra','Offensive web pentest recall (OpenAI new eval)',32.0,'vendor-table','OpenAI','oai_cyber','GPT-6 Astra as reported in the GPT-6 Cyber post')
+r('cyber','RemoteExploitBench tasks completed',95,'claim','OpenAI','oai_cyber','OpenAI new benchmark (GitLab, PostgreSQL, Jenkins targets); GPT-6 Astra with Daybreak Blue refused 100% of tasks')
+r('cyber','ExploitGym Honeypot, stayed in scope',99.93,'claim','OpenAI','oai_cyber','without deployment safety prompt; GPT-5.6 Cyber was 94.49')
+r('cyber','ExploitGym Honeypot, stayed in scope',100,'claim','OpenAI','oai_cyber','with deployment safety prompt')
+# GPT-6 Cyber, Irregular (independent; OpenAI collaborated on the evaluation)
+r('cyber','FrontierCyber challenges solved (of 288)',90,'independent','Irregular','irr_cyber','','Irregular worked with OpenAI on this evaluation. Count of challenges solved, not a percent.',unit='challenges')
+r('astra','FrontierCyber challenges solved (of 288)',96,'independent','Irregular','irr_cyber','same benchmark snapshot','Irregular says the difference does not establish a capability regression.',unit='challenges')
+r('cyber','CyScenarioBench scenarios solved at least once (of 11)',11,'independent','Irregular','irr_cyber','','',unit='scenarios')
+r('astra','CyScenarioBench scenarios solved at least once (of 11)',8,'independent','Irregular','irr_cyber','','',unit='scenarios')
+r('cyber','CyScenarioBench average success rate',61,'independent','Irregular','irr_cyber','','Irregular says this is 7 points above GPT-6 Astra; the Astra value is not stated, so none recorded.')
+r('cyber','Irregular Atomic Challenges solved (of 22)',22,'independent','Irregular','irr_cyber','','',unit='challenges')
+for b,v in [('vulnerability research and exploitation',97),('network attack simulation',98),('evasion',63)]:
+    r('cyber','Irregular Atomic Challenges average success, '+b,v,'independent','Irregular','irr_cyber')
+# Inkling 2 Small, AA article (index v5.0.1)
+r('inkling2s','AA Intelligence Index v5',31,'independent','Artificial Analysis','aa_inkling','Index v5.0.1; AA says it matches Gemini 3.8 Flash (high)','v5 is a new composite; not comparable with v4.3.',unit='index')
+for b,v,n in [('AutomationBench-AA',46,''),('FrontierCode 2.0 (AA)',25,''),('HLE-Diamond (AA)',29,''),('CritPt v2 hard subset (AA)',56,'AA writes "CritPt v2"; hard-subset label assumed from v5 naming'),('Terminal-Bench 4.0',13,''),('AA-Omniscience v1.1 hallucination rate (lower better)',27,''),('AA-Omniscience v1.1 accuracy',34,'')]:
+    r('inkling2s',b,v,'independent','Artificial Analysis','aa_inkling',n)
+r('inkling2s','AA-Omniscience v1.1 Index',16,'independent','Artificial Analysis','aa_inkling','','AA calls it the net score.',unit='index')
+for b,v,u in [('AA-Briefcase (Elo)',1527,'Elo'),('AA-3D (Elo)',1021,'Elo'),('Code2Video-AA (Elo)',1020,'Elo')]:
+    r('inkling2s',b,v,'independent','Artificial Analysis','aa_inkling',unit=u)
+r('sonnet55','FrontierCode 2.0 (AA)',11,'independent','Artificial Analysis','aa_inkling','medium effort','Quoted in the Inkling 2 Small article; the v5 launch row (42) is at max.')
+r('sonnet55','Terminal-Bench 4.0',30,'independent','Artificial Analysis','aa_inkling','medium effort','Quoted in the Inkling 2 Small article.')
+r('sonnet55','AA-Briefcase (Elo)',1439,'independent','Artificial Analysis','aa_inkling','medium effort','Quoted in the Inkling 2 Small article.',unit='Elo')
+# VIALS-AA launch (pass^3, Stirrup harness, 161 tasks; scores stated in the key findings)
+for m,v,n in [('carbon',64,'high'),('astra',63,'max'),('opus55',61,'max with fallback'),('sonnet55',60,'max with fallback'),('sol61',59,'max'),('kimi31',45,'max')]:
+    r(m,'VIALS-AA (pass^3)',v,'independent','Artificial Analysis','aa_vials',n,'Share of 161 tasks answered correctly in all three repeats; Stirrup harness; graded by GPT-6 Luna (medium). Results as of Nov 6, 2026.')
+# Decision Index v2 (language-model rows named in the article)
+for m,v in [('haiku55',77),('luna',76)]:
+    r(m,'AA Decision Index v2',v,'independent','Artificial Analysis','aa_dec2','Max','v2 (Nov 8, 2026) uses a new Decision Score; not comparable with v1.0 (61 and 55 on Oct 13).',unit='index')
+r('haiku55','AA-Paperclip (share of documents all 15 answers correct)',92,'independent','Artificial Analysis','aa_dec2','Max','Private AA benchmark, 1,500 documents.')
+r('luna','AA-Paperclip (share of documents all 15 answers correct)',86,'independent','Artificial Analysis','aa_dec2','Max','Private AA benchmark, 1,500 documents.')
+
+# ---- 2026-11-16 weekly update (pages read 2026-11-16; some via search extracts of the page, noted per row) ----
+FA='Anthropic launch table; highest-available effort, safeguards on unless noted'
+for b_,v,n in [('FrontierCode 2.0',49.1,'Xhigh effort'),('FrontierSWE v2',69.9,''),('AutomationBench',51.4,''),('Terminal-Bench-Science 0.1',74.6,''),('WANDR (relaxed score)',82.1,''),('OSWorld 2.1 (offline set, partial)',89.3,''),('RoboDojo Sim',64.9,'run internally'),('AA-Briefcase v1.1 (rubric)',66.1,''),('Remote Labor Index',41.3,'High effort'),("Humanity's Last Exam (with tools)",74.2,''),('Chartography (no tools)',73.4,'')]:
+    r('fable52',b_,v,'claim','Anthropic','anth_fable52',(n+'; ' if n else '')+FA)
+r('fable52','AA-Briefcase v1.1 (Elo)',1785,'claim','Anthropic','anth_fable52',FA+'; trails Opus 5.5 (1800 Elo) per system card',unit='Elo')
+r('mythos52','Terminal-Bench-Science 0.1',75.3,'claim','Anthropic','anth_fable52','Mythos 5.2 column of launch table')
+r('mythos52','CyScenarioBench',76.3,'claim','Anthropic','anth_fable52','Each lab uses unique tasks, so not directly comparable with GPT-6 Cyber (61%)')
+r('mythos52','CVE Rediscovery',89.6,'claim','Anthropic','anth_fable52','Mythos 5.2')
+r('mythos52','De novo binder design (24 hr)',85.1,'claim','Anthropic','anth_fable52','Mythos 5.2',unit='score')
+r('fable52','SWE-bench Pro',93.0,'claim','Anthropic','anth_fable52_sc','Average of 5 trials; value from system card summary as quoted in search extract')
+r('fable52','Remote Labor Index (rival, as reported by Anthropic)',20.8,'vendor-table','Anthropic','anth_fable52','GPT-6 Astra value in Anthropic table')
+# Gemini 4 Hydrogen model card (Google), with Claude Sonnet 5.5 and GPT-6.1 Terra columns as printed by Google
+HC='Google model card (Nov 2026); Hydrogen vs Claude Sonnet 5.5 and GPT-6.1 Terra as printed by Google'
+for b_,h,s_,t_,n in [('SWE-sweep',13.5,3.1,5.8,''),('Terminal-Bench 4.1 (cheating-adjusted)',57.0,63.9,None,'Hydrogen run: mini-swe-agent vision harness, high effort, 5 attempts (per methodology PDF, via secondary source)'),("Agents' Last Exam v1.1",71.6,60.4,69.8,''),('AutomationBench-AA',76.1,71.8,60.2,''),('OSWorld 2.1 (offline subset)',77.6,83.9,74.2,''),('MKA (Climb WSR)',53.4,52.0,43.8,''),('Chartography',66.6,61.6,63.2,''),('Terminal-Bench-Science 0.1',51.4,59.9,58.3,''),('HLE-Diamond',58.8,53.3,47.3,'')]:
+    r('hydrogen',b_,h,'claim','Google','gcard_hydrogen',(n+'; ' if n else '')+HC)
+    r('sonnet55',b_,s_,'vendor-table','Google','gcard_hydrogen',HC)
+    if t_ is not None: r('terra61',b_,t_,'vendor-table','Google','gcard_hydrogen',HC)
+r('hydrogen','Vending-Bench 2 bank balance ($)',14549,'claim','Google','gcard_hydrogen',HC,unit='USD')
+r('sonnet55','Vending-Bench 2 bank balance ($)',11165,'vendor-table','Google','gcard_hydrogen',HC,unit='USD')
+r('terra61','Vending-Bench 2 bank balance ($)',9107,'vendor-table','Google','gcard_hydrogen',HC,unit='USD')
+r('hydrogen','Terminal-Bench 4.1 (Gemini 3.8 Flash baseline)',18.2,'claim','Google','gblog_hydrogen','Google says Hydrogen more than triples this baseline; source of 18.2 not stated')
+r('hydrogen','Vals Tax Agent Bench',52.3,'claim','Google','gblog_hydrogen','Google cites #1 overall; third-party leaderboard, not checked directly')
+r('hydrogen','Vals Legal Research Bench',55.8,'claim','Google','gblog_hydrogen','Google says ties for #1; third-party leaderboard, not checked directly')
+# Muse Ember, Meta table (max effort) with Haiku 5.5 and GPT-6 Luna as printed by Meta
+EM='Meta launch table; Muse Ember (max) vs Claude Haiku 5.5 (max) and GPT-6 Luna (max) as printed by Meta'
+for b_,e,h,l in [('AutomationBench-AA',37.8,13.9,20.2),("Agents' Last Exam",61.6,57.0,57.1),('Terminal-Bench 4.0',40.9,39.2,16.4),('FrontierCode 2.0-AA',27.2,34.9,25.2),('GDP.pdf-AA',22.8,20.8,22.8),('PerceptionBench (with tools)',80.6,78.6,62.8)]:
+    r('ember',b_,e,'claim','Meta','meta_ember','max; '+EM)
+    r('haiku55',b_,h,'vendor-table','Meta','meta_ember',EM)
+    r('luna',b_,l,'vendor-table','Meta','meta_ember',EM)
+for b_,e,h,l,u in [('Coding Agent Index-AA',46,37,31,'index'),('Personal Superintelligence Index (Meta internal)',46.8,36.1,37.0,'index')]:
+    r('ember',b_,e,'claim','Meta','meta_ember','max; '+EM,unit=u)
+    r('haiku55',b_,h,'vendor-table','Meta','meta_ember',EM,unit=u)
+    r('luna',b_,l,'vendor-table','Meta','meta_ember',EM,unit=u)
+r('ember','OSWorld 2.1 (partial)',69.5,'claim','Meta','meta_ember','max; '+EM)
+r('ember','OSWorld 2.1 (binary)',33.8,'claim','Meta','meta_ember','max; '+EM)
+r('haiku55','OSWorld 2.1 (partial)',68.9,'vendor-table','Meta','meta_ember',EM)
+r('luna','OSWorld 2.1 (partial)',50.5,'vendor-table','Meta','meta_ember',EM)
+# Artificial Analysis, independent
+IX='Index version label not on the changelog; Haiku 5.5 (max) 36 matches the v5 value from Oct 27'
+for m,v,n in [('fable52',65,'Max, default fallback'),('fable52',62,'High, default fallback'),('fable52',62,'Xhigh, default fallback'),('fable52',56,'Medium, default fallback'),('fable52',54,'Low, default fallback'),('hydrogen',54,'Xhigh'),('hydrogen',51,'High (default)'),('hydrogen',41,'Medium'),('hydrogen',27,'Low'),('ember',36,'Max'),('ember',34,'Xhigh'),('argon',48,'Medium')]:
+    r(m,'AA Intelligence Index v5',v,'independent','Artificial Analysis','aa_changelog',n,IX,unit='index')
+r('wonder','AA Intelligence Index v5',44,'independent','Artificial Analysis','aa_ember','Max','Quoted in Muse Ember article; AA changelog lists Muse Wonder (High) at 41.',unit='index')
+r('wonder','AA Intelligence Index v5',41,'independent','Artificial Analysis','aa_changelog','High','Changelog entry dated Nov 4, 2026.',unit='index')
+r('luna','AA Intelligence Index v5',28,'independent','Artificial Analysis','aa_ember','Max','Quoted in Muse Ember article.',unit='index')
+r('spark13','AA Intelligence Index v5',37,'independent','Artificial Analysis','aa_ember','Max','Shown in Meta comparison table citing AA.',unit='index')
+for m,v,u in [('ember',0.14,'USD'),('haiku55',0.41,'USD'),('luna',0.15,'USD')]:
+    r(m,'AA cost per Intelligence Index task',v,'independent','Artificial Analysis','aa_ember','Max','Lower is cheaper.',unit=u)
+r('ember','AA cost per Intelligence Index task',0.12,'independent','Artificial Analysis','aa_ember','Xhigh','Lower is cheaper.',unit='USD')
+# MKA (Google DeepMind benchmark run by AA, Stirrup harness, GPT-6 Luna medium judge)
+for m,v,n in [('fable52',57,'max'),('carbon',54,'high'),('opus55',53,'max')]:
+    r(m,'MKA Climb WSR (AA)',v,'independent','Artificial Analysis','aa_mka',n,'Benchmark by Google DeepMind, run by AA in Stirrup with GPT-6 Luna (medium) as judge. Cost per task: Fable 5.2 $31.97, Carbon $6.29, GPT-6.1 Sol $1.11.')
+# Coding Agent Index v2.1 (secondary summary of AA page)
+for m,v,n in [('fable52',58,'high/xhigh in Claude Code'),('opus55',58,'max in Claude Code or with GPT-6 Luna High in Devin Fusion CLI'),('sonnet55',56,'max'),('fable52',56,'max'),('carbon',55,'high')]:
+    r(m,'AA Coding Agent Index v2.1',v,'independent','Artificial Analysis','aa_cai21',n,'Read in a secondary summary dated Nov 13/14, 2026; AA article not opened. Average scores fell 5 points vs v2.0.',unit='index')
+# VIALS-AA tool vs no tool
+r('fable52','VIALS-AA (with tools)',67,'independent','Artificial Analysis','aa_vials_li','max; $4.20 per task','AA LinkedIn post (Nov 11). Different scoring basis from the pass^3 rows recorded Nov 9.')
+r('fable52','VIALS-AA (one-shot, no tools)',44,'independent','Artificial Analysis','aa_vials_li','max; $0.73 per task')
+r('haiku55','VIALS-AA (with tools)',49,'independent','Artificial Analysis','aa_vials_li','max; $0.07 per task')
 PAIRS=[('argon','Terminal-Bench 4.0',57.4,57,'close'),('opus55','Terminal-Bench 4.0',66.4,60,'claim xhigh, Anthropic harness; AA max'),('astra','Terminal-Bench 4.0',58.2,59,'claim value from Google table, "as reported by OpenAI"'),('grok47','Terminal-Bench 4.0',37.6,33,'AA used Grok Build harness'),('wfull','Terminal-Bench 4.0',57.1,57,'close'),('grok47','DeepSWE v1.1',71.0,73,'independent higher than claim'),('argon','AutomationBench vs AA variant',51.3,78,'DIFFERENT variants: Zapier private set vs AutomationBench-AA'),('wfull','AutomationBench vs AA variant',45.4,71,'Labels conflict; likely different variants'),('fable51','DeepSWE v1.1 (Google table vs xAI table)',67.4,70.0,'two rival vendors report different Fable numbers'),('kimi31','Terminal-Bench 4.0',65.7,67,'claim Claude-Code harness; AA harness. Added 2026-10-26'),('sol61','HealthBench Professional',64.2,65.1,'both length-adjusted; OpenAI claim vs AA run. Added 2026-10-26'),('sol61','HealthBench',58.5,58.5,'both length-adjusted; identical. Added 2026-10-26')]
 pairs=[dict(model=a,benchmark=b,claim=c,independent=i,gap=round(i-c,1),note=n) for a,b,c,i,n in PAIRS]
-data=dict(as_of='2026-11-02',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
- not_found=['A released "GPT-6.1 Astra" (a Cleus blog post reports OpenAI cancelled its planned October release; not confirmed on an OpenAI page). GPT-6.1 Terra is now tracked','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)','Absolute values behind the relative comparisons in the GPT-6.1 Terra launch post (Agents Last Exam, MMMU-Pro, OSWorld 2.1, Terminal-Bench-Science 0.1)','Gemini 4 Carbon evaluation table (published only as an image on the Google blog; not transcribed)','Claude, Grok, and Muse model releases between Oct 26 and Nov 2, 2026 (none found)'])
+data=dict(as_of='2026-11-16',models=[dict(id=a,name=b,maker=c,family=d,release=e,status=f,note=g) for a,b,c,d,e,f,g in M],records=R,pairs=pairs,google_table_benchmarks=GB,sources={k:dict(url=v[0],date=v[1],title=v[2]) for k,v in S.items()},
+ not_found=['Window Nov 9 to Nov 16 checked, not added: Claude Mythos 5.2 beyond Anthropic table rows; Gemini 4 Carbon Nov 10 general release and its AA numbers beyond MKA; Gemini Decision 1 and Qwen4 Max (not in tracked set); Perplexity, Edge0, Reflection and other small entrants; Grok: x.ai/news read 2026-11-16 shows no new model since Grok 4.7. Fable 5.2 benchmark rows beyond the launch table (for example Terminal-Bench 4.0 67.6, DeepSWE 74.3) appear only in secondary extracts and were not recorded.; Window Nov 2 to Nov 9 checked, not added: Meta specialized Muse models (Nov 6, no scores in the post text read); Kimi K3.1 Pro Highspeed and weights; Tencent Hy4 (Nov 4) and Baidu ERNIE 5.5 Flash Base (Nov 5), no benchmark pages opened; Gemini Omni 1.2 Flash (video, out of scope); GPT-6 Astra ExploitGym 42.43 appears only in a search summary, not recorded; no new Anthropic or xAI/SpaceXAI model (newsrooms read 2026-11-09)','A released "GPT-6.1 Astra" (a Cleus blog post reports OpenAI cancelled its planned October release; not confirmed on an OpenAI page). GPT-6.1 Terra is now tracked','A Cursor-specific Grok 4.7 model (user said "Cursor with Grok 4.7"); only xAI-reported CursorBench 4.0','SWE-bench Verified, ARC Prize, Epoch, Scale SEAL, GPQA Diamond, AIME, MMMU scores for these models were not located (checked again 2026-10-26; Arena Text scores now included)','GPT-6 Luna release date','Anthropic benchmark claims for Sonnet 5.5 and Haiku 5.5','Arena Text score for Kimi K3.1 Pro and Muse Spark Open (not listed on Oct 22 snapshot)','Absolute values behind the relative comparisons in the GPT-6.1 Terra launch post (Agents Last Exam, MMMU-Pro, OSWorld 2.1, Terminal-Bench-Science 0.1)','Gemini 4 Carbon evaluation table (published only as an image on the Google blog; not transcribed)','Claude, Grok, and Muse model releases between Oct 26 and Nov 2, 2026 (none found)'])
 w=csv.writer(open('sources.csv','w',newline=''),lineterminator='\n')
 w.writerow(['model','benchmark','value','unit','type','reporter','setting','note','source','date'])
 for x in R: w.writerow([x[k] for k in ['model','benchmark','value','unit','type','reporter','setting','note','source','date']])

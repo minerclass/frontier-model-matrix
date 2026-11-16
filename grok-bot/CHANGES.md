@@ -1,3 +1,52 @@
+# Changes: 2026-11-16 weekly update
+
+Window: Nov 9 to Nov 16, 2026. 410 records total (109 new vs the staged Nov 9 build, which is still an unmerged PR). Nothing estimated or derived. Rows read from the lab's own page where noted; some rows come from search extracts of those pages and say so.
+
+## Releases checked
+
+- Anthropic: **Claude Fable 5.2** and **Claude Mythos 5.2** (Nov 9). Launch table rows recorded (Anthropic page and system card).
+- Google: **Gemini 4 Hydrogen** (Nov 12). Model card table recorded, with the Sonnet 5.5 and GPT-6.1 Terra columns as printed by Google.
+- Meta: **Muse Ember** (Nov 9). Meta launch table recorded, plus AA index and cost.
+- OpenAI: no new GPT language model (GPT Image variants out of scope).
+- xAI/SpaceXSI: x.ai/news read 2026-11-16, no new model since Grok 4.7.
+
+## New independent results (Artificial Analysis)
+
+- Intelligence Index per effort for Fable 5.2 (max 65), Hydrogen (xhigh 54, high 51), Muse Ember (max 36), Argon medium 48.
+- MKA launch (Nov 10): Fable 5.2 57, Carbon 54, Opus 5.5 53.
+- Coding Agent Index v2.1 (Nov 14): from a secondary summary only.
+- VIALS-AA with and without tools (AA LinkedIn post, Nov 11).
+
+## Other changes
+
+- template.html: hero text, data date, timeline range, colors for four new models. shots/ and atlas.json were not regenerated.
+- Caveat: the AA index version label is not stated on the changelog; values are filed under v5 with a note.
+
+# Changes: 2026-11-09 weekly update
+
+Window: Nov 2 to Nov 9, 2026. Every new row was read on the source page on 2026-11-09 (first-hand). No values were estimated, derived, or averaged. 301 records total, 40 new.
+
+## Releases checked
+
+- OpenAI: **GPT-6 Cyber** (Nov 5, cybersecurity model, select approved Daybreak Red customers via API and Codex) added, with OpenAI figures and Irregular's independent evaluation.
+- Google: no new Gemini language model (Gemini Omni 1.2 Flash on Nov 5 is a video model, out of scope).
+- Anthropic: no new model (newsroom read 2026-11-09; latest model items are Opus 5.5, Sonnet 5.5, Haiku 5.5).
+- xAI/SpaceXAI: no new model (x.ai/news read 2026-11-09; latest is Grok 4.7).
+- Meta: no new Muse model. Nov 6 post on specialized Muse models for Muse and Meta AI has no benchmark numbers in the text read, so nothing added.
+- New entrants: **Inkling 2 Small** (Thinking Machines, Nov 5, proprietary at launch) added from the Artificial Analysis article. Not added: Tencent Hy4 (Nov 4), Baidu ERNIE 5.5 Flash Base (Nov 5), Kimi K3.1 Pro Highspeed (no benchmark pages opened).
+
+## New independent results (Artificial Analysis)
+
+- VIALS-AA launch (Nov 6): Carbon 64, Astra 63, Opus 5.5 61, Sonnet 5.5 60, GPT-6.1 Sol 59, Kimi K3.1 Pro 45 (pass^3). Terra, Luna, Argon, Grok scores are not stated in the article text, so none recorded.
+- Decision Index v2 (Nov 8): Claude Haiku 5.5 77, GPT-6 Luna 76. v2 is a new composite; v1.0 values (61, 55) stay under their own name.
+- Inkling 2 Small article (Nov 5): 12 records for Inkling 2 Small, plus three Sonnet 5.5 (medium) figures quoted in it.
+
+## Other changes
+
+- template.html: hero text, data date, timeline range, colors for the two new models. shots/ were not re-rendered.
+- Not recorded: GPT-6 Astra ExploitGym 42.43 (search summary only); CyScenarioBench Astra average (only a 7 point gap is stated).
+
+
 # Changes: 2026-11-02 weekly update
 
 Window: Oct 26 to Nov 2, 2026. Every new row was read on the source page on 2026-11-02 (first-hand). No values were estimated, derived, or averaged. Settings are listed as the source gives them.
