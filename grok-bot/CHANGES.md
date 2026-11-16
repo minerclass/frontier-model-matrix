@@ -1,3 +1,27 @@
+# Changes: 2026-11-16 weekly update
+
+Window: Nov 9 to Nov 16, 2026. 410 records total (109 new vs the staged Nov 9 build, which is still an unmerged PR). Nothing estimated or derived. Rows read from the lab's own page where noted; some rows come from search extracts of those pages and say so.
+
+## Releases checked
+
+- Anthropic: **Claude Fable 5.2** and **Claude Mythos 5.2** (Nov 9). Launch table rows recorded (Anthropic page and system card).
+- Google: **Gemini 4 Hydrogen** (Nov 12). Model card table recorded, with the Sonnet 5.5 and GPT-6.1 Terra columns as printed by Google.
+- Meta: **Muse Ember** (Nov 9). Meta launch table recorded, plus AA index and cost.
+- OpenAI: no new GPT language model (GPT Image variants out of scope).
+- xAI/SpaceXSI: x.ai/news read 2026-11-16, no new model since Grok 4.7.
+
+## New independent results (Artificial Analysis)
+
+- Intelligence Index per effort for Fable 5.2 (max 65), Hydrogen (xhigh 54, high 51), Muse Ember (max 36), Argon medium 48.
+- MKA launch (Nov 10): Fable 5.2 57, Carbon 54, Opus 5.5 53.
+- Coding Agent Index v2.1 (Nov 14): from a secondary summary only.
+- VIALS-AA with and without tools (AA LinkedIn post, Nov 11).
+
+## Other changes
+
+- template.html: hero text, data date, timeline range, colors for four new models. shots/ and atlas.json were not regenerated.
+- Caveat: the AA index version label is not stated on the changelog; values are filed under v5 with a note.
+
 # Changes: 2026-11-09 weekly update
 
 Window: Nov 2 to Nov 9, 2026. Every new row was read on the source page on 2026-11-09 (first-hand). No values were estimated, derived, or averaged. 301 records total, 40 new.
