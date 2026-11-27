@@ -9,6 +9,8 @@ Revision 3. Prompt: Micah's 12–13 Nov 2026 instructions to update the model At
 
 Added `data/incidents.json` and `incidents/` pages for confirmed hacking events and AI sandbox / evaluation egress since January 2026, with school-district, K–12, and higher-ed breaches emphasized. Method: victim- or lab-confirmed records only; one researcher-reported Kimi K3 case retained with the AISI dispute noted; leak-site-only school claims omitted. Rebuild with `python3 build.py`.
 
+Handoff for the next agent to build a **collective display** that joins incidents with harness cyber cells (`cve-rediscovery`, `cyscenariobench`, `cwe-bench-v1`, `exploitgym`): `incidents/COLLECTIVE-DISPLAY-HANDOFF.md`.
+
 ## Who compiled it
 
 - Harness: cursor
