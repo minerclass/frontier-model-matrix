@@ -37,6 +37,13 @@ All pages open in dark mode by default with a persistent light/dark toggle in th
   3. **Cost vs. Score Pareto Frontier Scatterplot** (logarithmic per-task USD with reasoning-effort trajectories)
   4. **Chronological Release Timeline** (September–November 2026)
   5. **Cross-Publisher Benchmark Matrix** (inline visual score bars and provenance badges)
+- `incidents/` is the Incidents Atlas companion:
+  1. **Education emphasis** boards for K–12 / school districts and higher education
+  2. **Sandbox escape / agent egress** directory matching the model-card layout
+  3. **Chronological strip** for January–November 2026
+  4. **Provenance matrix** with confirmation stance and source labels
+  5. One profile page per event under `incidents/<id>.html`, fed by `data/incidents.json`
+  6. Handoff for a combined incidents + harness-cyber collective display: `incidents/COLLECTIVE-DISPLAY-HANDOFF.md`
 - `harnesses/` is one visual scorecard page per publisher, including how that publisher compiled the score.
 - `models/` is one profile page per model, repeating each harness's cells and provenance badges for that model.
 
