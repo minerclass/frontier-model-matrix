@@ -162,6 +162,7 @@ def page(title: str, body: str, depth: int, current_nav: str = "") -> str:
     nav_items = [
         (HUB, "Atlas hub", "hub"),
         (f"{prefix}index.html", "Visual Atlas", "index"),
+        (f"{prefix}incidents/index.html", "Incidents", "incidents"),
         (f"{prefix}harnesses/index.html", "Harnesses", "harnesses"),
         (f"{prefix}models/index.html", "Models", "models"),
         (f"{prefix}NOTES.md", "Notes", "notes"),
@@ -189,8 +190,8 @@ def page(title: str, body: str, depth: int, current_nav: str = "") -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="{prefix}assets/site.css?v=5">
-  <script src="{prefix}assets/site.js?v=5" defer></script>
+  <link rel="stylesheet" href="{prefix}assets/site.css?v=6">
+  <script src="{prefix}assets/site.js?v=6" defer></script>
 </head>
 <body>
   <header class="site">
@@ -767,15 +768,289 @@ def write_figures(models: dict, harnesses: list[dict]) -> int:
     return len(figures)
 
 
+CATEGORY_COLOR = {
+    "sandbox-escape": "var(--stance-rival)",
+    "education-breach": "var(--stance-claim)",
+}
+
+SECTOR_LABEL = {
+    "k12": "K–12 / school district",
+    "higher-ed": "Higher education",
+    "lab-eval": "Lab / evaluation",
+    "vendor": "Vendor / platform",
+}
+
+STATUS_LABEL = {
+    "confirmed": "Confirmed",
+    "researcher-reported": "Researcher-reported",
+}
+
+
+def load_incidents() -> dict:
+    return json.loads((DATA / "incidents.json").read_text(encoding="utf-8"))
+
+
+def validate_incidents(payload: dict) -> None:
+    seen = set()
+    for event in payload["events"]:
+        eid = event["id"]
+        if eid in seen:
+            raise SystemExit(f"Duplicate incident id: {eid}")
+        seen.add(eid)
+        if event["status"] not in STATUS_LABEL:
+            raise SystemExit(f"Bad status on {eid}")
+        if event["category"] not in CATEGORY_COLOR:
+            raise SystemExit(f"Bad category on {eid}")
+        if not event.get("sources"):
+            raise SystemExit(f"{eid} needs at least one source")
+        if event["status"] == "confirmed" and not event.get("confirmation"):
+            raise SystemExit(f"{eid} confirmed events need a confirmation note")
+
+
+def category_badge(category: str) -> str:
+    label = "Sandbox escape / agent egress" if category == "sandbox-escape" else "Education-sector breach"
+    return f"<span class='badge badge-{'rival' if category == 'sandbox-escape' else 'claim'}'>{esc(label)}</span>"
+
+
+def status_badge(status: str) -> str:
+    klass = "independent" if status == "confirmed" else "quoted"
+    return f"<span class='badge badge-{klass}'>{esc(STATUS_LABEL[status])}</span>"
+
+
+def sector_badge(sector: str) -> str:
+    return f"<span class='badge'>{esc(SECTOR_LABEL.get(sector, sector))}</span>"
+
+
+def emphasis_badges(event: dict) -> str:
+    bits = []
+    for tag in event.get("emphasis") or []:
+        if tag == "k12":
+            bits.append("<span class='badge badge-claim'>K–12 emphasis</span>")
+        elif tag == "school-district":
+            bits.append("<span class='badge badge-claim'>School district</span>")
+        elif tag == "higher-ed":
+            bits.append("<span class='badge badge-claim'>Higher ed emphasis</span>")
+    return " ".join(bits)
+
+
+def incident_color(event: dict) -> str:
+    if event.get("emphasis"):
+        return "var(--stance-claim)"
+    return CATEGORY_COLOR.get(event["category"], "var(--accent)")
+
+
+def render_incident_index(payload: dict) -> str:
+    events = sorted(payload["events"], key=lambda e: e["date"])
+    confirmed = [e for e in events if e["status"] == "confirmed"]
+    escapes = [e for e in events if e["category"] == "sandbox-escape"]
+    education = [e for e in events if e["category"] == "education-breach"]
+    k12 = [e for e in education if e["sector"] == "k12"]
+    higher = [e for e in education if e["sector"] == "higher-ed"]
+
+    def cards(subset: list[dict], link_prefix: str = "") -> str:
+        out = []
+        for event in subset:
+            models = ", ".join(event.get("models") or []) or "No model named"
+            out.append(
+                f"<article class='dir-card' style='border-top:3px solid {incident_color(event)}'>"
+                f"<div class='node-top'><span class='eyebrow'>{esc(event['date'])} · {esc(SECTOR_LABEL.get(event['sector'], event['sector']))}</span>"
+                f"{status_badge(event['status'])}</div>"
+                f"<h3><a href='{link_prefix}{esc(event['id'])}.html'>{esc(event['shortTitle'])}</a></h3>"
+                f"<p class='sub' style='font-size:0.85rem'>{esc(event['summary'][:180])}{'…' if len(event['summary']) > 180 else ''}</p>"
+                f"<div style='display:flex;flex-wrap:wrap;gap:6px'>{category_badge(event['category'])}{emphasis_badges(event)}</div>"
+                f"<span class='meta'>{esc(models)}</span>"
+                f"</article>"
+            )
+        return "".join(out)
+
+    timeline = []
+    for event in events:
+        timeline.append(
+            f"<article class='tl-card' style='--tl-color:{incident_color(event)}'>"
+            f"<time datetime='{esc(event['date'])}'>{esc(event['date'])}</time>"
+            f"<h3><a href='{esc(event['id'])}.html'>{esc(event['shortTitle'])}</a></h3>"
+            f"<p>{esc(event['impact'][:160])}{'…' if len(event['impact']) > 160 else ''}</p>"
+            f"<div style='display:flex;flex-wrap:wrap;gap:6px'>{category_badge(event['category'])}{status_badge(event['status'])}</div>"
+            f"</article>"
+        )
+
+    matrix_rows = []
+    for event in events:
+        sources = "; ".join(s["label"] for s in event["sources"][:2])
+        matrix_rows.append([
+            f"<a href='{esc(event['id'])}.html'>{esc(event['shortTitle'])}</a>",
+            esc(event["date"]),
+            category_badge(event["category"]),
+            sector_badge(event["sector"]),
+            status_badge(event["status"]),
+            esc(event["confirmation"]),
+            esc(sources),
+        ])
+
+    body = f"""
+    <section class="sheet hero-sheet">
+      <span class="eyebrow">Frontier Benchmark Atlas · Incidents Collection · Revision {esc(payload['revision'])}</span>
+      <h1>Confirmed Hacking Events &amp; Sandbox Escapes · Jan–Nov 2026</h1>
+      <p class="lede">A visual companion to the model-release Atlas: lab-confirmed agent sandbox escapes and victim-confirmed education-sector breaches since January 2026, with school districts, K–12 systems, and higher education emphasized.</p>
+      <div class="stat-strip">
+        <div class="stat-card"><b>{len(events)}</b><span>Events in collection</span></div>
+        <div class="stat-card"><b>{len(confirmed)}</b><span>Confirmed records</span></div>
+        <div class="stat-card"><b>{len(escapes)}</b><span>Sandbox / agent egress cases</span></div>
+        <div class="stat-card"><b>{len(k12) + len(higher)}</b><span>K–12 &amp; higher-ed breaches</span></div>
+      </div>
+      <div class="jump-bar" aria-label="Jump to section">
+        <a class="jump-pill" href="#education">1 · Education emphasis</a>
+        <a class="jump-pill" href="#escapes">2 · Sandbox escapes</a>
+        <a class="jump-pill" href="#timeline">3 · Chronological strip</a>
+        <a class="jump-pill" href="#matrix">4 · Provenance matrix</a>
+        <a class="jump-pill" href="#method">5 · Method</a>
+      </div>
+      <p class="meta">{esc(payload['method'])}</p>
+    </section>
+
+    <section class="sheet" id="education" aria-labelledby="h-education">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Station 1 · Education-sector emphasis</span>
+          <h2 id="h-education">School districts, K–12 systems, and higher education</h2>
+          <p class="sub">Victim-confirmed ransomware and data-theft events. Cards open like model-release profile pages.</p>
+        </div>
+        <span class="meta">{len(k12)} K–12 · {len(higher)} higher ed</span>
+      </div>
+      <h3>K–12 / school districts</h3>
+      <div class="dir-grid">{cards(k12)}</div>
+      <h3>Higher education</h3>
+      <div class="dir-grid">{cards(higher)}</div>
+    </section>
+
+    <section class="sheet" id="escapes" aria-labelledby="h-escapes">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Station 2 · Agent sandbox escapes &amp; evaluation egress</span>
+          <h2 id="h-escapes">Models and agents that left intended isolation</h2>
+          <p class="sub">Includes lab-confirmed evaluation incidents and the WorkOS / ARTEX third-party breach. One researcher-reported Kimi K3 case is retained with the AISI dispute noted.</p>
+        </div>
+        <span class="meta">{len(escapes)} escape / egress records</span>
+      </div>
+      <div class="dir-grid">{cards(escapes)}</div>
+    </section>
+
+    <section class="sheet" id="timeline" aria-labelledby="h-timeline">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Station 3 · Chronological strip</span>
+          <h2 id="h-timeline">January–November 2026 event order</h2>
+          <p class="sub">Ordered by event date (approximate mid-month placeholders noted on individual pages when a day was unpublished).</p>
+        </div>
+        <span class="meta">{esc(payload['scopeStart'])} → {esc(payload['scopeEnd'])}</span>
+      </div>
+      <div class="timeline-grid">{''.join(timeline)}</div>
+    </section>
+
+    <section class="sheet" id="matrix" aria-labelledby="h-matrix">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Station 4 · Provenance matrix</span>
+          <h2 id="h-matrix">Confirmation stance and source labels</h2>
+          <p class="sub">Same discipline as the model Atlas: each row stays with the organization or report that established it.</p>
+        </div>
+      </div>
+      {render_table(
+            ["Event", "Date", "Category", "Sector", "Status", "Confirmation", "Sources"],
+            matrix_rows,
+        )}
+    </section>
+
+    <section class="sheet" id="method" aria-labelledby="h-method">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Station 5 · Method</span>
+          <h2 id="h-method">What counts as confirmed</h2>
+        </div>
+        <span class="meta">Compiled {esc(payload['compiledOn'])}</span>
+      </div>
+      <p class="sub">{esc(payload['method'])}</p>
+      <p class="sub">{esc(payload['emphasis'])}</p>
+      <p class="meta">Leak-site claims without district confirmation (for example Westfield NJ and Llano ISD TX in contemporaneous reporting) are intentionally omitted from this revision.</p>
+    </section>
+    """
+    return page("Incidents · Frontier Model Matrix", body, 1, "incidents")
+
+
+def render_incident(event: dict, payload: dict) -> str:
+    source_rows = []
+    for source in event["sources"]:
+        source_rows.append([
+            f"<a href='{esc(source['url'])}' rel='noopener noreferrer'>{esc(source['label'])}</a>",
+            esc(source["kind"]),
+            esc(source.get("readOn") or payload["compiledOn"]),
+        ])
+    model_list = "".join(f"<li>{esc(m)}</li>" for m in (event.get("models") or [])) or "<li>No model named in primary public materials</li>"
+    org_list = "".join(f"<li>{esc(o)}</li>" for o in event.get("orgs") or [])
+    body = f"""
+    <section class="sheet hero-sheet">
+      <span class="kicker" style="color:{incident_color(event)}">{esc(SECTOR_LABEL.get(event['sector'], event['sector']))} · {esc(event['date'])}</span>
+      <h1>{esc(event['title'])}</h1>
+      <p class="lede">{esc(event['summary'])}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        {category_badge(event['category'])}
+        {status_badge(event['status'])}
+        {sector_badge(event['sector'])}
+        {emphasis_badges(event)}
+      </div>
+      <p class="meta">Disclosed {esc(event.get('disclosed') or event['date'])} · {esc(event['confirmation'])}</p>
+    </section>
+
+    <section class="sheet">
+      <div class="section-head"><div><span class="eyebrow">Impact</span><h2>What was affected</h2></div></div>
+      <p class="sub">{esc(event['impact'])}</p>
+    </section>
+
+    <section class="sheet">
+      <div class="section-head"><div><span class="eyebrow">Mechanism</span><h2>How containment or defenses failed</h2></div></div>
+      <p class="sub">{esc(event['mechanism'])}</p>
+    </section>
+
+    <section class="sheet">
+      <div class="section-head"><div><span class="eyebrow">Actors &amp; models</span><h2>Named organizations and systems</h2></div></div>
+      <div class="incident-two-col">
+        <div>
+          <h3>Organizations</h3>
+          <ul class="plain-list">{org_list}</ul>
+        </div>
+        <div>
+          <h3>Models / agents</h3>
+          <ul class="plain-list">{model_list}</ul>
+        </div>
+      </div>
+      <p class="meta">Location: {esc(event.get('location') or 'Not stated')}</p>
+    </section>
+
+    <section class="sheet">
+      <div class="section-head"><div><span class="eyebrow">Provenance</span><h2>Sources read for this card</h2></div>
+      <span class="badge">{len(event['sources'])} sources</span></div>
+      {render_table(["Source", "Kind", "Read on"], source_rows)}
+      <p class="meta">{esc(event.get('notes') or '')}</p>
+    </section>
+
+    <p class="meta"><a href="index.html">← Back to Incidents Atlas</a></p>
+    """
+    return page(f"{event['shortTitle']} · Incidents", body, 1, "incidents")
+
+
 def main() -> None:
     models, releases, harnesses = load()
     validate(models, harnesses)
+    incidents = load_incidents()
+    validate_incidents(incidents)
     (ROOT / "harnesses").mkdir(exist_ok=True)
     (ROOT / "models").mkdir(exist_ok=True)
+    (ROOT / "incidents").mkdir(exist_ok=True)
     count = write_figures(models, harnesses)
     (ROOT / "index.html").write_text(render_index(models, releases, harnesses, count), encoding="utf-8")
     (ROOT / "harnesses" / "index.html").write_text(render_harness_index(harnesses), encoding="utf-8")
     (ROOT / "models" / "index.html").write_text(render_model_index(models, harnesses), encoding="utf-8")
+    (ROOT / "incidents" / "index.html").write_text(render_incident_index(incidents), encoding="utf-8")
     for harness in harnesses:
         (ROOT / "harnesses" / f"{harness['id']}.html").write_text(
             render_harness(models, harness), encoding="utf-8"
@@ -784,7 +1059,14 @@ def main() -> None:
         (ROOT / "models" / f"{model_id}.html").write_text(
             render_model(models, model_id, meta, harnesses), encoding="utf-8"
         )
-    print(f"Wrote {len(harnesses)} harness pages, {len(models['models'])} model pages, and {count} figures.")
+    for event in incidents["events"]:
+        (ROOT / "incidents" / f"{event['id']}.html").write_text(
+            render_incident(event, incidents), encoding="utf-8"
+        )
+    print(
+        f"Wrote {len(harnesses)} harness pages, {len(models['models'])} model pages, "
+        f"{len(incidents['events'])} incident pages, and {count} figures."
+    )
 
 
 if __name__ == "__main__":

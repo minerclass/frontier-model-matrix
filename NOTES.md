@@ -1,8 +1,13 @@
-Written on: surface-arm · cursor · 2026-11-13
+Written on: surface-arm · cursor · 2026-11-13  
+Incidents Atlas addendum: cursor-cloud · cursor · 2026-11-27
 
 # Cursor compilation notes
 
 Revision 3. Prompt: Micah's 12–13 Nov 2026 instructions to update the model Atlas for Gemini 4 Hydrogen, Gemini 4 Carbon, and other recent frontier releases, set it up in dark mode with a toggle, and make it visual, continuing from the Frontier Benchmark Atlas brief (`HARNESS.md`). Revision 1 is commits `e4ba379` and `058c977`. Revision 2 is commit `b362d95` (13 Oct 2026).
+
+## Incidents Atlas (27 Nov 2026)
+
+Added `data/incidents.json` and `incidents/` pages for confirmed hacking events and AI sandbox / evaluation egress since January 2026, with school-district, K–12, and higher-ed breaches emphasized. Method: victim- or lab-confirmed records only; one researcher-reported Kimi K3 case retained with the AISI dispute noted; leak-site-only school claims omitted. Rebuild with `python3 build.py`.
 
 ## Who compiled it
 
